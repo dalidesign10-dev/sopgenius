@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+function getAnthropic() {
+  return new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+}
 
 export async function POST(request: Request) {
   try {
@@ -74,7 +76,7 @@ Complexity Level: ${complexity}
 Target Audience: ${audience}
 ${additionalNotes ? `Additional context: ${additionalNotes}` : ""}`;
 
-    const message = await anthropic.messages.create({
+    const message = await getAnthropic().messages.create({
       model: "claude-sonnet-4-20250514",
       max_tokens: 4096,
       system: systemPrompt,
