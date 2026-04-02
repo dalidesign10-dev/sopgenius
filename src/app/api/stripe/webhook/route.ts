@@ -31,7 +31,7 @@ export async function POST(request: Request) {
         const customerId = session.customer as string;
 
         // TODO: Update user's plan and stripe_customer_id in Supabase
-        // e.g. await supabase.from("users").update({ stripe_customer_id: customerId, plan: "pro" }).eq("id", userId);
+        // e.g. await supabase.from("users").update({ stripe_customer_id: customerId, plan: "solo" }).eq("id", userId);
         console.log(
           `Checkout completed for user ${userId}, customer ${customerId}`
         );

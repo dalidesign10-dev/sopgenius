@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PLANS, type Plan } from "@/types";
+import { PublicNav } from "@/components/shared/public-nav";
+import { PublicFooter } from "@/components/shared/public-footer";
 
 export const metadata: Metadata = {
   title: "Pricing — SOPGenius",
@@ -13,26 +15,12 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
-  const planKeys: Plan[] = ["free", "starter", "pro", "business"];
+  const planKeys: Plan[] = ["free", "solo", "practice", "dso"];
 
   return (
     <div className="min-h-screen bg-background">
       {/* Nav */}
-      <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="text-xl font-bold text-primary">
-            SOPGenius
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/login">
-              <Button variant="ghost" size="sm">Log In</Button>
-            </Link>
-            <Link href="/signup">
-              <Button size="sm">Get Started Free</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <PublicNav />
 
       {/* Hero */}
       <section className="py-20 text-center">
@@ -156,9 +144,7 @@ export default function PricingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-8 text-center text-sm text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} SOPGenius. All rights reserved.</p>
-      </footer>
+      <PublicFooter />
     </div>
   );
 }
