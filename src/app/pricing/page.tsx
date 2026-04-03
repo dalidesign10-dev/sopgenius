@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
-  const planKeys: Plan[] = ["free", "solo", "practice", "dso"];
+  const planKeys: Plan[] = ["free", "pro", "clinic"];
 
   return (
     <div className="min-h-screen bg-background">

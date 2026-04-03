@@ -550,6 +550,68 @@ Whether you work with a single local lab or multiple specialty labs across the c
       },
     ],
   },
+  {
+    slug: "dental-assistant-onboarding-sop-template",
+    title: "Dental Assistant Onboarding SOP Template",
+    metaTitle:
+      "Dental Assistant Onboarding SOP Template — Free AI SOP Generator | SOPGenius",
+    metaDescription:
+      "Create a comprehensive dental assistant onboarding SOP. Cover clinical training, sterilization protocols, patient communication, and compliance requirements.",
+    industry: "HR & Training",
+    department: "Human Resources / Training",
+    icon: "UserPlus",
+    shortDescription:
+      "Standardize how your practice trains and onboards new dental assistants with a clear, step-by-step procedure covering clinical skills, compliance, and office protocols.",
+    longDescription: `Dental assistant turnover is among the highest in healthcare, and every departure takes institutional knowledge with it. When a new assistant starts, practices often rely on whoever happens to be available that day to show them around, leading to inconsistent training that varies depending on who is teaching. One assistant learns sterilization one way, another learns a different sequence, and neither receives structured exposure to the compliance requirements that regulators expect every team member to understand. The result is longer ramp-up times, preventable clinical errors, and a frustrating experience that drives new hires out the door before they reach full productivity.
+
+Regulatory requirements make standardized onboarding even more critical. OSHA mandates that every employee with occupational exposure to bloodborne pathogens receive training before they begin tasks that involve contact with blood or other potentially infectious materials — not after their first week, not when the office manager has time, but before exposure begins. HIPAA requires workforce training on privacy policies and procedures. State dental boards may impose additional requirements for radiology certification, coronal polishing permits, or expanded function credentials. A documented onboarding SOP ensures these compliance training milestones happen on schedule and are properly recorded.
+
+A structured onboarding program that follows a written SOP reduces time-to-competency from months to weeks. New dental assistants know exactly what they need to learn, in what order, and by when. Trainers follow the same checklist regardless of which senior assistant or office manager is conducting the orientation. Evaluation checkpoints at defined intervals catch skill gaps early, before they become patient safety issues. The practice protects itself from compliance gaps, and the new hire gains confidence from a clear path to independence — reducing the turnover that triggered the hiring cycle in the first place.`,
+    whoIsItFor: [
+      "Office managers responsible for hiring and training new clinical staff",
+      "Lead dental assistants who mentor and train incoming team members",
+      "HR coordinators at multi-location dental groups standardizing onboarding across offices",
+      "Practice owners seeking to reduce turnover by improving the new-hire experience",
+    ],
+    whatToInclude: [
+      "First-day orientation checklist covering office tour, introductions, IT setup, uniform and badge, and employee handbook review",
+      "Clinical skills training schedule with hands-on competencies for chairside assisting, suctioning, instrument transfer, and radiograph exposure",
+      "Sterilization and instrument reprocessing training with demonstrated competency sign-off",
+      "HIPAA privacy and security training with documented acknowledgment and OSHA Bloodborne Pathogens Standard training before occupational exposure begins",
+      "Patient communication and front-office cross-training covering phone etiquette, appointment confirmation, and patient greeting protocols",
+      "Scheduled evaluation checkpoints at Day 3, Week 1, Week 2, and Day 30 with written competency assessments and feedback sessions",
+    ],
+    exampleSteps: [
+      "Day 1 — Orientation: Conduct an office tour covering operatories, sterilization area, lab, supply storage, break room, and emergency exits. Introduce the new assistant to every team member by name and role. Issue uniform, ID badge, keys, and login credentials for the practice management system. Review the employee handbook, complete HIPAA privacy training with signed acknowledgment, and complete OSHA Bloodborne Pathogens training before any clinical exposure.",
+      "Days 2–3 — Sterilization and Infection Control: Train the new assistant on the full instrument reprocessing workflow: point-of-use pre-treatment, ultrasonic cleaning, inspection, packaging, autoclave operation, biological indicator handling, and sterilization log documentation. Have them process three full instrument cycles under direct supervision and verify competency before allowing independent operation.",
+      "Days 3–5 — Chairside Assisting Fundamentals: Shadow an experienced assistant during patient procedures to observe instrument transfer, suctioning technique, material mixing, and four-handed dentistry workflow. Gradually transition from observation to hands-on participation with the senior assistant providing real-time coaching.",
+      "Week 1 — Radiograph Training: Train on the practice's radiograph equipment including sensor placement, exposure settings, infection control for digital sensors, and image evaluation. Verify that the assistant holds any state-required radiology certification or permit before allowing independent radiograph exposure.",
+      "Week 2 — Patient Communication and Administrative Cross-Training: Train on patient greeting protocols, appointment confirmation calls, chairside patient communication during procedures, and post-operative instruction delivery. Introduce basic front-office tasks including patient check-in and check-out workflows so the assistant can support the front desk during peak times.",
+      "Day 14 and Day 30 — Formal Evaluation Checkpoints: Conduct a structured competency assessment covering clinical skills, sterilization protocol compliance, radiograph technique, patient communication, and OSHA/HIPAA knowledge. Provide written feedback, document areas meeting expectations and areas needing improvement, and set goals for the next evaluation period.",
+    ],
+    whyUseAI:
+      "Every dental practice has a unique mix of procedures, equipment, software, and state-specific requirements that make generic onboarding checklists inadequate. SOPGenius generates a customized onboarding SOP based on your practice's specific workflow — the autoclave model your sterilization tech uses, the practice management system your front desk runs, the radiograph equipment in your operatories, and the expanded functions your state permits dental assistants to perform. The result is a ready-to-use onboarding plan that your office manager can hand to every new hire on Day 1, not a template that requires weeks of adaptation.",
+    relatedSlugs: [
+      "infection-control-ppe-sop-template",
+      "instrument-sterilization-sop-template",
+      "hipaa-patient-records-sop-template",
+      "osha-exposure-control-plan-sop-template",
+    ],
+    faq: [
+      {
+        q: "How long should a dental assistant onboarding program last?",
+        a: "A structured onboarding program should cover at least the first 30 days with formal evaluation checkpoints, but full competency development typically takes 60 to 90 days depending on the assistant's prior experience. The first two weeks focus on foundational skills, compliance training, and supervised clinical work. Days 15 through 30 transition to increasing independence with periodic check-ins. After 30 days, conduct a comprehensive review to determine whether the assistant is ready for full independent work or needs additional training in specific areas.",
+      },
+      {
+        q: "What compliance training must be completed before a new dental assistant starts clinical work?",
+        a: "At minimum, OSHA requires Bloodborne Pathogens Standard training before the employee performs any task with occupational exposure to blood or other potentially infectious materials. HIPAA privacy and security training should also be completed on Day 1. Depending on your state, additional requirements may include radiology safety certification, infection control coursework, and CPR/BLS certification. Document all training with dates, topics covered, and signed acknowledgments.",
+      },
+      {
+        q: "How do we evaluate whether a new dental assistant is progressing on schedule?",
+        a: "Build formal evaluation checkpoints into the onboarding SOP at Day 3, Week 1, Week 2, and Day 30. Use a written competency checklist that covers each skill area: sterilization, chairside assisting, radiographs, patient communication, and compliance knowledge. Have the training supervisor and the new assistant both sign the evaluation. If gaps are identified, create a targeted remediation plan with a follow-up assessment date rather than waiting for problems to surface during patient care.",
+      },
+    ],
+  },
 ];
 
 export function getTemplateBySlug(slug: string): Template | undefined {

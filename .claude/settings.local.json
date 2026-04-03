@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:sopgenius.vercel.app)",
+      "Bash(npx vercel:*)",
+      "Bash(grep -v '^$')",
+      "Bash(while IFS='=' read -r key value)",
+      "Bash(do echo:*)",
+      "Bash(echo -n \"$value\")",
+      "Bash(done)"
+    ]
+  }
+}

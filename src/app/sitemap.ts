@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "infection-control-ppe-sop-template",
     "new-patient-intake-sop-template",
     "dental-lab-case-communication-sop-template",
+    "dental-assistant-onboarding-sop-template",
   ];
 
   const guides = [
@@ -22,6 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "dental-sterilization-protocol-guide",
     "dental-emergency-preparedness",
     "dental-front-office-sop-guide",
+    "cdc-dental-infection-control-checklist",
+    "how-to-train-dental-staff-efficiently",
   ];
 
   const useCases = [
@@ -36,6 +39,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/features`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/templates`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/dental-sop-software`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/dental-sop-template`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/dental-office-sops`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/dental-compliance-software`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/help`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },

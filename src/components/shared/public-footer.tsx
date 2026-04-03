@@ -11,7 +11,7 @@ export function PublicFooter() {
               SOPGenius
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              AI-powered SOP generator for dental practices. OSHA, HIPAA, and CDC-compliant documentation.
+              The operations system for dental clinics. Standardize procedures, train staff faster, and stay compliance-ready.
             </p>
           </div>
 
@@ -29,9 +29,11 @@ export function PublicFooter() {
           <div>
             <h4 className="text-sm font-semibold">Resources</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li><Link href="/dental-sop-software" className="hover:text-foreground">Dental SOP Software</Link></li>
+              <li><Link href="/dental-office-sops" className="hover:text-foreground">Dental Office SOPs Guide</Link></li>
+              <li><Link href="/dental-compliance-software" className="hover:text-foreground">Compliance Software</Link></li>
               <li><Link href="/guides/how-to-write-a-dental-sop" className="hover:text-foreground">How to Write a Dental SOP</Link></li>
               <li><Link href="/guides/dental-osha-compliance-checklist" className="hover:text-foreground">OSHA Compliance Checklist</Link></li>
-              <li><Link href="/guides/hipaa-compliance-dental-office" className="hover:text-foreground">HIPAA for Dental Offices</Link></li>
               <li><Link href="/help" className="hover:text-foreground">Help Center</Link></li>
             </ul>
           </div>

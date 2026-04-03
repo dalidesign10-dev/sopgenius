@@ -1,4 +1,4 @@
-export type Plan = "free" | "solo" | "practice" | "dso";
+export type Plan = "free" | "pro" | "clinic";
 export type SOPStatus = "draft" | "published" | "archived";
 
 export interface User {
@@ -118,7 +118,7 @@ export const PLANS: Record<Plan, PlanDetails> = {
     name: "Free",
     price: 0,
     annualPrice: 0,
-    description: "Try SOPGenius free",
+    description: "Try SOPGenius risk-free",
     generationsPerMonth: 3,
     maxTeamMembers: null,
     features: [
@@ -129,57 +129,38 @@ export const PLANS: Record<Plan, PlanDetails> = {
       "Community support",
     ],
   },
-  solo: {
-    name: "Solo",
+  pro: {
+    name: "Pro",
     price: 49,
     annualPrice: 39,
-    description: "For solo dental practices",
-    generationsPerMonth: 25,
-    maxTeamMembers: null,
-    features: [
-      "25 SOP generations per month",
-      "All 8 dental templates",
-      "Export to PDF, Word, Markdown",
-      "No watermark",
-      "OSHA & HIPAA compliance formatting",
-      "Email support",
-    ],
-  },
-  practice: {
-    name: "Practice",
-    price: 99,
-    annualPrice: 79,
-    description: "For group practices up to 3 locations",
+    description: "For solo and small practices",
     generationsPerMonth: null,
-    maxTeamMembers: 10,
+    maxTeamMembers: null,
     highlighted: true,
     features: [
       "Unlimited SOP generations",
-      "All templates + custom dental SOPs",
-      "All export formats",
-      "Team sharing (up to 10 users)",
-      "Multi-location management",
-      "Custom branding on exports",
-      "Priority support",
+      "All dental templates",
+      "Export to PDF, Word, Markdown",
+      "No watermark",
+      "OSHA & HIPAA compliance formatting",
       "Version history",
+      "Email support",
     ],
   },
-  dso: {
-    name: "DSO",
-    price: 249,
-    annualPrice: 199,
-    description: "For DSOs and multi-location groups",
+  clinic: {
+    name: "Clinic",
+    price: 99,
+    annualPrice: 79,
+    description: "For group practices and multi-location",
     generationsPerMonth: null,
-    maxTeamMembers: null,
+    maxTeamMembers: 15,
     features: [
-      "Everything in Practice",
-      "Unlimited team members",
-      "Unlimited locations",
-      "API access",
-      "Bulk SOP generation",
-      "Custom templates",
-      "Dedicated account manager",
+      "Everything in Pro",
+      "Team sharing (up to 15 users)",
+      "Multi-location management",
+      "Custom branding on exports",
       "Compliance audit trail",
+      "Priority support",
     ],
   },
 };

@@ -69,19 +69,13 @@ const organizationSchema = {
       "@type": "Offer",
       price: "49",
       priceCurrency: "USD",
-      name: "Solo Plan",
+      name: "Pro Plan",
     },
     {
       "@type": "Offer",
       price: "99",
       priceCurrency: "USD",
-      name: "Practice Plan",
-    },
-    {
-      "@type": "Offer",
-      price: "249",
-      priceCurrency: "USD",
-      name: "DSO Plan",
+      name: "Clinic Plan",
     },
   ],
 };
