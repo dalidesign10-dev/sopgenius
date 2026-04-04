@@ -25,6 +25,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "dental-front-office-sop-guide",
     "cdc-dental-infection-control-checklist",
     "how-to-train-dental-staff-efficiently",
+    "reduce-staff-turnover",
+    "dental-onboarding-checklist",
+    "audit-preparation",
+    "dental-office-efficiency",
+  ];
+
+  const comparisons = [
+    "trainual",
+    "google-docs",
+    "dental-consultant",
   ];
 
   const useCases = [
@@ -66,6 +76,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    })),
+    ...comparisons.map((slug) => ({
+      url: `${baseUrl}/vs/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
   ];
 }
