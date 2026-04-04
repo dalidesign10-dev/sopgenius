@@ -122,7 +122,7 @@ function BillingContent() {
           {showPlans ? "Hide Plans" : "Change Plan"}
         </Button>
         <Button variant="outline" onClick={handleManageBilling}>
-          Manage Billing
+          Manage Subscription
         </Button>
       </div>
 

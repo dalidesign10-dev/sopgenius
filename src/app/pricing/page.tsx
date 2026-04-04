@@ -2,13 +2,18 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PLANS, type Plan } from "@/types";
 import { PublicNav } from "@/components/shared/public-nav";
 import { PublicFooter } from "@/components/shared/public-footer";
+
+const PRICE_IDS: Record<string, string> = {
+  clinic: "price_pro",
+  "multi-clinic": "price_business",
+};
 
 // export const metadata: Metadata = {
 //   title: "Pricing — Pricing That Makes Sense for Dental Practices",
@@ -21,6 +26,26 @@ const planKeys: Plan[] = ["starter", "clinic", "multi-clinic"];
 
 export default function PricingPage() {
   const [annual, setAnnual] = useState(true);
+  const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
+
+  async function handleCheckout(planKey: string) {
+    const priceId = PRICE_IDS[planKey];
+    if (!priceId) return;
+    setCheckoutLoading(planKey);
+    try {
+      const res = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ priceId, userId: "anonymous", email: "" }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch {
+      setCheckoutLoading(null);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -114,15 +139,31 @@ export default function PricingPage() {
                     ))}
                   </ul>
                   <div className="mt-8">
-                    <Link href="/signup" className="block">
+                    {plan.price === 0 ? (
+                      <Link href="/signup" className="block">
+                        <Button
+                          className="w-full"
+                          variant={isHighlighted ? "default" : "outline"}
+                          size="lg"
+                        >
+                          Start Free Pilot
+                        </Button>
+                      </Link>
+                    ) : (
                       <Button
                         className="w-full"
                         variant={isHighlighted ? "default" : "outline"}
                         size="lg"
+                        disabled={checkoutLoading === key}
+                        onClick={() => handleCheckout(key)}
                       >
-                        {plan.price === 0 ? "Start Free Pilot" : `Start 14-Day Pilot — ${plan.name}`}
+                        {checkoutLoading === key ? (
+                          <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Creating checkout…</>
+                        ) : (
+                          `Start 14-Day Pilot — ${plan.name}`
+                        )}
                       </Button>
-                    </Link>
+                    )}
                     {plan.price > 0 && (
                       <p className="mt-2 text-center text-xs text-muted-foreground">
                         30-day money-back guarantee
