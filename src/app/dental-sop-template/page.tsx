@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Free Dental SOP Templates | Download & Customize | DentiSOP",
+  title: "Dental SOP Templates with Built-In Enforcement | DentiSOP",
   description:
-    "Free dental SOP templates for infection control, sterilization, patient intake, OSHA compliance, and front office workflows. Customize and export in minutes.",
+    "Dental SOP templates that come with role assignments, read tracking, and non-compliance flags built in. Assign to your team and enforce from day one.",
 };
 
 const templateCategories = [
@@ -82,20 +82,20 @@ export default function DentalSopTemplatePage() {
         {/* Hero */}
         <section className="border-b bg-gradient-to-b from-green-50 to-white px-6 py-20 text-center">
           <Badge variant="secondary" className="mb-4">
-            Free templates included
+            Templates with enforcement built in
           </Badge>
           <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Free Dental SOP Templates for Every Practice Workflow
+            Dental SOP Templates You Can Assign, Track, and Enforce
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Stop starting from scratch. Pick a dental SOP template, customize it
-            to your practice, and have a polished procedure document ready in
-            minutes instead of hours.
+            Stop starting from scratch. Pick a dental SOP template, assign it to
+            the right roles, and start tracking who has read it — with
+            non-compliance flags and automated reminders from day one.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button asChild size="lg">
               <Link href="/signup">
-                Try Templates Free <ArrowRight className="ml-2 h-4 w-4" />
+                Take Control of Your Clinic <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
@@ -107,34 +107,35 @@ export default function DentalSopTemplatePage() {
         {/* What makes a good template */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            What Makes a Good Dental SOP Template
+            What Makes an Enforceable Dental SOP Template
           </h2>
           <p className="mt-4 text-muted-foreground">
-            A dental SOP template is only useful if your team can follow it
-            without asking questions. That means clear steps, assigned roles,
-            safety callouts, and compliance references baked in from the start.
+            A dental SOP template is only useful if you can assign it, track
+            who read it, and flag who did not. That means role assignments,
+            read receipts, compliance scoring, and automated reminders baked in
+            from the start.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
-                icon: Clipboard,
-                title: "Step-by-Step Structure",
-                desc: "Numbered steps with clear action items. No ambiguity about what happens next.",
+                icon: Users,
+                title: "Role-Based Assignments",
+                desc: "Every template specifies which roles are responsible — dentist, hygienist, assistant, or front desk. Assign on import.",
               },
               {
-                icon: Users,
-                title: "Role Assignments",
-                desc: "Every step specifies who is responsible — dentist, hygienist, assistant, or front desk.",
+                icon: Clipboard,
+                title: "Read Receipts and Acknowledgments",
+                desc: "Track exactly who has opened and acknowledged each procedure. No more guessing if your team actually read it.",
               },
               {
                 icon: ShieldCheck,
-                title: "Compliance References",
-                desc: "Built-in references to OSHA, HIPAA, and CDC guidelines so you know the why behind each step.",
+                title: "Non-Compliance Flags",
+                desc: "When a team member misses a deadline, they are flagged by name. You see the gap before an auditor does.",
               },
               {
                 icon: BookOpen,
-                title: "Revision Tracking",
-                desc: "Date created, last revised, and approved by fields are included. Auditors look for these.",
+                title: "Compliance Score Integration",
+                desc: "Every template feeds into your clinic compliance score. See your overall posture and which areas need attention.",
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
@@ -158,8 +159,8 @@ export default function DentalSopTemplatePage() {
             </h2>
             <p className="mt-4 text-muted-foreground">
               We organize templates into four categories that cover everything a
-              dental practice needs. Pick a starting point, then customize the
-              details for your office.
+              dental practice needs. Pick a starting point, assign it to the
+              right roles, and start enforcing compliance immediately.
             </p>
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               {templateCategories.map((cat) => (
@@ -187,14 +188,14 @@ export default function DentalSopTemplatePage() {
           </div>
         </section>
 
-        {/* How to customize */}
+        {/* How to enforce */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            How to Customize a Dental SOP Template
+            How to Deploy and Enforce a Dental SOP Template
           </h2>
           <p className="mt-4 text-muted-foreground">
-            A template is a starting point, not a finished product. Here is how
-            to make it yours:
+            A template is a starting point. Here is how to turn it into an
+            enforced procedure across your team:
           </p>
           <ol className="mt-8 space-y-6">
             {[
@@ -203,20 +204,20 @@ export default function DentalSopTemplatePage() {
                 desc: "Choose the template that matches your workflow. It does not need to be exact — close enough works.",
               },
               {
-                title: "Add your practice details",
+                title: "Customize for your practice",
                 desc: "Insert your practice name, specific equipment brands, product names, and team member titles.",
               },
               {
-                title: "Adjust the steps",
-                desc: "Add, remove, or reorder steps to match how your team actually does the work. Do not document how it should work in theory.",
+                title: "Assign to the right roles",
+                desc: "Select which roles are responsible for this procedure. Hygienists, assistants, front desk — each person gets only their assignments.",
               },
               {
-                title: "Review with your team",
-                desc: "Have the people who do the work read through it. They will catch what you missed.",
+                title: "Deploy and track reads",
+                desc: "Publish the SOP. DentiSOP notifies assigned team members and tracks when each person opens and acknowledges it.",
               },
               {
-                title: "Export and distribute",
-                desc: "Download as PDF for your compliance binder or share digitally through DentiSOP so everyone has the latest version.",
+                title: "Monitor compliance and follow up",
+                desc: "Your dashboard shows who has read it and who has not. Automated reminders handle the follow-up. Non-compliance is flagged by name.",
               },
             ].map((step, i) => (
               <li key={step.title} className="flex gap-4">
@@ -238,17 +239,17 @@ export default function DentalSopTemplatePage() {
         <section className="border-y bg-green-50 px-6 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold">
-              Stop Formatting. Start Documenting.
+              Stop Distributing. Start Enforcing.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Every minute you spend wrestling with Word formatting is a minute
-              you could spend running your practice. Pick a dental SOP template,
-              customize it, and move on with your day.
+              Every dental SOP template you send without tracking is a procedure
+              nobody can prove was read. Pick a template, assign it by role,
+              and enforce compliance from day one.
             </p>
             <div className="mt-8">
               <Button asChild size="lg">
                 <Link href="/signup">
-                  Get Free Templates <ArrowRight className="ml-2 h-4 w-4" />
+                  Take Control of Your Clinic <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>

@@ -17,45 +17,45 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "The Complete Guide to Dental Office SOPs | DentiSOP",
+  title: "Dental Office SOPs: Assign, Track, and Enforce by Role | DentiSOP",
   description:
-    "Learn which dental office SOPs your practice needs, how to create them, and how to stay compliant with OSHA, HIPAA, and CDC requirements. Practical guide for office managers.",
+    "Dental office SOPs that are assigned by role, tracked with read receipts, and enforced with non-compliance flags. Know who has read what — by name.",
 };
 
 const prioritySops = [
   {
     title: "Infection Control and Sterilization",
-    why: "Required by OSHA and CDC. This is the first thing inspectors look for.",
+    why: "Required by OSHA and CDC. Assign to clinical staff, track acknowledgment, flag anyone who has not reviewed the latest update.",
     covers:
       "Instrument processing, surface disinfection, PPE requirements, hand hygiene, dental unit waterlines.",
   },
   {
     title: "Bloodborne Pathogen Exposure Control",
-    why: "Federally mandated by OSHA. Must be written, site-specific, and reviewed annually.",
+    why: "Federally mandated by OSHA. Must be reviewed annually by every team member — DentiSOP tracks that automatically.",
     covers:
       "Exposure determination, engineering controls, post-exposure procedures, hepatitis B vaccination, recordkeeping.",
   },
   {
     title: "HIPAA Privacy and Security",
-    why: "Federal law. Violations carry fines from $100 to $50,000 per incident.",
+    why: "Federal law. Violations carry fines from $100 to $50,000 per incident. You need proof every staff member read the policy.",
     covers:
       "Patient data handling, electronic records access, breach notification, business associate agreements, staff training.",
   },
   {
     title: "Emergency Medical Response",
-    why: "Medical emergencies happen in every practice. Your team needs to know the plan before it happens.",
+    why: "Every team member needs to know the plan before it happens. Assign by role and confirm readiness with read receipts.",
     covers:
       "Emergency kit contents and checks, syncope protocol, allergic reaction response, CPR procedures, emergency contact numbers.",
   },
   {
     title: "Hazard Communication",
-    why: "OSHA requirement. Every practice using chemicals needs a written HazCom program.",
+    why: "OSHA requirement. Every practice using chemicals needs a written HazCom program with documented staff training.",
     covers:
       "Safety Data Sheet access, chemical inventory, labeling requirements, staff training, spill procedures.",
   },
   {
     title: "New Patient Intake and Scheduling",
-    why: "Consistency here reduces errors, improves patient experience, and protects revenue.",
+    why: "Front desk consistency reduces errors and protects revenue. Assign to front desk staff and track compliance.",
     covers:
       "Registration forms, medical history review, insurance verification, appointment confirmation, welcome communication.",
   },
@@ -70,51 +70,50 @@ export default function DentalOfficeSopsPage() {
         {/* Hero */}
         <section className="border-b bg-gradient-to-b from-amber-50 to-white px-6 py-20 text-center">
           <Badge variant="secondary" className="mb-4">
-            Practical guide
+            Enforcement guide for dental practices
           </Badge>
           <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            The Complete Guide to Dental Office SOPs
+            Dental Office SOPs That Are Assigned, Tracked, and Enforced
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            You know your practice needs standard operating procedures. The
-            question is which ones to create first, what they should cover, and
-            how to get your team to actually follow them. This guide covers all
-            of it.
+            You know your practice needs dental office SOPs. The real question is
+            how to make sure every team member actually reads them, follows them,
+            and is held accountable when they do not. This guide shows you how.
           </p>
         </section>
 
         {/* Why SOPs matter */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Why Every Dental Office Needs SOPs
+            Why Dental Office SOPs Fail Without Enforcement
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Dental office SOPs are not bureaucratic paperwork. They are the
-            difference between a practice that runs smoothly when you are out
-            sick and one that falls apart. Here is what documented procedures
-            actually do for your practice:
+            Dental office SOPs are not just paperwork. But without role-based
+            assignments, read tracking, and non-compliance flags, they are
+            documents that nobody opens. Here is what enforcement actually does
+            for your practice:
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
                 icon: ShieldCheck,
-                title: "Pass Inspections Confidently",
-                desc: "OSHA requires written exposure control plans, hazard communication programs, and training documentation. No written SOPs means automatic citations.",
+                title: "Prove Compliance by Name",
+                desc: "OSHA requires documented training. With read receipts and acknowledgments, you can show exactly who reviewed each procedure and when.",
               },
               {
                 icon: ClipboardList,
-                title: "Reduce Training Time",
-                desc: "New hires get up to speed faster when they have clear procedures to follow instead of shadowing someone for weeks.",
+                title: "Onboard with Accountability",
+                desc: "New hires get assigned procedures by role on day one. You see their progress in real time instead of hoping they were trained properly.",
               },
               {
                 icon: HeartPulse,
-                title: "Improve Patient Safety",
-                desc: "Consistent sterilization and infection control procedures reduce the risk of cross-contamination and patient harm.",
+                title: "Enforce Patient Safety Protocols",
+                desc: "Assign sterilization and infection control SOPs to clinical staff. Flag anyone who has not acknowledged the latest update.",
               },
               {
                 icon: Scale,
-                title: "Limit Liability",
-                desc: "Documented procedures show due diligence. If something goes wrong, you can demonstrate your practice followed established protocols.",
+                title: "Reduce Liability with a Paper Trail",
+                desc: "Every read receipt and compliance flag is logged. If something goes wrong, you have proof your practice enforced established protocols.",
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
@@ -134,12 +133,12 @@ export default function DentalOfficeSopsPage() {
         <section className="border-y bg-gray-50 px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold">
-              Which Dental Office SOPs to Create First
+              Which Dental Office SOPs to Enforce First
             </h2>
             <p className="mt-4 text-muted-foreground">
-              You cannot document everything at once. Start with the SOPs that
-              are legally required or carry the highest risk if your team gets
-              them wrong.
+              You cannot enforce everything at once. Start with the SOPs that
+              are legally required or carry the highest risk — and assign them
+              to the right roles immediately.
             </p>
             <div className="mt-10 space-y-6">
               {prioritySops.map((sop, i) => (
@@ -154,7 +153,7 @@ export default function DentalOfficeSopsPage() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <p className="text-sm">
-                      <span className="font-medium">Why it is a priority:</span>{" "}
+                      <span className="font-medium">Why enforce it first:</span>{" "}
                       <span className="text-muted-foreground">{sop.why}</span>
                     </p>
                     <p className="text-sm">
@@ -173,11 +172,12 @@ export default function DentalOfficeSopsPage() {
         {/* Compliance requirements */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Compliance Requirements You Cannot Ignore
+            Compliance Requirements You Must Enforce
           </h2>
           <p className="mt-4 text-muted-foreground">
             Three federal agencies set the rules for dental practices. Your
-            dental office SOPs need to address requirements from all three.
+            dental office SOPs need to address requirements from all three —
+            and you need proof every staff member has read them.
           </p>
           <div className="mt-8 grid gap-8 sm:grid-cols-3">
             {[
@@ -186,14 +186,14 @@ export default function DentalOfficeSopsPage() {
                 items: [
                   "Written Exposure Control Plan",
                   "Hazard Communication Program",
-                  "Annual training and documentation",
+                  "Annual training with read receipts",
                   "Injury and illness recordkeeping",
                 ],
               },
               {
                 title: "HIPAA",
                 items: [
-                  "Privacy policies and procedures",
+                  "Privacy policies assigned by role",
                   "Security risk assessment",
                   "Business associate agreements",
                   "Breach notification procedures",
@@ -202,7 +202,7 @@ export default function DentalOfficeSopsPage() {
               {
                 title: "CDC",
                 items: [
-                  "Infection prevention guidelines",
+                  "Infection prevention with staff tracking",
                   "Sterilization monitoring",
                   "Hand hygiene protocols",
                   "Dental unit waterline management",
@@ -237,28 +237,28 @@ export default function DentalOfficeSopsPage() {
         <section className="border-y bg-gray-50 px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold">
-              How to Implement SOPs in Your Practice
+              How to Enforce SOPs in Your Practice
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Creating the document is half the work. Getting your team to use it
-              is the other half. Here is what actually works:
+              Creating the document is half the work. Enforcing it is the other
+              half. Here is what actually works:
             </p>
             <div className="mt-8 space-y-6">
               {[
                 {
                   icon: BookOpen,
-                  title: "Start with one SOP at a time",
-                  desc: "Roll out procedures individually. Give your team a week to learn each one before introducing the next. Dumping 20 SOPs on them at once guarantees none get read.",
+                  title: "Assign by role, not to everyone at once",
+                  desc: "Hygienists get clinical SOPs. Front desk gets intake SOPs. Each person sees only their assignments. DentiSOP handles the routing automatically.",
                 },
                 {
                   icon: ClipboardList,
-                  title: "Make them easy to find",
-                  desc: "SOPs in a binder nobody opens are worthless. Use a digital system where your team can search and access procedures from any workstation.",
+                  title: "Track reads with receipts, not honor systems",
+                  desc: "Every acknowledgment is logged with a timestamp. Your compliance dashboard shows exactly who has read what and who is behind.",
                 },
                 {
                   icon: AlertTriangle,
-                  title: "Review and update regularly",
-                  desc: "Set a calendar reminder to review SOPs quarterly. Procedures drift. Equipment changes. Staff changes. Your SOPs need to keep up.",
+                  title: "Flag non-compliance and send automated reminders",
+                  desc: "When someone misses a deadline, DentiSOP flags them by name and sends reminders. You stop being the compliance nag.",
                 },
               ].map((tip) => (
                 <div key={tip.title} className="flex gap-4">
@@ -279,17 +279,17 @@ export default function DentalOfficeSopsPage() {
         <section className="bg-amber-50 px-6 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold">
-              Ready to Document Your Practice?
+              Ready to Enforce Compliance Across Your Practice?
             </h2>
             <p className="mt-4 text-muted-foreground">
-              DentiSOP gives you dental-specific templates and generates
-              structured SOPs from plain language descriptions. Start with the
-              free plan and build your compliance documentation today.
+              DentiSOP assigns dental office SOPs by role, tracks every read
+              receipt, flags non-compliance by name, and gives you a real-time
+              clinic compliance score. Take control today.
             </p>
             <div className="mt-8 flex justify-center gap-4">
               <Button asChild size="lg">
                 <Link href="/signup">
-                  Start Free <ArrowRight className="ml-2 h-4 w-4" />
+                  Take Control of Your Clinic <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">

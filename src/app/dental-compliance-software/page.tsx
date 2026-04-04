@@ -18,9 +18,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dental Compliance Software for OSHA, HIPAA & CDC | DentiSOP",
+  title: "Dental Compliance Software That Enforces by Name | DentiSOP",
   description:
-    "Dental compliance software that helps your practice stay audit-ready for OSHA, HIPAA, and CDC inspections. Generate compliant SOPs, track revisions, and document training.",
+    "Dental compliance software that assigns OSHA, HIPAA, and CDC procedures by role, tracks read receipts, flags non-compliance by name, and gives you a real-time clinic compliance score.",
 };
 
 export default function DentalComplianceSoftwarePage() {
@@ -32,20 +32,21 @@ export default function DentalComplianceSoftwarePage() {
         {/* Hero */}
         <section className="border-b bg-gradient-to-b from-red-50 to-white px-6 py-20 text-center">
           <Badge variant="secondary" className="mb-4">
-            Compliance documentation
+            Compliance enforcement platform
           </Badge>
           <h1 className="mx-auto max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Dental Compliance Software for OSHA, HIPAA, and CDC Documentation
+            Dental Compliance Software That Tracks Every Staff Member by Name
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            An OSHA inspector is not going to wait while you dig through a
-            filing cabinet. DentiSOP keeps your compliance documentation
-            organized, current, and accessible so you are ready when it matters.
+            An OSHA inspector is not going to accept &quot;we told everyone
+            about it.&quot; DentiSOP is dental compliance software that assigns
+            procedures by role, tracks who has read what, flags non-compliance
+            by name, and gives you a real-time clinic compliance score.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button asChild size="lg">
               <Link href="/signup">
-                Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
+                Take Control of Your Clinic <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
@@ -57,22 +58,22 @@ export default function DentalComplianceSoftwarePage() {
         {/* Compliance challenges */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Compliance Is Hard Enough Without Bad Tools
+            Compliance Without Enforcement Is Just Paperwork
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Dental practices face compliance requirements from multiple agencies,
-            each with different documentation standards. Most office managers are
-            juggling these on top of scheduling, billing, and patient care. Here
-            is what makes it so difficult:
+            Dental practices face compliance requirements from multiple agencies.
+            Most office managers create the documents but have no way to prove
+            their team actually read them. Here is what makes compliance so
+            difficult without enforcement:
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
-              "OSHA requires written, site-specific plans updated annually",
-              "HIPAA demands documented policies, risk assessments, and breach procedures",
-              "CDC guidelines for infection control change and your SOPs need to keep up",
-              "State dental boards add their own requirements on top of federal mandates",
-              "Documentation scattered across Word docs, binders, and email chains",
-              "No way to prove when a procedure was last reviewed or who approved it",
+              "OSHA requires proof of annual training — not just that it exists",
+              "HIPAA demands documented acknowledgment from every staff member",
+              "No way to know which team members are non-compliant right now",
+              "State dental boards ask for training records you cannot produce",
+              "New hires start working before they have read required procedures",
+              "You are the compliance nag — chasing people to read and sign off",
             ].map((challenge) => (
               <div key={challenge} className="flex items-start gap-3">
                 <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
@@ -86,7 +87,7 @@ export default function DentalComplianceSoftwarePage() {
         <section className="border-y bg-gray-50 px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold">
-              What Each Agency Requires From Your Practice
+              What Each Agency Requires — and How DentiSOP Enforces It
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
               {[
@@ -94,36 +95,36 @@ export default function DentalComplianceSoftwarePage() {
                   agency: "OSHA",
                   color: "text-red-600",
                   requirements: [
-                    "Written Exposure Control Plan",
-                    "Hazard Communication Program",
-                    "Safety Data Sheet accessibility",
-                    "Annual bloodborne pathogen training",
-                    "Injury and illness logs (OSHA 300)",
-                    "Post-exposure evaluation procedures",
+                    "Exposure Control Plan assigned to clinical staff",
+                    "HazCom program with read receipts",
+                    "Annual training tracked by name",
+                    "Post-exposure procedures acknowledged",
+                    "Injury logs with compliance flags",
+                    "Automated reminders for annual reviews",
                   ],
                 },
                 {
                   agency: "HIPAA",
                   color: "text-blue-600",
                   requirements: [
-                    "Written privacy policies",
-                    "Security risk assessment",
-                    "Employee training documentation",
-                    "Business associate agreements",
-                    "Breach notification procedures",
-                    "Minimum necessary standard policies",
+                    "Privacy policies assigned by role",
+                    "Security risk assessment tracked",
+                    "Staff training with read receipts",
+                    "Business associate agreements logged",
+                    "Breach procedures acknowledged by name",
+                    "Non-compliance flagged in real time",
                   ],
                 },
                 {
                   agency: "CDC",
                   color: "text-green-600",
                   requirements: [
-                    "Infection prevention protocols",
-                    "Sterilization monitoring logs",
-                    "Hand hygiene procedures",
-                    "PPE selection and use",
-                    "Dental unit waterline testing",
-                    "Single-use device policies",
+                    "Infection prevention assigned to clinical roles",
+                    "Sterilization monitoring with tracking",
+                    "Hand hygiene protocols enforced",
+                    "PPE procedures with acknowledgments",
+                    "Waterline testing assigned and tracked",
+                    "Compliance score updated automatically",
                   ],
                 },
               ].map((reg) => (
@@ -155,44 +156,45 @@ export default function DentalComplianceSoftwarePage() {
         {/* How DentiSOP helps */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            How DentiSOP Helps With Compliance Documentation
+            How DentiSOP Enforces Compliance Across Your Practice
           </h2>
           <p className="mt-4 text-muted-foreground">
             DentiSOP is not a compliance consultant. It is dental compliance
-            software that makes creating and maintaining your required
-            documentation dramatically faster.
+            software that assigns every procedure by role, tracks who has read
+            it, and flags who has not — so you always know your compliance
+            posture.
           </p>
           <div className="mt-10 grid gap-8 sm:grid-cols-2">
             {[
               {
-                icon: FileText,
-                title: "Generate Compliant SOPs Fast",
-                desc: "Describe your procedure in plain language. DentiSOP structures it with proper headers, compliance references, role assignments, and safety callouts.",
+                icon: Users,
+                title: "Role-Based Procedure Assignments",
+                desc: "Assign OSHA, HIPAA, and CDC procedures to the right roles. Hygienists see clinical SOPs. Front desk sees intake procedures. Nobody is overwhelmed with irrelevant documents.",
               },
               {
-                icon: Clock,
-                title: "Automatic Version History",
-                desc: "Every edit is tracked with timestamps and user attribution. Compare versions side by side. Auditors want to see revision history — you will have it.",
+                icon: CheckCircle,
+                title: "Read Receipts by Name",
+                desc: "Every time a team member opens and acknowledges a procedure, it is logged with their name and a timestamp. You have proof for any auditor.",
               },
               {
                 icon: CalendarCheck,
-                title: "Review Reminders",
-                desc: "Set annual review dates on your SOPs. Get notified when it is time to review and update. No more outdated procedures sitting in a binder.",
+                title: "Automated Compliance Reminders",
+                desc: "Set review deadlines on every procedure. DentiSOP sends reminders to team members who have not completed their reads. You stop chasing people.",
               },
               {
                 icon: FileSearch,
-                title: "Searchable Documentation",
-                desc: "Find any procedure instantly. No more digging through filing cabinets or scrolling through shared drives during an inspection.",
-              },
-              {
-                icon: Users,
-                title: "Training Documentation",
-                desc: "Track which team members have reviewed each SOP. Document training completion for OSHA and HIPAA requirements.",
+                title: "Non-Compliance Flags by Name",
+                desc: "Your dashboard shows exactly who is behind on required reads. Address gaps before an inspector finds them.",
               },
               {
                 icon: ShieldCheck,
-                title: "Export for Compliance Binders",
-                desc: "Download polished PDFs with revision dates, approval signatures, and consistent formatting. Ready for inspection day.",
+                title: "Clinic Compliance Score",
+                desc: "A real-time score across all procedures, all roles, all team members. Track your compliance posture week over week and identify weak spots instantly.",
+              },
+              {
+                icon: FileText,
+                title: "Audit-Ready Compliance Reports",
+                desc: "Export reports showing every assignment, read receipt, and acknowledgment. Names, dates, and timestamps — ready for OSHA, HIPAA, or state board review.",
               },
             ].map((feature) => (
               <div key={feature.title} className="flex gap-4">
@@ -216,23 +218,23 @@ export default function DentalComplianceSoftwarePage() {
             </h2>
             <p className="mt-4 text-muted-foreground">
               OSHA inspections in dental practices are increasing. Patient
-              complaints trigger HIPAA investigations. State boards conduct
-              routine audits. The practices that survive these without stress are
-              the ones with organized, current documentation. That is what dental
-              compliance software does for you.
+              complaints trigger HIPAA investigations. The practices that
+              survive these without stress are the ones that can prove every
+              staff member read every required procedure. That is what dental
+              compliance software with enforcement does for you.
             </p>
             <div className="mt-8 flex justify-center gap-4 flex-wrap">
               <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium shadow-sm">
                 <CheckCircle className="h-4 w-4 text-green-600" />
-                Revision-tracked SOPs
+                Read receipts by name
               </div>
               <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium shadow-sm">
                 <CheckCircle className="h-4 w-4 text-green-600" />
-                Training documentation
+                Non-compliance flags
               </div>
               <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium shadow-sm">
                 <CheckCircle className="h-4 w-4 text-green-600" />
-                Instant PDF export
+                Clinic compliance score
               </div>
             </div>
           </div>
@@ -241,16 +243,17 @@ export default function DentalComplianceSoftwarePage() {
         {/* CTA */}
         <section className="mx-auto max-w-3xl px-6 py-16 text-center">
           <h2 className="text-3xl font-bold">
-            Get Your Compliance Documentation in Order
+            Take Control of Your Clinic Compliance
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Start with the free plan. Create your first three compliance SOPs.
-            See how much faster it is than what you are doing now.
+            Start with the free plan. Assign your first procedures. See who
+            reads them and who does not. Know your compliance score before your
+            next inspection.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button asChild size="lg">
               <Link href="/signup">
-                Start Free <ArrowRight className="ml-2 h-4 w-4" />
+                Take Control of Your Clinic <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
