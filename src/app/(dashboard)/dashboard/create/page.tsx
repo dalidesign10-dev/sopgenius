@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect, useRef, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -318,8 +318,10 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
 
 // ── Page component ────────────────────────────────────────────────────
 
-export default function CreateProcedurePage() {
+function CreateProcedureContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const quickTriggered = useRef(false);
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null);
@@ -328,6 +330,7 @@ export default function CreateProcedurePage() {
   const [error, setError] = useState<string | null>(null);
   const [loadingMsg, setLoadingMsg] = useState(0);
   const [saving, setSaving] = useState(false);
+  const [quickMode, setQuickMode] = useState(false);
 
   // Cycle loading messages
   useEffect(() => {
@@ -337,6 +340,46 @@ export default function CreateProcedurePage() {
     }, 2500);
     return () => clearInterval(interval);
   }, [step]);
+
+  // Quick-generate: detect ?quick=templateId and auto-trigger
+  useEffect(() => {
+    if (quickTriggered.current) return;
+    const quickId = searchParams.get("quick");
+    if (!quickId) return;
+    const tpl = TEMPLATES.find((t) => t.id === quickId);
+    if (!tpl) return;
+    quickTriggered.current = true;
+    setQuickMode(true);
+    setSelectedTemplate(tpl.id);
+    setForm((prev) => ({ ...prev, ...tpl.prefill }));
+    // Jump straight to generation
+    setStep(3);
+    setLoadingMsg(0);
+    setError(null);
+
+    fetch("/api/generate-sop", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...INITIAL_FORM, ...tpl.prefill }),
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          throw new Error(body.error || "Failed to generate procedure");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setGeneratedSOP(data.content);
+        setSopId(data.id);
+        setStep(4);
+      })
+      .catch((err) => {
+        setError(err.message ?? "Something went wrong");
+        setStep(2);
+        setQuickMode(false);
+      });
+  }, [searchParams]);
 
   // ── Handlers ────────────────────────────────────────────────────────
 
@@ -796,5 +839,19 @@ export default function CreateProcedurePage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function CreateProcedurePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-[60vh] items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+        </div>
+      }
+    >
+      <CreateProcedureContent />
+    </Suspense>
   );
 }
