@@ -7,7 +7,7 @@ import { Mail } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with the SOPGenius team. Questions about SOP generation for dental practices, pricing, or enterprise features — we're here to help.",
+    "Get in touch with the DentiSOP team. Questions about SOP generation for dental practices, pricing, or enterprise features — we're here to help.",
 };
 
 export default function ContactPage() {
@@ -31,10 +31,10 @@ export default function ContactPage() {
             <p className="mt-2 text-gray-600">
               Reach us at{" "}
               <a
-                href="mailto:support@sopgenius.com"
+                href="mailto:support@dentisop.com"
                 className="text-blue-600 hover:text-blue-700"
               >
-                support@sopgenius.com
+                support@dentisop.com
               </a>
               . We typically respond within one business day.
             </p>

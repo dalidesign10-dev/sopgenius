@@ -204,19 +204,19 @@ export default async function GuidePage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://sopgenius.com",
+        item: "https://dentisop.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Guides",
-        item: "https://sopgenius.com/guides",
+        item: "https://dentisop.com/guides",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: guide.title,
-        item: `https://sopgenius.com/guides/${guide.slug}`,
+        item: `https://dentisop.com/guides/${guide.slug}`,
       },
     ],
   };
@@ -262,7 +262,7 @@ export default async function GuidePage({ params }: Props) {
       {/* CTA */}
       <section className="border-t bg-slate-50 py-16 text-center">
         <div className="mx-auto max-w-2xl px-4">
-          <h2 className="text-2xl font-bold">Try SOPGenius free</h2>
+          <h2 className="text-2xl font-bold">Try DentiSOP free</h2>
           <p className="mt-3 text-muted-foreground">
             Stop writing SOPs from scratch. Describe your process and get a
             professional, structured procedure in minutes.

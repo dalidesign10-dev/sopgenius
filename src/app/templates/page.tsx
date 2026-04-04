@@ -66,7 +66,7 @@ export default function TemplatesPage() {
             <Link href="/features" className="text-primary underline">
               features
             </Link>{" "}
-            to see how SOPGenius turns these templates into fully customized
+            to see how DentiSOP turns these templates into fully customized
             documents for your practice.
           </p>
 
@@ -88,7 +88,7 @@ export default function TemplatesPage() {
               Don&apos;t see your template?
             </h2>
             <p className="text-muted-foreground mb-6">
-              Describe any dental office process and SOPGenius generates a
+              Describe any dental office process and DentiSOP generates a
               custom SOP tailored to your practice, equipment, and workflows.
               No template required.
             </p>

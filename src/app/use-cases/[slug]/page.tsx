@@ -40,19 +40,19 @@ export default async function UseCasePage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://sopgenius.com",
+        item: "https://dentisop.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Use Cases",
-        item: "https://sopgenius.com/use-cases",
+        item: "https://dentisop.com/use-cases",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: uc.title,
-        item: `https://sopgenius.com/use-cases/${uc.slug}`,
+        item: `https://dentisop.com/use-cases/${uc.slug}`,
       },
     ],
   };

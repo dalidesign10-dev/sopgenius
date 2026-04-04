@@ -24,7 +24,7 @@ function BillingContent() {
   const [showPlans, setShowPlans] = useState(false);
 
   // Placeholder current plan & usage
-  const currentPlan = "free" as const;
+  const currentPlan = "starter" as const;
   const usedGenerations = 1;
   const plan = PLANS[currentPlan];
   const maxGenerations = plan.generationsPerMonth ?? Infinity;

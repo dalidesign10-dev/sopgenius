@@ -16,7 +16,7 @@ import { Badge } from "@/components/ui/badge";
 // For now, show the page structure
 
 export const metadata: Metadata = {
-  title: "View SOP — SOPGenius",
+  title: "View SOP — DentiSOP",
 };
 
 export default async function SOPViewerPage({

@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 export const metadata: Metadata = {
   title: "Security",
   description:
-    "Learn how SOPGenius protects your dental practice data. HIPAA-aware SOP formatting, hosted on Vercel, database on Supabase, with row-level security and encrypted connections.",
+    "Learn how DentiSOP protects your dental practice data. HIPAA-aware SOP formatting, hosted on Vercel, database on Supabase, with row-level security and encrypted connections.",
 };
 
 export default function SecurityPage() {
@@ -16,7 +16,7 @@ export default function SecurityPage() {
       <main className="flex-1">
         <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Security at SOPGenius
+            Security at DentiSOP
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             We take the security of your dental practice data seriously. Here is
@@ -29,7 +29,7 @@ export default function SecurityPage() {
                 Infrastructure
               </h2>
               <p className="mt-3">
-                SOPGenius is hosted on{" "}
+                DentiSOP is hosted on{" "}
                 <strong className="text-gray-900">Vercel</strong>, which
                 provides production-grade infrastructure with automatic scaling,
                 DDoS protection, and global edge delivery.
@@ -52,7 +52,7 @@ export default function SecurityPage() {
                 Encryption
               </h2>
               <p className="mt-3">
-                All connections to SOPGenius are encrypted via HTTPS/TLS. Data in
+                All connections to DentiSOP are encrypted via HTTPS/TLS. Data in
                 transit between your browser, our servers, and the database is
                 always encrypted.
               </p>
@@ -85,12 +85,12 @@ export default function SecurityPage() {
                 HIPAA Compliance Note
               </h2>
               <p className="mt-3">
-                SOPGenius helps dental practices format SOPs that align with
-                HIPAA requirements, but SOPGenius is not itself a covered entity
+                DentiSOP helps dental practices format SOPs that align with
+                HIPAA requirements, but DentiSOP is not itself a covered entity
                 or business associate under HIPAA. Our platform is designed for
                 documenting processes and procedures — users describe how
                 workflows operate, not individual patient data. No protected
-                health information (PHI) is stored in SOPGenius. If your SOPs
+                health information (PHI) is stored in DentiSOP. If your SOPs
                 describe patient-facing processes, they document the procedure
                 itself, not patient records.
               </p>

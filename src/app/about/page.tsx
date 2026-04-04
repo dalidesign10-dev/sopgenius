@@ -4,9 +4,9 @@ import { PublicNav } from "@/components/shared/public-nav";
 import { PublicFooter } from "@/components/shared/public-footer";
 
 export const metadata: Metadata = {
-  title: "About SOPGenius — AI SOP Generator for Dental Practices",
+  title: "About DentiSOP — AI SOP Generator for Dental Practices",
   description:
-    "SOPGenius is an AI-powered tool that helps dental practices create, manage, and share standard operating procedures for OSHA, HIPAA, and CDC compliance.",
+    "DentiSOP is an AI-powered tool that helps dental practices create, manage, and share standard operating procedures for OSHA, HIPAA, and CDC compliance.",
 };
 
 export default function AboutPage() {
@@ -16,12 +16,12 @@ export default function AboutPage() {
       <main className="flex-1">
         <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            About SOPGenius
+            About DentiSOP
           </h1>
 
           <div className="mt-10 space-y-10 text-gray-600">
             <p className="text-lg">
-              SOPGenius helps dental practices turn compliance requirements and
+              DentiSOP helps dental practices turn compliance requirements and
               clinical workflows into structured, shareable standard operating
               procedures using AI. Instead of staring at a blank document, you
               describe how a process works — sterilization, patient intake, OSHA
@@ -36,7 +36,7 @@ export default function AboutPage() {
                 We provide a focused tool for creating, managing, and sharing
                 SOPs built for dental practices. Whether you need infection
                 control procedures, HIPAA privacy protocols, CDC-aligned
-                sterilization checklists, or front desk workflows, SOPGenius
+                sterilization checklists, or front desk workflows, DentiSOP
                 gives you a fast starting point and a clean system for keeping
                 everything organized, compliant, and up to date.
               </p>
@@ -52,7 +52,7 @@ export default function AboutPage() {
                   dental-specific template.
                 </li>
                 <li>
-                  SOPGenius generates a structured SOP with steps, roles, and
+                  DentiSOP generates a structured SOP with steps, roles, and
                   compliance notes aligned to OSHA, HIPAA, and CDC guidelines.
                 </li>
                 <li>

@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
-    process.env.NEXT_PUBLIC_APP_URL || "https://sopgenius.vercel.app";
+    process.env.NEXT_PUBLIC_APP_URL || "https://dentisop.com";
 
   const templates = [
     "instrument-sterilization-sop-template",

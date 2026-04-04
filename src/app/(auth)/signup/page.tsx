@@ -56,7 +56,7 @@ export default function SignupPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center space-y-1">
           <h1 className="text-2xl font-bold tracking-tight text-primary">
-            SOPGenius
+            DentiSOP
           </h1>
           <p className="text-sm text-muted-foreground">
             Create your account

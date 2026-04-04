@@ -53,19 +53,19 @@ export default async function TemplateDetailPage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://sopgenius.com",
+        item: "https://dentisop.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Templates",
-        item: "https://sopgenius.com/templates",
+        item: "https://dentisop.com/templates",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: template.title,
-        item: `https://sopgenius.com/templates/${template.slug}`,
+        item: `https://dentisop.com/templates/${template.slug}`,
       },
     ],
   };
@@ -186,7 +186,7 @@ export default async function TemplateDetailPage({ params }: Props) {
               Generate Your {template.title.replace(" Template", "")}
             </h2>
             <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-              Answer a few questions about your team and tools, and SOPGenius
+              Answer a few questions about your team and tools, and DentiSOP
               creates a ready-to-use SOP you can export to PDF or Word.
             </p>
             <Link

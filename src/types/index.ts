@@ -1,4 +1,4 @@
-export type Plan = "free" | "pro" | "clinic";
+export type Plan = "starter" | "practice" | "group" | "enterprise";
 export type SOPStatus = "draft" | "published" | "archived";
 
 export interface User {
@@ -114,53 +114,74 @@ export interface PlanDetails {
 }
 
 export const PLANS: Record<Plan, PlanDetails> = {
-  free: {
-    name: "Free",
+  starter: {
+    name: "Starter",
     price: 0,
     annualPrice: 0,
-    description: "Try SOPGenius risk-free",
-    generationsPerMonth: 3,
+    description: "See DentiSOP in action — no commitment",
+    generationsPerMonth: 2,
     maxTeamMembers: null,
     features: [
-      "3 SOP generations per month",
-      "2 dental templates",
-      "Export to PDF",
-      "SOPGenius watermark",
-      "Community support",
+      "2 SOP generations per month",
+      "2 starter templates",
+      "Export to PDF (DentiSOP watermark)",
+      "OSHA & HIPAA basics",
+      "Email support (72-hour response)",
     ],
   },
-  pro: {
-    name: "Pro",
-    price: 49,
-    annualPrice: 39,
-    description: "For solo and small practices",
+  practice: {
+    name: "Practice",
+    price: 97,
+    annualPrice: 67,
+    description: "For single-location practices ready to standardise",
     generationsPerMonth: null,
     maxTeamMembers: null,
     highlighted: true,
     features: [
       "Unlimited SOP generations",
       "All dental templates",
-      "Export to PDF, Word, Markdown",
-      "No watermark",
-      "OSHA & HIPAA compliance formatting",
-      "Version history",
-      "Email support",
+      "Export to PDF, Word, Markdown — no watermark",
+      "Full OSHA, HIPAA, CDC, ADA, State Board, EPA frameworks",
+      "30-day version history",
+      "1 seat included (add more at £15/mo each)",
+      "Email support (48-hour response)",
+      "30-day money-back guarantee",
     ],
   },
-  clinic: {
-    name: "Clinic",
-    price: 99,
-    annualPrice: 79,
-    description: "For group practices and multi-location",
+  group: {
+    name: "Group",
+    price: 197,
+    annualPrice: 147,
+    description: "For group practices and DSOs managing 2+ locations",
     generationsPerMonth: null,
     maxTeamMembers: 15,
     features: [
-      "Everything in Pro",
-      "Team sharing (up to 15 users)",
-      "Multi-location management",
+      "Everything in Practice",
+      "Team sharing (up to 15 users included)",
+      "Up to 5 locations",
       "Custom branding on exports",
+      "Unlimited version history",
       "Compliance audit trail",
-      "Priority support",
+      "HIPAA BAA included",
+      "Priority email support (24-hour response)",
+      "30-day money-back guarantee",
+    ],
+  },
+  enterprise: {
+    name: "Enterprise",
+    price: 597,
+    annualPrice: 597,
+    description: "For DSOs and multi-location groups needing full control",
+    generationsPerMonth: null,
+    maxTeamMembers: null,
+    features: [
+      "Everything in Group",
+      "Unlimited team members and locations",
+      "Custom compliance frameworks",
+      "SSO and API access",
+      "White-label option",
+      "Dedicated account manager",
+      "HIPAA BAA included",
     ],
   },
 };
@@ -195,5 +216,8 @@ export const COMPLIANCE_FRAMEWORKS = [
   "ADA Standards",
   "State Dental Board",
   "EPA Regulations",
+  "CQC",
+  "GDC",
+  "HTM 01-05",
   "None",
 ] as const;

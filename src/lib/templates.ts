@@ -26,7 +26,7 @@ export const TEMPLATES: Template[] = [
     slug: "instrument-sterilization-sop-template",
     title: "Instrument Sterilization Protocol SOP Template",
     metaTitle:
-      "Instrument Sterilization Protocol SOP Template — Free AI SOP Generator | SOPGenius",
+      "Instrument Sterilisation Protocol SOP Template — Free AI SOP Generator | DentiSOP",
     metaDescription:
       "Create a CDC-compliant instrument sterilization SOP for your dental practice. Cover autoclave validation, biological indicators, packaging, and sterilization logs.",
     industry: "Clinical Operations",
@@ -38,7 +38,7 @@ export const TEMPLATES: Template[] = [
 
 The template incorporates current CDC Guidelines for Infection Control in Dental Health-Care Settings and OSAP best practices. It specifies when to run biological indicators (spore tests), how to interpret chemical indicator results, what to document in the sterilization log, and the corrective actions required when a cycle fails. These details matter during state board inspections and OSHA audits, where incomplete records are the most frequently cited deficiency.
 
-Whether you run a single-operatory general practice or a multi-location group, having a written sterilization protocol protects patients, satisfies regulatory requirements, and gives your team confidence that every instrument in every cassette is safe. Use this template as your starting point, then let SOPGenius tailor it to your specific autoclaves, instrument inventory, and practice workflow.`,
+Whether you run a single-operatory general practice or a multi-location group, having a written sterilisation protocol protects patients, satisfies regulatory requirements, and gives your team confidence that every instrument in every cassette is safe. Use this template as your starting point, then let DentiSOP tailor it to your specific autoclaves, instrument inventory, and practice workflow.`,
     whoIsItFor: [
       "Dental office managers establishing or updating sterilization workflows",
       "Sterilization technicians who need a clear step-by-step reprocessing procedure",
@@ -64,7 +64,7 @@ Whether you run a single-operatory general practice or a multi-location group, h
       "Incubate the biological indicator per manufacturer instructions, record the pass/fail result in the sterilization log, and if a spore test fails, immediately quarantine all items processed since the last passing test, notify the lead clinician, and initiate the recall and re-sterilization procedure.",
     ],
     whyUseAI:
-      "Every dental practice has a different mix of autoclaves, instrument types, and staffing models. SOPGenius generates a sterilization SOP customized to your specific equipment — including exact cycle parameters for your autoclave model, the biological indicator brand you stock, and the cassette system you use. Instead of adapting a generic CDC checklist, you get a procedure your sterilization tech can follow from the first instrument to the last log entry, complete with corrective action steps and documentation templates.",
+      "Every dental practice has a different mix of autoclaves, instrument types, and staffing models. DentiSOP generates a sterilisation SOP customised to your specific equipment — including exact cycle parameters for your autoclave model, the biological indicator brand you stock, and the cassette system you use. Instead of adapting a generic CDC checklist, you get a procedure your sterilisation tech can follow from the first instrument to the last log entry, complete with corrective action steps and documentation templates.",
     relatedSlugs: [
       "infection-control-ppe-sop-template",
       "operatory-turnover-sop-template",
@@ -84,7 +84,7 @@ Whether you run a single-operatory general practice or a multi-location group, h
       },
       {
         q: "How long should we keep sterilization records?",
-        a: "Retention requirements vary by state, but most dental regulatory bodies recommend keeping sterilization logs for a minimum of three years. Some states require longer retention. Check your state dental board regulations and err on the side of keeping records longer. SOPGenius can configure the retention schedule for your specific state.",
+        a: "Retention requirements vary by state, but most dental regulatory bodies recommend keeping sterilisation logs for a minimum of three years. Some states require longer retention. Check your state dental board regulations and err on the side of keeping records longer. DentiSOP can configure the retention schedule for your specific state.",
       },
     ],
   },
@@ -92,7 +92,7 @@ Whether you run a single-operatory general practice or a multi-location group, h
     slug: "osha-exposure-control-plan-sop-template",
     title: "OSHA Exposure Control Plan SOP Template",
     metaTitle:
-      "OSHA Exposure Control Plan SOP Template — Free AI SOP Generator | SOPGenius",
+      "OSHA Exposure Control Plan SOP Template — Free AI SOP Generator | DentiSOP",
     metaDescription:
       "Build an OSHA-compliant exposure control plan for your dental office. Cover bloodborne pathogens, exposure incidents, PPE, hepatitis B vaccination, and sharps disposal.",
     industry: "Compliance & Safety",
@@ -104,7 +104,7 @@ Whether you run a single-operatory general practice or a multi-location group, h
 
 The most common citation dental offices receive is failing to update the Exposure Control Plan annually or lacking documentation of employee training. This template builds update triggers and training checklists directly into the procedure so annual reviews do not slip through the cracks. It also includes the specific forms and logs OSHA expects to see: sharps injury logs, exposure incident reports, hepatitis B declination forms, and training attendance records.
 
-Whether you have three team members or thirty, OSHA compliance is not optional. This template scales from solo practitioners to multi-provider group practices and covers dental-specific hazards — needle sticks, bur lacerations, aerosol exposure, and contact with saliva and blood. Let SOPGenius adapt it to your practice's specific job classifications, PPE inventory, and state-level OSHA requirements.`,
+Whether you have three team members or thirty, OSHA compliance is not optional. This template scales from solo practitioners to multi-provider group practices and covers dental-specific hazards — needle sticks, bur lacerations, aerosol exposure, and contact with saliva and blood. Let DentiSOP adapt it to your practice's specific job classifications, PPE inventory, and state-level OSHA requirements.`,
     whoIsItFor: [
       "Practice owners responsible for OSHA compliance",
       "Office managers tasked with maintaining the written Exposure Control Plan",
@@ -130,7 +130,7 @@ Whether you have three team members or thirty, OSHA compliance is not optional. 
       "Conduct annual bloodborne pathogen training for all employees with occupational exposure, covering the Exposure Control Plan, routes of transmission, PPE use, and post-exposure procedures; document attendance with signed rosters and retain records for three years beyond the employee's tenure.",
     ],
     whyUseAI:
-      "OSHA compliance documents are notoriously tedious to write and easy to get wrong. SOPGenius generates an Exposure Control Plan pre-populated with your practice's job classifications, the specific engineered sharps devices you use, your PPE brands and sizes, and the name of your designated healthcare professional for post-exposure evaluation. It keeps the regulatory language accurate while making the procedure readable enough for your team to actually follow — and it reminds you of the annual review and training deadlines so you stay ahead of inspectors.",
+      "OSHA compliance documents are notoriously tedious to write and easy to get wrong. DentiSOP generates an Exposure Control Plan pre-populated with your practice's job classifications, the specific engineered sharps devices you use, your PPE brands and sizes, and the name of your designated healthcare professional for post-exposure evaluation. It keeps the regulatory language accurate while making the procedure readable enough for your team to actually follow — and it reminds you of the annual review and training deadlines so you stay ahead of inspectors.",
     relatedSlugs: [
       "infection-control-ppe-sop-template",
       "instrument-sterilization-sop-template",
@@ -158,7 +158,7 @@ Whether you have three team members or thirty, OSHA compliance is not optional. 
     slug: "hipaa-patient-records-sop-template",
     title: "HIPAA Patient Records Management SOP Template",
     metaTitle:
-      "HIPAA Patient Records Management SOP Template — Free AI SOP Generator | SOPGenius",
+      "HIPAA Patient Records Management SOP Template — Free AI SOP Generator | DentiSOP",
     metaDescription:
       "Create a HIPAA-compliant patient records SOP for your dental practice. Cover PHI handling, access controls, breach notification, record retention, and patient rights.",
     industry: "Compliance & Safety",
@@ -170,7 +170,7 @@ Whether you have three team members or thirty, OSHA compliance is not optional. 
 
 The template covers the full lifecycle of protected health information (PHI): how patient data enters the practice (intake forms, referrals, digital imaging), who is authorized to access which systems, how records are stored and transmitted, when and how records are disposed of, and what to do if a breach occurs. It also documents the administrative safeguards HIPAA requires — workforce training, Business Associate Agreements, risk assessments, and sanction policies — in a format that satisfies auditors.
 
-Dental practices of every size are covered entities under HIPAA, yet many lack the written policies that the law demands. This template closes that gap. SOPGenius can customize it for your practice management software, imaging system, cloud storage provider, and state privacy laws that may impose requirements beyond the federal baseline.`,
+Dental practices of every size are covered entities under HIPAA, yet many lack the written policies that the law demands. This template closes that gap. DentiSOP can customise it for your practice management software, imaging system, cloud storage provider, and state privacy laws that may impose requirements beyond the federal baseline.`,
     whoIsItFor: [
       "Practice owners serving as the designated HIPAA Privacy Officer",
       "Office managers responsible for staff training on PHI handling",
@@ -196,7 +196,7 @@ Dental practices of every size are covered entities under HIPAA, yet many lack t
       "Conduct annual HIPAA training for all workforce members, including temporary staff and volunteers, covering PHI handling, breach reporting, patient rights, and social engineering awareness; document attendance and retain training records for six years.",
     ],
     whyUseAI:
-      "HIPAA policies are dense, and most dental-specific templates are either too vague to satisfy auditors or too complex for a small office to implement. SOPGenius generates a records management SOP calibrated to your practice size, software systems, and state-specific requirements. It produces the exact policy language auditors expect while keeping daily procedures clear enough for every team member to follow — and it can generate the supporting documents you need, including the Notice of Privacy Practices, Business Associate Agreement checklist, and breach risk assessment worksheet.",
+      "HIPAA policies are dense, and most dental-specific templates are either too vague to satisfy auditors or too complex for a small office to implement. DentiSOP generates a records management SOP calibrated to your practice size, software systems, and state-specific requirements. It produces the exact policy language auditors expect while keeping daily procedures clear enough for every team member to follow — and it can generate the supporting documents you need, including the Notice of Privacy Practices, Business Associate Agreement checklist, and breach risk assessment worksheet.",
     relatedSlugs: [
       "new-patient-intake-sop-template",
       "osha-exposure-control-plan-sop-template",
@@ -224,7 +224,7 @@ Dental practices of every size are covered entities under HIPAA, yet many lack t
     slug: "operatory-turnover-sop-template",
     title: "Operatory Turnover & Disinfection SOP Template",
     metaTitle:
-      "Operatory Turnover & Disinfection SOP Template — Free AI SOP Generator | SOPGenius",
+      "Operatory Turnover & Disinfection SOP Template — Free AI SOP Generator | DentiSOP",
     metaDescription:
       "Standardize dental operatory turnover with a step-by-step disinfection SOP. Cover room teardown, surface disinfection, barrier replacement, and patient-ready verification.",
     industry: "Clinical Operations",
@@ -236,7 +236,7 @@ Dental practices of every size are covered entities under HIPAA, yet many lack t
 
 The template follows CDC surface disinfection categories, distinguishing between clinical contact surfaces (light handles, bracket trays, chair controls) that require barrier protection or disinfection between patients and housekeeping surfaces (floors, walls) that require less frequent attention. It specifies the EPA-registered disinfectant contact time for your product, the correct barrier materials for each surface, and the dental unit waterline flushing protocol that reduces biofilm risk.
 
-Efficient turnover keeps your schedule on time, and thorough turnover keeps your patients safe. This template helps you achieve both. SOPGenius can customize it for your specific operatory layout, disinfectant brand, barrier system, and waterline treatment protocol.`,
+Efficient turnover keeps your schedule on time, and thorough turnover keeps your patients safe. This template helps you achieve both. DentiSOP can customise it for your specific operatory layout, disinfectant brand, barrier system, and waterline treatment protocol.`,
     whoIsItFor: [
       "Dental assistants responsible for operatory setup and teardown",
       "Office managers creating standardized turnover checklists",
@@ -262,7 +262,7 @@ Efficient turnover keeps your schedule on time, and thorough turnover keeps your
       "Perform a final walkthrough using the patient-ready checklist: confirm that the chair is in the entry position, the light is off, surfaces are dry and barrier-covered, the monitor displays the next patient's name, and there are no visible signs of the previous patient's visit.",
     ],
     whyUseAI:
-      "Operatory layouts, disinfectant products, and barrier systems vary from practice to practice. SOPGenius generates a turnover SOP customized to your operatory floor plan, the exact disinfectant you use (with its specific contact time), and the barrier products in your inventory. It also calculates a realistic target turnover time based on your operatory count and appointment schedule so your front desk and clinical teams are aligned on timing.",
+      "Operatory layouts, disinfectant products, and barrier systems vary from practice to practice. DentiSOP generates a turnover SOP customised to your operatory floor plan, the exact disinfectant you use (with its specific contact time), and the barrier products in your inventory. It also calculates a realistic target turnover time based on your operatory count and appointment schedule so your front desk and clinical teams are aligned on timing.",
     relatedSlugs: [
       "instrument-sterilization-sop-template",
       "infection-control-ppe-sop-template",
@@ -290,7 +290,7 @@ Efficient turnover keeps your schedule on time, and thorough turnover keeps your
     slug: "dental-emergency-response-sop-template",
     title: "Dental Emergency Response SOP Template",
     metaTitle:
-      "Dental Emergency Response SOP Template — Free AI SOP Generator | SOPGenius",
+      "Dental Emergency Response SOP Template — Free AI SOP Generator | DentiSOP",
     metaDescription:
       "Prepare your dental team for medical emergencies with a structured SOP covering syncope, anaphylaxis, cardiac arrest, emergency kit management, and staff roles.",
     industry: "Clinical Operations",
@@ -302,7 +302,7 @@ Efficient turnover keeps your schedule on time, and thorough turnover keeps your
 
 The template also covers the operational side that keeps your emergency response functional: emergency drug kit contents and quantities, oxygen delivery equipment, AED placement and maintenance, expiration date tracking, and the quarterly drill schedule that ensures your team can execute the protocols under stress. Most state dental boards require that practices maintain emergency drugs and equipment; this SOP documents what you have, where it is, and who checks it.
 
-Whether you are a solo general practitioner or a large oral surgery group administering conscious sedation, having a written, rehearsed emergency plan is both a clinical necessity and a legal safeguard. SOPGenius can tailor the protocols to your sedation level, team size, drug inventory, and proximity to the nearest hospital.`,
+Whether you are a solo general practitioner or a large oral surgery group administering conscious sedation, having a written, rehearsed emergency plan is both a clinical necessity and a legal safeguard. DentiSOP can tailor the protocols to your sedation level, team size, drug inventory, and proximity to the nearest hospital.`,
     whoIsItFor: [
       "Dentists responsible for patient safety during clinical procedures",
       "Office managers coordinating emergency preparedness and drills",
@@ -328,7 +328,7 @@ Whether you are a solo general practitioner or a large oral surgery group admini
       "After the event, the team leader conducts an immediate debriefing within 24 hours, completes the incident report form, replenishes any emergency supplies used, and schedules a team review to discuss what went well and what should be improved.",
     ],
     whyUseAI:
-      "Emergency protocols must be specific to your team, equipment, and clinical environment — a generic poster on the wall is not enough. SOPGenius generates emergency response procedures that name your actual team members in each role, list the exact drugs and dosages in your emergency kit, reference your AED model's operating steps, and account for your practice's distance from the nearest emergency department. The result is a ready-to-drill protocol, not a document that collects dust in a binder.",
+      "Emergency protocols must be specific to your team, equipment, and clinical environment — a generic poster on the wall is not enough. DentiSOP generates emergency response procedures that name your actual team members in each role, list the exact drugs and dosages in your emergency kit, reference your AED model's operating steps, and account for your practice's distance from the nearest emergency department. The result is a ready-to-drill protocol, not a document that collects dust in a binder.",
     relatedSlugs: [
       "infection-control-ppe-sop-template",
       "osha-exposure-control-plan-sop-template",
@@ -356,7 +356,7 @@ Whether you are a solo general practitioner or a large oral surgery group admini
     slug: "infection-control-ppe-sop-template",
     title: "Infection Control & PPE SOP Template",
     metaTitle:
-      "Infection Control & PPE SOP Template — Free AI SOP Generator | SOPGenius",
+      "Infection Control & PPE SOP Template — Free AI SOP Generator | DentiSOP",
     metaDescription:
       "Establish comprehensive infection control and PPE procedures for your dental office. Cover hand hygiene, PPE donning/doffing, aerosol management, and waste segregation.",
     industry: "Clinical Operations",
@@ -368,7 +368,7 @@ Whether you are a solo general practitioner or a large oral surgery group admini
 
 The template is built on the CDC's Standard Precautions framework and incorporates guidance from the Organization for Safety, Asepsis and Prevention (OSAP). It specifies when to perform hand hygiene (not just "wash your hands" but the five specific moments defined by the WHO), which PPE to wear for which procedure category, the correct sequence for donning and doffing to avoid self-contamination, and how to manage aerosol-generating procedures that present unique risks in dental settings.
 
-This is the master infection control document that ties together your sterilization protocol, operatory turnover procedure, and OSHA Exposure Control Plan into a cohesive program. SOPGenius can customize it for your practice's clinical procedures, PPE brands, aerosol mitigation equipment (high-volume evacuation, extraoral suction), and laundry and waste disposal vendors.`,
+This is the master infection control document that ties together your sterilisation protocol, operatory turnover procedure, and OSHA Exposure Control Plan into a cohesive programme. DentiSOP can customise it for your practice's clinical procedures, PPE brands, aerosol mitigation equipment (high-volume evacuation, extraoral suction), and laundry and waste disposal vendors.`,
     whoIsItFor: [
       "Infection control coordinators responsible for the practice's IC program",
       "Clinical team members who need clear PPE and hygiene procedures",
@@ -394,7 +394,7 @@ This is the master infection control document that ties together your sterilizat
       "Segregate regulated medical waste (items saturated or dripping with blood, pathological waste, sharps) into designated red biohazard bags or sharps containers; place non-regulated clinical waste in standard trash; and arrange pickup by the licensed medical waste transporter on the established schedule.",
     ],
     whyUseAI:
-      "Infection control programs involve dozens of interconnected procedures, and a gap in one area can undermine the entire system. SOPGenius generates a comprehensive IC manual that connects your hand hygiene, PPE, sterilization, surface disinfection, and waste management procedures into a single coherent document. It accounts for the specific aerosol-generating procedures your practice performs, the PPE products you stock, and your waste hauler's requirements — producing a practice-ready manual instead of a generic guideline summary.",
+      "Infection control programs involve dozens of interconnected procedures, and a gap in one area can undermine the entire system. DentiSOP generates a comprehensive IC manual that connects your hand hygiene, PPE, sterilisation, surface disinfection, and waste management procedures into a single coherent document. It accounts for the specific aerosol-generating procedures your practice performs, the PPE products you stock, and your waste hauler's requirements — producing a practice-ready manual instead of a generic guideline summary.",
     relatedSlugs: [
       "instrument-sterilization-sop-template",
       "operatory-turnover-sop-template",
@@ -422,7 +422,7 @@ This is the master infection control document that ties together your sterilizat
     slug: "new-patient-intake-sop-template",
     title: "New Patient Intake & Insurance Verification SOP Template",
     metaTitle:
-      "New Patient Intake & Insurance Verification SOP Template — Free AI SOP Generator | SOPGenius",
+      "New Patient Intake & Insurance Verification SOP Template — Free AI SOP Generator | DentiSOP",
     metaDescription:
       "Streamline new dental patient intake with an SOP covering registration forms, insurance verification, treatment plan presentation, consent, and HIPAA notices.",
     industry: "Front Office",
@@ -434,7 +434,7 @@ This is the master infection control document that ties together your sterilizat
 
 The template addresses the specific challenges dental front offices face: verifying dental insurance benefits that are structured differently from medical plans (annual maximums, frequency limitations, waiting periods, missing tooth clauses), collecting the right consent forms for dental procedures, presenting treatment plans with accurate patient cost estimates, and distributing the HIPAA Notice of Privacy Practices with documented acknowledgment. Each step includes who is responsible, when it should happen relative to the appointment date, and what to do if information is missing or insurance verification reveals a coverage issue.
 
-Whether you use Dentrix, Eaglesoft, Open Dental, or another practice management system, the workflow structure is the same. SOPGenius can customize this template for your specific software, the insurance plans you see most frequently, the consent forms your state requires, and your practice's new-patient appointment structure.`,
+Whether you use Dentrix, Eaglesoft, Open Dental, or another practice management system, the workflow structure is the same. DentiSOP can customise this template for your specific software, the insurance plans you see most frequently, the consent forms your state requires, and your practice's new-patient appointment structure.`,
     whoIsItFor: [
       "Front desk coordinators managing new patient registration and scheduling",
       "Insurance coordinators responsible for eligibility verification and benefits breakdown",
@@ -460,7 +460,7 @@ Whether you use Dentrix, Eaglesoft, Open Dental, or another practice management 
       "After the initial examination, the treatment coordinator presents the treatment plan with a clear cost estimate showing insurance-covered amounts and patient responsibility, obtains informed consent signatures for planned procedures, and schedules the next appointment before the patient leaves the office.",
     ],
     whyUseAI:
-      "Dental intake workflows involve dozens of small steps that are easy to overlook but expensive to fix after the fact — a missed insurance verification leads to a denied claim, a forgotten consent form delays treatment. SOPGenius generates an intake SOP matched to your practice management software, the insurance plans you accept, and your state's specific consent requirements. It builds in the verification checkpoints and follow-up triggers that prevent the most common front office errors, and it formats the procedure so new hires can learn it quickly.",
+      "Dental intake workflows involve dozens of small steps that are easy to overlook but expensive to fix after the fact — a missed insurance verification leads to a denied claim, a forgotten consent form delays treatment. DentiSOP generates an intake SOP matched to your practice management software, the insurance plans you accept, and your state's specific consent requirements. It builds in the verification checkpoints and follow-up triggers that prevent the most common front office errors, and it formats the procedure so new hires can learn it quickly.",
     relatedSlugs: [
       "hipaa-patient-records-sop-template",
       "dental-lab-case-communication-sop-template",
@@ -488,7 +488,7 @@ Whether you use Dentrix, Eaglesoft, Open Dental, or another practice management 
     slug: "dental-lab-case-communication-sop-template",
     title: "Dental Lab Case Communication SOP Template",
     metaTitle:
-      "Dental Lab Case Communication SOP Template — Free AI SOP Generator | SOPGenius",
+      "Dental Lab Case Communication SOP Template — Free AI SOP Generator | DentiSOP",
     metaDescription:
       "Standardize dental lab case communication with an SOP for lab prescriptions, shade matching, case tracking, quality checks, and remake management.",
     industry: "Front Office",
@@ -500,7 +500,7 @@ Whether you use Dentrix, Eaglesoft, Open Dental, or another practice management 
 
 The template covers the full lab case lifecycle: completing the lab prescription form with all required clinical information, documenting shade selection with standardized references and photographs, packaging and shipping (or digitally transmitting) the case, tracking turnaround times, inspecting returned work before the patient arrives, and managing remakes when the work does not meet specifications. It also addresses the administrative side — purchase order tracking, invoice reconciliation, and lab performance metrics that help you evaluate whether your lab partners are meeting quality and turnaround expectations.
 
-Whether you work with a single local lab or multiple specialty labs across the country, having a documented communication process reduces errors, remakes, and scheduling disruptions. SOPGenius can customize this template for your case mix (crowns, bridges, implant restorations, removable prosthetics, orthodontic appliances), your digital workflow (intraoral scanner, CAD/CAM, or conventional impressions), and the specific labs you partner with.`,
+Whether you work with a single local lab or multiple specialty labs across the country, having a documented communication process reduces errors, remakes, and scheduling disruptions. DentiSOP can customise this template for your case mix (crowns, bridges, implant restorations, removable prosthetics, orthodontic appliances), your digital workflow (intraoral scanner, CAD/CAM, or conventional impressions), and the specific labs you partner with.`,
     whoIsItFor: [
       "Lab coordinators managing case submissions and tracking for the practice",
       "Dental assistants responsible for shade documentation and case packaging",
@@ -526,7 +526,7 @@ Whether you work with a single local lab or multiple specialty labs across the c
       "At the end of each month, review the lab tracking log to calculate each lab's average turnaround time, remake rate, and on-time delivery percentage; discuss any concerns with the lab representative and retain the performance data for quarterly lab partner reviews.",
     ],
     whyUseAI:
-      "Lab communication involves clinical, logistical, and administrative details that are easy to overlook under time pressure. SOPGenius generates a lab case SOP matched to your specific restorative workflow — whether you use conventional impressions or digital scans, which labs you partner with and their submission requirements, and how your practice management system tracks cases. It builds in the quality checkpoints that catch errors before the patient is in the chair and the documentation steps that support remake requests when the lab work does not meet specifications.",
+      "Lab communication involves clinical, logistical, and administrative details that are easy to overlook under time pressure. DentiSOP generates a lab case SOP matched to your specific restorative workflow — whether you use conventional impressions or digital scans, which labs you partner with and their submission requirements, and how your practice management system tracks cases. It builds in the quality checkpoints that catch errors before the patient is in the chair and the documentation steps that support remake requests when the lab work does not meet specifications.",
     relatedSlugs: [
       "new-patient-intake-sop-template",
       "operatory-turnover-sop-template",
@@ -554,7 +554,7 @@ Whether you work with a single local lab or multiple specialty labs across the c
     slug: "dental-assistant-onboarding-sop-template",
     title: "Dental Assistant Onboarding SOP Template",
     metaTitle:
-      "Dental Assistant Onboarding SOP Template — Free AI SOP Generator | SOPGenius",
+      "Dental Assistant Onboarding SOP Template — Free AI SOP Generator | DentiSOP",
     metaDescription:
       "Create a comprehensive dental assistant onboarding SOP. Cover clinical training, sterilization protocols, patient communication, and compliance requirements.",
     industry: "HR & Training",
@@ -590,7 +590,7 @@ A structured onboarding program that follows a written SOP reduces time-to-compe
       "Day 14 and Day 30 — Formal Evaluation Checkpoints: Conduct a structured competency assessment covering clinical skills, sterilization protocol compliance, radiograph technique, patient communication, and OSHA/HIPAA knowledge. Provide written feedback, document areas meeting expectations and areas needing improvement, and set goals for the next evaluation period.",
     ],
     whyUseAI:
-      "Every dental practice has a unique mix of procedures, equipment, software, and state-specific requirements that make generic onboarding checklists inadequate. SOPGenius generates a customized onboarding SOP based on your practice's specific workflow — the autoclave model your sterilization tech uses, the practice management system your front desk runs, the radiograph equipment in your operatories, and the expanded functions your state permits dental assistants to perform. The result is a ready-to-use onboarding plan that your office manager can hand to every new hire on Day 1, not a template that requires weeks of adaptation.",
+      "Every dental practice has a unique mix of procedures, equipment, software, and state-specific requirements that make generic onboarding checklists inadequate. DentiSOP generates a customised onboarding SOP based on your practice's specific workflow — the autoclave model your sterilisation tech uses, the practice management system your front desk runs, the radiograph equipment in your operatories, and the expanded functions your state permits dental assistants to perform. The result is a ready-to-use onboarding plan that your office manager can hand to every new hire on Day 1, not a template that requires weeks of adaptation.",
     relatedSlugs: [
       "infection-control-ppe-sop-template",
       "instrument-sterilization-sop-template",

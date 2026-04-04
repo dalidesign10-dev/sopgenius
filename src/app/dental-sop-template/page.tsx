@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Free Dental SOP Templates | Download & Customize | SOPGenius",
+  title: "Free Dental SOP Templates | Download & Customize | DentiSOP",
   description:
     "Free dental SOP templates for infection control, sterilization, patient intake, OSHA compliance, and front office workflows. Customize and export in minutes.",
 };
@@ -216,7 +216,7 @@ export default function DentalSopTemplatePage() {
               },
               {
                 title: "Export and distribute",
-                desc: "Download as PDF for your compliance binder or share digitally through SOPGenius so everyone has the latest version.",
+                desc: "Download as PDF for your compliance binder or share digitally through DentiSOP so everyone has the latest version.",
               },
             ].map((step, i) => (
               <li key={step.title} className="flex gap-4">

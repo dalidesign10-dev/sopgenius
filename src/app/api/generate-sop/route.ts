@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const systemPrompt = `You are SOPGenius, an expert Standard Operating Procedure (SOP) writer. You create professional, detailed, and actionable SOPs for businesses across all industries.
+    const systemPrompt = `You are DentiSOP, an expert Standard Operating Procedure (SOP) writer. You create professional, detailed, and actionable SOPs for businesses across all industries.
 
 When generating an SOP, always include these sections:
 1. Document Header: Title, SOP Number (auto-generated), Version, Effective Date, Department, Author
@@ -62,7 +62,7 @@ Output the SOP as a JSON object with this exact structure:
   "qualityChecks": [""],
   "complianceNotes": [""],
   "relatedDocuments": [""],
-  "revisionHistory": [{ "version": 1, "date": "", "author": "SOPGenius", "changes": "Initial creation" }]
+  "revisionHistory": [{ "version": 1, "date": "", "author": "DentiSOP", "changes": "Initial creation" }]
 }
 
 IMPORTANT: Return ONLY the JSON object, no markdown code fences, no additional text.`;

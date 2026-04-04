@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 export const metadata: Metadata = {
   title: "Help Center",
   description:
-    "Find answers to common questions about using SOPGenius to create, edit, and export dental practice standard operating procedures.",
+    "Find answers to common questions about using DentiSOP to create, edit, and export dental practice standard operating procedures.",
 };
 
 const faqCategories = [
@@ -14,11 +14,11 @@ const faqCategories = [
     title: "Getting Started",
     questions: [
       {
-        q: "What is SOPGenius?",
-        a: "SOPGenius is an AI-powered tool that helps dental practices create, manage, and share standard operating procedures. Describe a clinical workflow or compliance process in plain language and get a structured, dental-specific SOP back in seconds.",
+        q: "What is DentiSOP?",
+        a: "DentiSOP is an AI-powered tool that helps dental practices create, manage, and share standard operating procedures. Describe a clinical workflow or compliance process in plain language and get a structured, dental-specific SOP back in seconds.",
       },
       {
-        q: "Do I need an account to use SOPGenius?",
+        q: "Do I need an account to use DentiSOP?",
         a: "Yes. Sign up for a free account to start creating SOPs. Free accounts include a limited number of SOP generations per month.",
       },
       {
@@ -36,7 +36,7 @@ const faqCategories = [
     questions: [
       {
         q: "How do I create a new SOP?",
-        a: "From your dashboard, click 'New SOP' and either describe your dental workflow in plain language or choose a dental-specific template such as infection control, sterilization, or patient intake. SOPGenius will generate a structured SOP that you can edit and refine.",
+        a: "From your dashboard, click 'New SOP' and either describe your dental workflow in plain language or choose a dental-specific template such as infection control, sterilization, or patient intake. DentiSOP will generate a structured SOP that you can edit and refine.",
       },
       {
         q: "Can I use dental templates?",
@@ -86,7 +86,7 @@ const faqCategories = [
       },
       {
         q: "How do I delete my account?",
-        a: "Contact us at support@sopgenius.com to request account deletion. We'll remove your data in accordance with our privacy policy.",
+        a: "Contact us at support@dentisop.com to request account deletion. We'll remove your data in accordance with our privacy policy.",
       },
     ],
   },
@@ -102,7 +102,7 @@ export default function HelpPage() {
             Help Center
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            Find answers to common questions about SOPGenius.
+            Find answers to common questions about DentiSOP.
           </p>
 
           <div className="mt-12 space-y-12">

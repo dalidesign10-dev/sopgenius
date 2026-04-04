@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dental SOP Software That Actually Gets Used | SOPGenius",
+  title: "Dental SOP Software That Actually Gets Used | DentiSOP",
   description:
     "Dental SOP software built for real practices. Generate OSHA, HIPAA, and CDC compliant SOPs in minutes. Stop losing time to Word docs your team ignores.",
 };
@@ -38,7 +38,7 @@ export default function DentalSopSoftwarePage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             Your team won&apos;t read a 40-page Word doc buried in a shared
-            drive. SOPGenius gives you dental SOP software that creates clear,
+            drive. DentiSOP gives you dental SOP software that creates clear,
             structured procedures your staff actually follows.
           </p>
           <div className="mt-8 flex justify-center gap-4">
@@ -82,7 +82,7 @@ export default function DentalSopSoftwarePage() {
         <section className="border-y bg-gray-50 px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold">
-              How SOPGenius Dental SOP Software Works
+              How DentiSOP Dental SOP Software Works
             </h2>
             <p className="mt-4 text-muted-foreground">
               Describe your workflow in plain language. Get a structured,
@@ -98,7 +98,7 @@ export default function DentalSopSoftwarePage() {
                 {
                   step: "2",
                   title: "Generate the SOP",
-                  desc: "SOPGenius structures it with proper headers, safety notes, compliance references, and role assignments.",
+                  desc: "DentiSOP structures it with proper headers, safety notes, compliance references, and role assignments.",
                 },
                 {
                   step: "3",
@@ -182,7 +182,7 @@ export default function DentalSopSoftwarePage() {
             <p className="mt-4 text-muted-foreground">
               OSHA inspections happen. State board audits happen. When they do,
               you need documented procedures with revision dates, approval
-              signatures, and consistent formatting. SOPGenius dental SOP
+              signatures, and consistent formatting. DentiSOP dental SOP
               software handles the structure so you can focus on patient care.
             </p>
             <div className="mt-8">
@@ -250,7 +250,7 @@ export default function DentalSopSoftwarePage() {
                 href="/features"
                 className="text-primary underline-offset-4 hover:underline"
               >
-                All SOPGenius Features
+                All DentiSOP Features
               </Link>
             </div>
           </div>

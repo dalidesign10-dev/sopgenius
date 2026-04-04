@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dental Compliance Software for OSHA, HIPAA & CDC | SOPGenius",
+  title: "Dental Compliance Software for OSHA, HIPAA & CDC | DentiSOP",
   description:
     "Dental compliance software that helps your practice stay audit-ready for OSHA, HIPAA, and CDC inspections. Generate compliant SOPs, track revisions, and document training.",
 };
@@ -39,7 +39,7 @@ export default function DentalComplianceSoftwarePage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             An OSHA inspector is not going to wait while you dig through a
-            filing cabinet. SOPGenius keeps your compliance documentation
+            filing cabinet. DentiSOP keeps your compliance documentation
             organized, current, and accessible so you are ready when it matters.
           </p>
           <div className="mt-8 flex justify-center gap-4">
@@ -152,13 +152,13 @@ export default function DentalComplianceSoftwarePage() {
           </div>
         </section>
 
-        {/* How SOPGenius helps */}
+        {/* How DentiSOP helps */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            How SOPGenius Helps With Compliance Documentation
+            How DentiSOP Helps With Compliance Documentation
           </h2>
           <p className="mt-4 text-muted-foreground">
-            SOPGenius is not a compliance consultant. It is dental compliance
+            DentiSOP is not a compliance consultant. It is dental compliance
             software that makes creating and maintaining your required
             documentation dramatically faster.
           </p>
@@ -167,7 +167,7 @@ export default function DentalComplianceSoftwarePage() {
               {
                 icon: FileText,
                 title: "Generate Compliant SOPs Fast",
-                desc: "Describe your procedure in plain language. SOPGenius structures it with proper headers, compliance references, role assignments, and safety callouts.",
+                desc: "Describe your procedure in plain language. DentiSOP structures it with proper headers, compliance references, role assignments, and safety callouts.",
               },
               {
                 icon: Clock,

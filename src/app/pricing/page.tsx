@@ -1,5 +1,7 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -8,38 +10,65 @@ import { PLANS, type Plan } from "@/types";
 import { PublicNav } from "@/components/shared/public-nav";
 import { PublicFooter } from "@/components/shared/public-footer";
 
-export const metadata: Metadata = {
-  title: "Pricing — SOPGenius",
-  description:
-    "Simple, transparent pricing for AI-powered SOP generation. Start free, upgrade when you need more.",
-};
+// export const metadata: Metadata = {
+//   title: "Pricing — Pricing That Makes Sense for Dental Practices",
+//   description:
+//     "Pricing that makes sense for dental practices. Start your free pilot, upgrade when your team is ready. 30-day money-back guarantee on all paid plans.",
+// };
+// Note: metadata must be in a server component. We use generateMetadata or a separate layout for this page.
+
+const planKeys: Plan[] = ["starter", "practice", "group"];
 
 export default function PricingPage() {
-  const planKeys: Plan[] = ["free", "pro", "clinic"];
+  const [annual, setAnnual] = useState(true);
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Nav */}
       <PublicNav />
 
       {/* Hero */}
       <section className="py-20 text-center">
         <div className="mx-auto max-w-3xl px-4">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Simple, Transparent Pricing
+            Pricing That Makes Sense for Dental Practices
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Start free. Upgrade when your team needs more power. No hidden fees.
+            Start your free pilot. Upgrade when your team is ready. Every paid plan includes a 30-day money-back guarantee.
           </p>
+
+          {/* Annual / Monthly toggle */}
+          <div className="mt-8 inline-flex items-center gap-3 rounded-full border bg-white p-1 text-sm">
+            <button
+              onClick={() => setAnnual(true)}
+              className={`rounded-full px-4 py-2 font-medium transition ${
+                annual
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Annual <span className="text-xs opacity-80">(save up to 31%)</span>
+            </button>
+            <button
+              onClick={() => setAnnual(false)}
+              className={`rounded-full px-4 py-2 font-medium transition ${
+                !annual
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Monthly
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* Cards */}
-      <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+      {/* Pricing cards */}
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {planKeys.map((key) => {
             const plan = PLANS[key];
             const isHighlighted = plan.highlighted;
+            const displayPrice = annual ? plan.annualPrice : plan.price;
 
             return (
               <Card
@@ -57,14 +86,21 @@ export default function PricingPage() {
                   <h3 className="text-lg font-semibold">{plan.name}</h3>
                   <p className="text-sm text-muted-foreground">{plan.description}</p>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold">${plan.price}</span>
-                    {plan.price > 0 && (
-                      <span className="text-muted-foreground">/month</span>
+                    <span className="text-4xl font-bold">
+                      {displayPrice === 0 ? "Free" : `$${displayPrice}`}
+                    </span>
+                    {displayPrice > 0 && (
+                      <span className="text-muted-foreground">/mo</span>
                     )}
                   </div>
-                  {plan.annualPrice > 0 && plan.annualPrice < plan.price && (
-                    <p className="mt-1 text-sm text-success">
-                      ${plan.annualPrice}/mo billed annually (save 20%)
+                  {annual && plan.price > 0 && plan.annualPrice < plan.price && (
+                    <p className="mt-1 text-sm text-green-600">
+                      or ${plan.price}/mo monthly — save ${(plan.price - plan.annualPrice) * 12}/yr
+                    </p>
+                  )}
+                  {!annual && plan.annualPrice > 0 && plan.annualPrice < plan.price && (
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      or ${plan.annualPrice}/mo billed annually
                     </p>
                   )}
                 </CardHeader>
@@ -72,7 +108,7 @@ export default function PricingPage() {
                   <ul className="flex-1 space-y-3">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2 text-sm">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
                         {feature}
                       </li>
                     ))}
@@ -84,14 +120,62 @@ export default function PricingPage() {
                         variant={isHighlighted ? "default" : "outline"}
                         size="lg"
                       >
-                        {plan.price === 0 ? "Get Started Free" : `Start ${plan.name} Plan`}
+                        {plan.price === 0 ? "Start Free Pilot" : `Start 14-Day Pilot — ${plan.name}`}
                       </Button>
                     </Link>
+                    {plan.price > 0 && (
+                      <p className="mt-2 text-center text-xs text-muted-foreground">
+                        30-day money-back guarantee
+                      </p>
+                    )}
                   </div>
                 </CardContent>
               </Card>
             );
           })}
+
+          {/* Enterprise card */}
+          <Card className="relative flex flex-col border-dashed">
+            <CardHeader className="text-center">
+              <h3 className="text-lg font-semibold">{PLANS.enterprise.name}</h3>
+              <p className="text-sm text-muted-foreground">{PLANS.enterprise.description}</p>
+              <div className="mt-4">
+                <span className="text-4xl font-bold">Custom</span>
+              </div>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Tailored pricing for your organisation
+              </p>
+            </CardHeader>
+            <CardContent className="flex flex-1 flex-col">
+              <ul className="flex-1 space-y-3">
+                {PLANS.enterprise.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2 text-sm">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <Link href="/contact" className="block">
+                  <Button className="w-full" variant="outline" size="lg">
+                    Contact Sales
+                  </Button>
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* ROI callout */}
+      <section className="mx-auto max-w-3xl px-4 pb-20 text-center">
+        <div className="rounded-2xl border bg-primary/5 p-8">
+          <p className="text-lg font-semibold">
+            One serious OSHA violation costs up to $16,550.
+          </p>
+          <p className="mt-2 text-muted-foreground">
+            A year of DentiSOP Practice costs less than $1,200. The maths speaks for itself.
+          </p>
         </div>
       </section>
 
@@ -105,23 +189,31 @@ export default function PricingPage() {
             {[
               {
                 q: "Can I switch plans later?",
-                a: "Yes! You can upgrade or downgrade your plan at any time. When upgrading, you'll be charged a prorated amount. When downgrading, you'll keep your current plan until the end of the billing cycle.",
+                a: "Yes. You can upgrade or downgrade at any time. When upgrading, you pay a prorated amount. When downgrading, you keep your current plan until the end of the billing cycle.",
               },
               {
                 q: "Is there a free trial for paid plans?",
-                a: "Our Free plan lets you generate 3 SOPs per month at no cost — no credit card required. This gives you a great feel for the product before committing to a paid plan.",
+                a: "Every paid plan includes a 14-day full-access pilot. If DentiSOP doesn't work for your practice, we'll refund every penny — no questions asked, for 30 days.",
               },
               {
-                q: "What happens if I exceed my generation limit?",
-                a: "You'll be prompted to upgrade your plan. We'll never charge you extra without your consent. Your existing SOPs remain fully accessible.",
+                q: "What happens if I exceed my generation limit on the free plan?",
+                a: "You'll be prompted to upgrade. We'll never charge you without your consent. Your existing SOPs remain fully accessible.",
+              },
+              {
+                q: "Is the AI-generated content actually compliant?",
+                a: "DentiSOP structures SOPs with sections that map to OSHA, HIPAA, CDC, and other regulatory frameworks. We always recommend reviewing generated SOPs with your compliance officer before implementation.",
               },
               {
                 q: "Can I cancel anytime?",
-                a: "Absolutely. There are no long-term contracts. Cancel anytime from your billing dashboard and you'll retain access until the end of your billing period.",
+                a: "Absolutely. No long-term contracts. Cancel from your billing dashboard and retain access until the end of your billing period.",
               },
               {
-                q: "Do you offer discounts for nonprofits or education?",
-                a: "Yes! Contact us at support@sopgenius.com for special pricing for nonprofits, educational institutions, and government organizations.",
+                q: "Do you offer a HIPAA BAA?",
+                a: "Yes — HIPAA Business Associate Agreements are included with Group and Enterprise plans. Contact us for details.",
+              },
+              {
+                q: "Do you offer discounts for dental schools or nonprofits?",
+                a: "Yes. Contact us at support@dentisop.com for special pricing for dental schools, nonprofits, and government organisations.",
               },
             ].map(({ q, a }) => (
               <details
@@ -143,7 +235,6 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Footer */}
       <PublicFooter />
     </div>
   );

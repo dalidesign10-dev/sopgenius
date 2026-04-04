@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "SOPGenius terms of service. Read before using our AI SOP generation platform.",
+    "DentiSOP terms of service. Read before using our AI SOP generation platform.",
   robots: { index: false, follow: true },
 };
 
@@ -29,7 +29,7 @@ export default function TermsPage() {
                 Acceptance of terms
               </h2>
               <p className="mt-3">
-                By accessing or using SOPGenius, you agree to be bound by these
+                By accessing or using DentiSOP, you agree to be bound by these
                 Terms of Service. If you do not agree, do not use the service.
               </p>
             </section>
@@ -39,7 +39,7 @@ export default function TermsPage() {
                 Service description
               </h2>
               <p className="mt-3">
-                SOPGenius is a web-based platform that uses AI to help users
+                DentiSOP is a web-based platform that uses AI to help users
                 create, manage, and share standard operating procedures. We
                 provide tools for SOP generation, editing, exporting, and team
                 collaboration.
@@ -90,8 +90,8 @@ export default function TermsPage() {
                 Intellectual property
               </h2>
               <p className="mt-3">
-                You retain ownership of the content you create using SOPGenius,
-                including your SOPs. SOPGenius retains ownership of the platform,
+                You retain ownership of the content you create using DentiSOP,
+                including your SOPs. DentiSOP retains ownership of the platform,
                 its design, code, and branding. The AI-generated output is
                 provided for your use but does not grant you rights to the
                 underlying AI models.
@@ -115,7 +115,7 @@ export default function TermsPage() {
                 Limitation of liability
               </h2>
               <p className="mt-3">
-                SOPGenius is provided &quot;as is&quot; without warranties of any
+                DentiSOP is provided &quot;as is&quot; without warranties of any
                 kind. We are not liable for any indirect, incidental, or
                 consequential damages arising from your use of the service.
                 AI-generated SOPs should be reviewed by qualified personnel
@@ -140,10 +140,10 @@ export default function TermsPage() {
               <p className="mt-3">
                 Questions about these terms? Email us at{" "}
                 <a
-                  href="mailto:support@sopgenius.com"
+                  href="mailto:support@dentisop.com"
                   className="text-blue-600 hover:text-blue-700"
                 >
-                  support@sopgenius.com
+                  support@dentisop.com
                 </a>{" "}
                 or visit our{" "}
                 <Link

@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "The Complete Guide to Dental Office SOPs | SOPGenius",
+  title: "The Complete Guide to Dental Office SOPs | DentiSOP",
   description:
     "Learn which dental office SOPs your practice needs, how to create them, and how to stay compliant with OSHA, HIPAA, and CDC requirements. Practical guide for office managers.",
 };
@@ -282,7 +282,7 @@ export default function DentalOfficeSopsPage() {
               Ready to Document Your Practice?
             </h2>
             <p className="mt-4 text-muted-foreground">
-              SOPGenius gives you dental-specific templates and generates
+              DentiSOP gives you dental-specific templates and generates
               structured SOPs from plain language descriptions. Start with the
               free plan and build your compliance documentation today.
             </p>
@@ -326,7 +326,7 @@ export default function DentalOfficeSopsPage() {
                 href="/features"
                 className="text-primary underline-offset-4 hover:underline"
               >
-                All SOPGenius Features
+                All DentiSOP Features
               </Link>
             </div>
           </div>

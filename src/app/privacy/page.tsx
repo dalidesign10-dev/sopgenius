@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "SOPGenius privacy policy. How we collect, use, and protect your data.",
+    "DentiSOP privacy policy. How we collect, use, and protect your data.",
   robots: { index: false, follow: true },
 };
 
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
                 What we collect
               </h2>
               <p className="mt-3">
-                When you use SOPGenius, we collect information you provide
+                When you use DentiSOP, we collect information you provide
                 directly: your name, email address, and the content of the SOPs
                 you create. We also collect basic usage data such as page views
                 and feature usage to improve the product.
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
                 How we use your data
               </h2>
               <ul className="mt-3 list-inside list-disc space-y-1">
-                <li>To provide and maintain the SOPGenius service</li>
+                <li>To provide and maintain the DentiSOP service</li>
                 <li>To generate SOPs based on your input</li>
                 <li>To process payments and manage your subscription</li>
                 <li>To send account-related communications</li>
@@ -108,10 +108,10 @@ export default function PrivacyPage() {
               <p className="mt-3">
                 For privacy-related questions, email us at{" "}
                 <a
-                  href="mailto:support@sopgenius.com"
+                  href="mailto:support@dentisop.com"
                   className="text-blue-600 hover:text-blue-700"
                 >
-                  support@sopgenius.com
+                  support@dentisop.com
                 </a>{" "}
                 or visit our{" "}
                 <Link

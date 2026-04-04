@@ -77,7 +77,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
         {/* Logo */}
         <div className="flex h-16 items-center justify-between border-b px-6">
           <Link href="/dashboard" className="text-xl font-bold text-primary">
-            SOPGenius
+            DentiSOP
           </Link>
           <Button
             variant="ghost"

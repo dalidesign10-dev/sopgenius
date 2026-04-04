@@ -8,10 +8,10 @@ export function PublicFooter() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="text-xl font-bold text-primary">
-              SOPGenius
+              DentiSOP
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              The operations system for dental clinics. Standardize procedures, train staff faster, and stay compliance-ready.
+              The operations system built exclusively for dental practices. Standardise procedures, train staff faster, and stay compliance-ready.
             </p>
           </div>
 
@@ -34,7 +34,7 @@ export function PublicFooter() {
               <li><Link href="/dental-compliance-software" className="hover:text-foreground">Compliance Software</Link></li>
               <li><Link href="/guides/how-to-write-a-dental-sop" className="hover:text-foreground">How to Write a Dental SOP</Link></li>
               <li><Link href="/guides/dental-osha-compliance-checklist" className="hover:text-foreground">OSHA Compliance Checklist</Link></li>
-              <li><Link href="/help" className="hover:text-foreground">Help Center</Link></li>
+              <li><Link href="/help" className="hover:text-foreground">Help Centre</Link></li>
             </ul>
           </div>
 
@@ -59,7 +59,8 @@ export function PublicFooter() {
         </div>
 
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} SOPGenius. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} DentiSOP. All rights reserved.</p>
+          <p className="mt-2">support@dentisop.com</p>
         </div>
       </div>
     </footer>
