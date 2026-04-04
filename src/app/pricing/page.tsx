@@ -17,7 +17,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 // };
 // Note: metadata must be in a server component. We use generateMetadata or a separate layout for this page.
 
-const planKeys: Plan[] = ["starter", "practice", "group"];
+const planKeys: Plan[] = ["starter", "clinic", "multi-clinic"];
 
 export default function PricingPage() {
   const [annual, setAnnual] = useState(true);
@@ -87,7 +87,7 @@ export default function PricingPage() {
                   <p className="text-sm text-muted-foreground">{plan.description}</p>
                   <div className="mt-4">
                     <span className="text-4xl font-bold">
-                      {displayPrice === 0 ? "Free" : `$${displayPrice}`}
+                      {displayPrice === 0 ? "Free" : `\u00a3${displayPrice}`}
                     </span>
                     {displayPrice > 0 && (
                       <span className="text-muted-foreground">/mo</span>
@@ -95,12 +95,12 @@ export default function PricingPage() {
                   </div>
                   {annual && plan.price > 0 && plan.annualPrice < plan.price && (
                     <p className="mt-1 text-sm text-green-600">
-                      or ${plan.price}/mo monthly — save ${(plan.price - plan.annualPrice) * 12}/yr
+                      or {"\u00a3"}{plan.price}/mo monthly — save {"\u00a3"}{(plan.price - plan.annualPrice) * 12}/yr
                     </p>
                   )}
                   {!annual && plan.annualPrice > 0 && plan.annualPrice < plan.price && (
                     <p className="mt-1 text-sm text-muted-foreground">
-                      or ${plan.annualPrice}/mo billed annually
+                      or {"\u00a3"}{plan.annualPrice}/mo billed annually
                     </p>
                   )}
                 </CardHeader>
@@ -174,7 +174,7 @@ export default function PricingPage() {
             One serious OSHA violation costs up to $16,550.
           </p>
           <p className="mt-2 text-muted-foreground">
-            A year of DentiSOP Practice costs less than $1,200. The maths speaks for itself.
+            A year of DentiSOP Clinic costs less than £950. The maths speaks for itself.
           </p>
         </div>
       </section>
@@ -197,11 +197,11 @@ export default function PricingPage() {
               },
               {
                 q: "What happens if I exceed my generation limit on the free plan?",
-                a: "You'll be prompted to upgrade. We'll never charge you without your consent. Your existing SOPs remain fully accessible.",
+                a: "You'll be prompted to upgrade. We'll never charge you without your consent. Your existing procedures remain fully accessible.",
               },
               {
                 q: "Is the AI-generated content actually compliant?",
-                a: "DentiSOP structures SOPs with sections that map to OSHA, HIPAA, CDC, and other regulatory frameworks. We always recommend reviewing generated SOPs with your compliance officer before implementation.",
+                a: "DentiSOP structures procedures with sections that map to OSHA, HIPAA, CDC, and other regulatory frameworks. We always recommend reviewing generated procedures with your compliance officer before implementation.",
               },
               {
                 q: "Can I cancel anytime?",
@@ -209,7 +209,7 @@ export default function PricingPage() {
               },
               {
                 q: "Do you offer a HIPAA BAA?",
-                a: "Yes — HIPAA Business Associate Agreements are included with Group and Enterprise plans. Contact us for details.",
+                a: "Yes — HIPAA Business Associate Agreements are included with Multi-Clinic and Enterprise plans. Contact us for details.",
               },
               {
                 q: "Do you offer discounts for dental schools or nonprofits?",

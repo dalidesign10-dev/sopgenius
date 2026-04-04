@@ -11,7 +11,7 @@ export function PublicFooter() {
               DentiSOP
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              The operations system built exclusively for dental practices. Standardise procedures, train staff faster, and stay compliance-ready.
+              The system your clinic runs on. Standardise procedures, train staff faster, and stay compliance-ready.
             </p>
           </div>
 
@@ -20,7 +20,7 @@ export function PublicFooter() {
             <h4 className="text-sm font-semibold">Product</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li><Link href="/features" className="hover:text-foreground">Features</Link></li>
-              <li><Link href="/templates" className="hover:text-foreground">SOP Templates</Link></li>
+              <li><Link href="/templates" className="hover:text-foreground">Procedure Templates</Link></li>
               <li><Link href="/pricing" className="hover:text-foreground">Pricing</Link></li>
             </ul>
           </div>
@@ -29,10 +29,10 @@ export function PublicFooter() {
           <div>
             <h4 className="text-sm font-semibold">Resources</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/dental-sop-software" className="hover:text-foreground">Dental SOP Software</Link></li>
-              <li><Link href="/dental-office-sops" className="hover:text-foreground">Dental Office SOPs Guide</Link></li>
+              <li><Link href="/dental-sop-software" className="hover:text-foreground">Dental Procedure Software</Link></li>
+              <li><Link href="/dental-office-sops" className="hover:text-foreground">Dental Office Procedures</Link></li>
               <li><Link href="/dental-compliance-software" className="hover:text-foreground">Compliance Software</Link></li>
-              <li><Link href="/guides/how-to-write-a-dental-sop" className="hover:text-foreground">How to Write a Dental SOP</Link></li>
+              <li><Link href="/guides" className="hover:text-foreground">Guides &amp; Checklists</Link></li>
               <li><Link href="/guides/dental-osha-compliance-checklist" className="hover:text-foreground">OSHA Compliance Checklist</Link></li>
               <li><Link href="/help" className="hover:text-foreground">Help Centre</Link></li>
             </ul>

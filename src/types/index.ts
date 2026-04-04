@@ -1,4 +1,4 @@
-export type Plan = "starter" | "practice" | "group" | "enterprise";
+export type Plan = "starter" | "clinic" | "multi-clinic" | "enterprise";
 export type SOPStatus = "draft" | "published" | "archived";
 
 export interface User {
@@ -118,45 +118,45 @@ export const PLANS: Record<Plan, PlanDetails> = {
     name: "Starter",
     price: 0,
     annualPrice: 0,
-    description: "See DentiSOP in action — no commitment",
-    generationsPerMonth: 2,
+    description: "See what DentiSOP can do — no commitment",
+    generationsPerMonth: 3,
     maxTeamMembers: null,
     features: [
-      "2 SOP generations per month",
+      "3 procedures per month",
       "2 starter templates",
       "Export to PDF (DentiSOP watermark)",
       "OSHA & HIPAA basics",
       "Email support (72-hour response)",
     ],
   },
-  practice: {
-    name: "Practice",
-    price: 97,
-    annualPrice: 67,
+  clinic: {
+    name: "Clinic",
+    price: 79,
+    annualPrice: 59,
     description: "For single-location practices ready to standardise",
     generationsPerMonth: null,
     maxTeamMembers: null,
     highlighted: true,
     features: [
-      "Unlimited SOP generations",
+      "Unlimited procedure generation",
       "All dental templates",
       "Export to PDF, Word, Markdown — no watermark",
       "Full OSHA, HIPAA, CDC, ADA, State Board, EPA frameworks",
       "30-day version history",
-      "1 seat included (add more at £15/mo each)",
+      "1 seat included (add more at \u00a315/mo each)",
       "Email support (48-hour response)",
       "30-day money-back guarantee",
     ],
   },
-  group: {
-    name: "Group",
-    price: 197,
-    annualPrice: 147,
+  "multi-clinic": {
+    name: "Multi-Clinic",
+    price: 149,
+    annualPrice: 119,
     description: "For group practices and DSOs managing 2+ locations",
     generationsPerMonth: null,
     maxTeamMembers: 15,
     features: [
-      "Everything in Practice",
+      "Everything in Clinic",
       "Team sharing (up to 15 users included)",
       "Up to 5 locations",
       "Custom branding on exports",
@@ -175,7 +175,7 @@ export const PLANS: Record<Plan, PlanDetails> = {
     generationsPerMonth: null,
     maxTeamMembers: null,
     features: [
-      "Everything in Group",
+      "Everything in Multi-Clinic",
       "Unlimited team members and locations",
       "Custom compliance frameworks",
       "SSO and API access",

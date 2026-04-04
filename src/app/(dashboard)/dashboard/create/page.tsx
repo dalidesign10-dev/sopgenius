@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -317,11 +318,40 @@ export default function CreateSOPPage() {
   }
 
   async function handleSave() {
-    if (!sopId) return;
+    if (!generatedSOP) return;
     setSaving(true);
+    setError(null);
     try {
-      router.push(`/dashboard/sop/${sopId}`);
-    } finally {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+
+      if (!user) {
+        setError("You must be logged in to save SOPs.");
+        setSaving(false);
+        return;
+      }
+
+      const { data, error: dbError } = await supabase
+        .from("sops")
+        .insert({
+          user_id: user.id,
+          title: generatedSOP.header?.title || "Untitled SOP",
+          description: form.processDescription,
+          industry: form.industry,
+          department: form.department,
+          content: generatedSOP,
+          status: "draft",
+          version: 1,
+        })
+        .select("id")
+        .single();
+
+      if (dbError) throw dbError;
+
+      router.push(`/dashboard/sop/${data.id}`);
+    } catch (err: any) {
+      console.error("Save error:", err);
+      setError(err.message ?? "Failed to save SOP.");
       setSaving(false);
     }
   }

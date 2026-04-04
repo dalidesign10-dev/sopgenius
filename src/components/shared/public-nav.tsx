@@ -26,7 +26,7 @@ export function PublicNav() {
           <Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground">
             Pricing
           </Link>
-          <Link href="/guides/how-to-write-a-dental-sop" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href="/guides" className="text-sm text-muted-foreground hover:text-foreground">
             Guides
           </Link>
         </nav>
@@ -53,7 +53,7 @@ export function PublicNav() {
             <Link href="/features" className="text-sm" onClick={() => setOpen(false)}>Features</Link>
             <Link href="/templates" className="text-sm" onClick={() => setOpen(false)}>Templates</Link>
             <Link href="/pricing" className="text-sm" onClick={() => setOpen(false)}>Pricing</Link>
-            <Link href="/guides/how-to-write-a-dental-sop" className="text-sm" onClick={() => setOpen(false)}>Guides</Link>
+            <Link href="/guides" className="text-sm" onClick={() => setOpen(false)}>Guides</Link>
             <hr />
             <Link href="/login" className="text-sm" onClick={() => setOpen(false)}>Log In</Link>
             <Link href="/signup" onClick={() => setOpen(false)}>

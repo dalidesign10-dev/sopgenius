@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 
+export const maxDuration = 60;
+
 function getAnthropic() {
   return new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 }
@@ -9,17 +11,25 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const {
+      processDescription,
       description,
       industry,
       department,
+      complianceFrameworks,
       compliance,
       complexity,
+      targetAudience,
       audience,
       additionalNotes,
     } = body;
 
+    // Support both field names (processDescription from form, description from legacy)
+    const desc = processDescription || description;
+    const comp = complianceFrameworks || compliance;
+    const aud = targetAudience || audience;
+
     // Basic validation
-    if (!description || typeof description !== "string" || description.trim().length < 10) {
+    if (!desc || typeof desc !== "string" || desc.trim().length < 10) {
       return NextResponse.json(
         { error: "Description is required and must be at least 10 characters." },
         { status: 400 }
@@ -68,12 +78,12 @@ Output the SOP as a JSON object with this exact structure:
 IMPORTANT: Return ONLY the JSON object, no markdown code fences, no additional text.`;
 
     const userPrompt = `Generate a comprehensive SOP for the following:
-Process: ${description}
+Process: ${desc}
 Industry: ${industry}
 Department: ${department}
-Compliance Requirements: ${Array.isArray(compliance) && compliance.length > 0 ? compliance.join(", ") : "None specified"}
+Compliance Requirements: ${Array.isArray(comp) && comp.length > 0 ? comp.join(", ") : "None specified"}
 Complexity Level: ${complexity}
-Target Audience: ${audience}
+Target Audience: ${aud}
 ${additionalNotes ? `Additional context: ${additionalNotes}` : ""}`;
 
     const message = await getAnthropic().messages.create({
@@ -99,7 +109,10 @@ ${additionalNotes ? `Additional context: ${additionalNotes}` : ""}`;
       }
     }
 
-    return NextResponse.json(sopData);
+    // Generate a simple ID for the SOP
+    const sopId = `sop-${Date.now()}`;
+
+    return NextResponse.json({ content: sopData, id: sopId });
   } catch (error) {
     console.error("SOP generation error:", error);
     return NextResponse.json(
