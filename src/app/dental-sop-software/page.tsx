@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dental SOP Software That Actually Gets Used | DentiSOP",
+  title: "Dental SOP Software That Enforces Compliance by Name | DentiSOP",
   description:
-    "Dental SOP software built for real practices. Generate OSHA, HIPAA, and CDC compliant SOPs in minutes. Stop losing time to Word docs your team ignores.",
+    "Dental SOP software that assigns every procedure by role, tracks who has read what, and flags non-compliance by name. Stop hoping your team follows SOPs — enforce it.",
 };
 
 export default function DentalSopSoftwarePage() {
@@ -31,20 +31,21 @@ export default function DentalSopSoftwarePage() {
         {/* Hero */}
         <section className="border-b bg-gradient-to-b from-blue-50 to-white px-6 py-20 text-center">
           <Badge variant="secondary" className="mb-4">
-            Built for dental practices
+            Execution enforcement for dental practices
           </Badge>
           <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Dental SOP Software That Actually Gets Used by Your Team
+            Dental SOP Software That Enforces Every Procedure by Name
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Your team won&apos;t read a 40-page Word doc buried in a shared
-            drive. DentiSOP gives you dental SOP software that creates clear,
-            structured procedures your staff actually follows.
+            Your team won&apos;t follow a 40-page Word doc buried in a shared
+            drive. DentiSOP is dental SOP software that assigns procedures by
+            role, tracks read receipts, and flags who is falling behind — by
+            name.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button asChild size="lg">
               <Link href="/signup">
-                Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
+                Take Control of Your Clinic <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
@@ -56,19 +57,19 @@ export default function DentalSopSoftwarePage() {
         {/* Problem */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Why Manual SOPs Fail in Dental Practices
+            Why SOPs Without Enforcement Fail in Dental Practices
           </h2>
           <p className="mt-4 text-muted-foreground">
-            You already know you need SOPs. The problem is creating them,
-            keeping them current, and getting your team to actually use them.
-            Here is what we hear from office managers every week:
+            You already have SOPs. The problem is nobody reads them, nobody is
+            held accountable, and you have no way to prove compliance. Here is
+            what we hear from office managers every week:
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
-              "SOPs live in a binder nobody opens",
-              "Updating one procedure takes an entire afternoon",
-              "New hires get verbal training and hope for the best",
-              "OSHA inspector asks for documentation you can't find",
+              "SOPs exist but you cannot prove anyone read them",
+              "No way to know which staff members are non-compliant",
+              "New hires get verbal training with zero tracking",
+              "OSHA inspector asks for proof of training and you have none",
             ].map((problem) => (
               <div key={problem} className="flex items-start gap-3">
                 <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
@@ -82,28 +83,29 @@ export default function DentalSopSoftwarePage() {
         <section className="border-y bg-gray-50 px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold">
-              How DentiSOP Dental SOP Software Works
+              How DentiSOP Dental SOP Software Enforces Compliance
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Describe your workflow in plain language. Get a structured,
-              compliance-ready SOP back in under a minute.
+              Assign every procedure to the right role. Track who has read it.
+              Flag anyone who has not. Know your clinic compliance score in
+              real time.
             </p>
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
               {[
                 {
                   step: "1",
-                  title: "Describe Your Procedure",
-                  desc: "Type what your team does — sterilization, patient intake, emergency response — in your own words.",
+                  title: "Assign by Role",
+                  desc: "Every SOP is assigned to specific roles — hygienists, assistants, front desk, dentists. Each person sees only the procedures they are responsible for.",
                 },
                 {
                   step: "2",
-                  title: "Generate the SOP",
-                  desc: "DentiSOP structures it with proper headers, safety notes, compliance references, and role assignments.",
+                  title: "Track Read Receipts",
+                  desc: "DentiSOP logs when each team member opens and acknowledges a procedure. You get a dashboard showing exactly who has read what.",
                 },
                 {
                   step: "3",
-                  title: "Share with Your Team",
-                  desc: "Export to PDF for your compliance binder or share digitally. Your team gets clear, step-by-step instructions.",
+                  title: "Flag Non-Compliance",
+                  desc: "Overdue reads and missed assignments are flagged by name. Automated reminders go out so you do not have to chase people down.",
                 },
               ].map((item) => (
                 <Card key={item.step}>
@@ -125,39 +127,39 @@ export default function DentalSopSoftwarePage() {
         {/* Features */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Key Features for Dental Practices
+            Enforcement Features for Dental Practices
           </h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2">
             {[
               {
-                icon: FileText,
-                title: "Dental-Specific Templates",
-                desc: "Start from templates designed for infection control, sterilization, radiographs, front desk workflows, and more.",
-              },
-              {
-                icon: ShieldCheck,
-                title: "OSHA, HIPAA, and CDC Alignment",
-                desc: "Every SOP includes structured compliance references so you are never guessing about regulatory requirements.",
-              },
-              {
-                icon: Clock,
-                title: "Version History and Audit Trail",
-                desc: "Every change is tracked. Compare versions, see who edited what, and restore previous versions instantly.",
-              },
-              {
                 icon: Users,
-                title: "Team Access by Role",
-                desc: "Share SOPs with dentists, hygienists, assistants, and front desk staff. Everyone sees what they need.",
-              },
-              {
-                icon: Zap,
-                title: "Generate SOPs in Minutes",
-                desc: "Stop spending afternoons formatting Word documents. Describe the procedure and get a finished SOP.",
+                title: "Role-Based Assignments",
+                desc: "Assign every SOP to dentists, hygienists, assistants, or front desk staff. Each team member sees their responsibilities and nothing else.",
               },
               {
                 icon: CheckCircle,
-                title: "PDF and Word Export",
-                desc: "Download polished documents for compliance binders, onboarding packets, or state board audits.",
+                title: "Read Receipts and Acknowledgments",
+                desc: "Know exactly who has read each procedure and when. No more guessing whether your team actually reviewed the updated sterilization protocol.",
+              },
+              {
+                icon: AlertTriangle,
+                title: "Non-Compliance Flags by Name",
+                desc: "See which team members have overdue reads or unacknowledged procedures. Address gaps before they become audit findings.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Clinic Compliance Score",
+                desc: "A real-time score showing your overall compliance posture. Track progress over time and identify which areas need attention.",
+              },
+              {
+                icon: Clock,
+                title: "Automated Reminders",
+                desc: "DentiSOP sends reminders to team members who have not completed their assigned reads. You stop being the compliance nag.",
+              },
+              {
+                icon: FileText,
+                title: "Audit-Ready Documentation",
+                desc: "Every read receipt, assignment, and acknowledgment is logged. Export compliance reports for OSHA, HIPAA, or state board audits instantly.",
               },
             ].map((feature) => (
               <div key={feature.title} className="flex gap-4">
@@ -177,18 +179,18 @@ export default function DentalSopSoftwarePage() {
         <section className="border-y bg-blue-50 px-6 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold">
-              Stay Audit-Ready Without the Busywork
+              Stop Hoping. Start Enforcing.
             </h2>
             <p className="mt-4 text-muted-foreground">
               OSHA inspections happen. State board audits happen. When they do,
-              you need documented procedures with revision dates, approval
-              signatures, and consistent formatting. DentiSOP dental SOP
-              software handles the structure so you can focus on patient care.
+              you need proof that every team member read and acknowledged every
+              required procedure. DentiSOP dental SOP software gives you that
+              proof with names, dates, and compliance scores.
             </p>
             <div className="mt-8">
               <Button asChild size="lg">
                 <Link href="/signup">
-                  Get Started Free <ArrowRight className="ml-2 h-4 w-4" />
+                  Take Control of Your Clinic <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -202,7 +204,7 @@ export default function DentalSopSoftwarePage() {
           </h2>
           <p className="mt-4 text-muted-foreground">
             Start with a free plan that includes 3 SOPs. Upgrade when your
-            practice needs more. No contracts, no setup fees, cancel anytime.
+            practice needs full enforcement tracking. No contracts, no setup fees, cancel anytime.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button asChild variant="outline" size="lg">

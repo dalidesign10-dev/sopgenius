@@ -4,9 +4,9 @@ import { PublicNav } from "@/components/shared/public-nav";
 import { PublicFooter } from "@/components/shared/public-footer";
 
 export const metadata: Metadata = {
-  title: "About DentiSOP — AI SOP Generator for Dental Practices",
+  title: "About DentiSOP — Dental Operations Enforcement Platform",
   description:
-    "DentiSOP is an AI-powered tool that helps dental practices create, manage, and share standard operating procedures for OSHA, HIPAA, and CDC compliance.",
+    "DentiSOP is the execution enforcement system for dental practices. Assign every procedure, track every read, and know who's compliant — every single day.",
 };
 
 export default function AboutPage() {
@@ -21,11 +21,11 @@ export default function AboutPage() {
 
           <div className="mt-10 space-y-10 text-gray-600">
             <p className="text-lg">
-              DentiSOP helps dental practices turn compliance requirements and
-              clinical workflows into structured, shareable standard operating
-              procedures using AI. Instead of staring at a blank document, you
-              describe how a process works — sterilization, patient intake, OSHA
-              training — and get a professionally formatted SOP back in seconds.
+              DentiSOP is the execution enforcement system for dental practices.
+              We don&apos;t just help you create procedures — we make sure your
+              team actually follows them. Every SOP is assigned by role, tracked
+              for reads, and flagged when someone falls behind. It&apos;s not a
+              document generator. It&apos;s the system your clinic depends on.
             </p>
 
             <section>
@@ -33,12 +33,12 @@ export default function AboutPage() {
                 What we do
               </h2>
               <p className="mt-3">
-                We provide a focused tool for creating, managing, and sharing
-                SOPs built for dental practices. Whether you need infection
-                control procedures, HIPAA privacy protocols, CDC-aligned
-                sterilization checklists, or front desk workflows, DentiSOP
-                gives you a fast starting point and a clean system for keeping
-                everything organized, compliant, and up to date.
+                We provide an operations enforcement platform built exclusively
+                for dental practices. Document your procedures with AI, assign
+                them to the right roles, track who&apos;s read what, and flag
+                non-compliance by name. Whether it&apos;s sterilization protocols,
+                HIPAA workflows, or front desk procedures — DentiSOP ensures
+                your team follows the process, every single day.
               </p>
             </section>
 
@@ -48,17 +48,18 @@ export default function AboutPage() {
               </h2>
               <ol className="mt-3 list-inside list-decimal space-y-2">
                 <li>
-                  Describe your dental workflow in plain language or pick a
-                  dental-specific template.
+                  <strong>Document</strong> — Describe your workflow or pick a
+                  dental template. AI generates a structured, compliance-mapped
+                  procedure in seconds.
                 </li>
                 <li>
-                  DentiSOP generates a structured SOP with steps, roles, and
-                  compliance notes aligned to OSHA, HIPAA, and CDC guidelines.
+                  <strong>Assign</strong> — Assign every procedure to the right
+                  roles: hygienists, assistants, front desk, dentists.
                 </li>
                 <li>
-                  Edit, refine, and share with your team across locations. Export
-                  to PDF for compliance binders or Word for collaborative
-                  editing.
+                  <strong>Enforce</strong> — Track reads, flag non-compliance by
+                  name, send automated reminders, and watch your clinic
+                  compliance score climb.
                 </li>
               </ol>
             </section>

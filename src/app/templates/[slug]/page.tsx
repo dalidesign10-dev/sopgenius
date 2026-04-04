@@ -173,7 +173,7 @@ export default async function TemplateDetailPage({ params }: Props) {
           {/* Why Use AI */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-4">
-              Why use AI to generate this SOP?
+              Why use AI to create and enforce this procedure?
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               {template.whyUseAI}
@@ -183,7 +183,7 @@ export default async function TemplateDetailPage({ params }: Props) {
           {/* CTA */}
           <section className="mb-16 rounded-xl bg-muted/50 p-8 text-center">
             <h2 className="text-xl font-semibold mb-3">
-              Generate Your {template.title.replace(" Template", "")}
+              Create &amp; Assign Your {template.title.replace(" Template", "")}
             </h2>
             <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
               Answer a few questions about your team and tools, and DentiSOP
@@ -193,7 +193,7 @@ export default async function TemplateDetailPage({ params }: Props) {
               href="/signup"
               className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              Generate Your {template.title.replace(" Template", "")}
+              Create &amp; Assign Your {template.title.replace(" Template", "")}
             </Link>
           </section>
 

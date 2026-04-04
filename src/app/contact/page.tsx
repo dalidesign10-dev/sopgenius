@@ -7,7 +7,7 @@ import { Mail } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with the DentiSOP team. Questions about SOP generation for dental practices, pricing, or enterprise features — we're here to help.",
+    "Get in touch with the DentiSOP team. Questions about compliance enforcement, team tracking, pricing, or enterprise features — we're here to help.",
 };
 
 export default function ContactPage() {

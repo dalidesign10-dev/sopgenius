@@ -4,9 +4,9 @@ import { PublicNav } from "@/components/shared/public-nav";
 import { PublicFooter } from "@/components/shared/public-footer";
 
 export const metadata: Metadata = {
-  title: "Help Center",
+  title: "Help Center — DentiSOP",
   description:
-    "Find answers to common questions about using DentiSOP to create, edit, and export dental practice standard operating procedures.",
+    "Find answers about using DentiSOP to assign, track, and enforce dental practice procedures across your team.",
 };
 
 const faqCategories = [
@@ -15,11 +15,11 @@ const faqCategories = [
     questions: [
       {
         q: "What is DentiSOP?",
-        a: "DentiSOP is an AI-powered tool that helps dental practices create, manage, and share standard operating procedures. Describe a clinical workflow or compliance process in plain language and get a structured, dental-specific SOP back in seconds.",
+        a: "DentiSOP is an execution enforcement system for dental practices. It helps you document procedures with AI, assign them to the right team members by role, track who's read what, and flag non-compliance by name. It's not just a document tool — it's the system your team uses every day.",
       },
       {
         q: "Do I need an account to use DentiSOP?",
-        a: "Yes. Sign up for a free account to start creating SOPs. Free accounts include a limited number of SOP generations per month.",
+        a: "Yes. Sign up for a free account to get started. Free accounts let you document, assign, and track a limited number of procedures per month.",
       },
       {
         q: "What formats can I export my SOPs in?",
@@ -36,15 +36,15 @@ const faqCategories = [
     questions: [
       {
         q: "How do I create a new SOP?",
-        a: "From your dashboard, click 'New SOP' and either describe your dental workflow in plain language or choose a dental-specific template such as infection control, sterilization, or patient intake. DentiSOP will generate a structured SOP that you can edit and refine.",
+        a: "From your dashboard, click 'New Procedure' and either describe your workflow or choose a dental-specific template. DentiSOP creates a structured procedure you can edit, then assign to team members and track for compliance.",
       },
       {
         q: "Can I use dental templates?",
         a: "Yes. We offer templates built for dental practices including infection control, instrument sterilization, radiograph protocols, patient check-in, emergency response, OSHA training, front desk procedures, and new hire onboarding.",
       },
       {
-        q: "Can I customize the generated SOP?",
-        a: "Absolutely. Every generated SOP is fully editable. You can modify steps, add sections, change formatting, and adjust any detail to match your practice.",
+        q: "Can I customize procedures after creation?",
+        a: "Absolutely. Every procedure is fully editable. Modify steps, add sections, adjust details to match your practice — then re-assign and track the updated version.",
       },
       {
         q: "How does version history work?",
@@ -53,11 +53,19 @@ const faqCategories = [
     ],
   },
   {
-    title: "Exporting and Sharing",
+    title: "Assignments and Tracking",
     questions: [
       {
-        q: "How do I share SOPs with my team or other locations?",
-        a: "Use the share option on any SOP to invite team members by email. You can control whether dentists, hygienists, assistants, or front desk staff can view or edit each document, and share across multiple practice locations.",
+        q: "How do I assign SOPs to my team?",
+        a: "From any procedure, click 'Assign' and select team members by role — hygienists, assistants, front desk, dentists. They'll be notified and the system tracks whether they've read and acknowledged the procedure.",
+      },
+      {
+        q: "How do read receipts work?",
+        a: "When a team member opens and reads an assigned procedure, it's logged automatically. You can see exactly who has and hasn't read each SOP from your dashboard — by name.",
+      },
+      {
+        q: "What happens when someone doesn't read an assigned SOP?",
+        a: "They show up as non-compliant on your dashboard with a red flag. DentiSOP can also send automated email reminders to nudge them. You stay informed without having to chase anyone.",
       },
       {
         q: "Can I export SOPs for compliance binders?",

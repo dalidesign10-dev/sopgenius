@@ -88,15 +88,15 @@ export default function TemplatesPage() {
               Don&apos;t see your template?
             </h2>
             <p className="text-muted-foreground mb-6">
-              Describe any dental office process and DentiSOP generates a
-              custom SOP tailored to your practice, equipment, and workflows.
-              No template required.
+              Describe any dental office process and DentiSOP creates a
+              custom procedure tailored to your practice — then assign it to
+              your team and track compliance automatically.
             </p>
             <Link
               href="/signup"
               className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              Create a Custom Dental SOP
+              Create &amp; Assign a Custom Procedure
             </Link>
             <p className="text-sm text-muted-foreground mt-4">
               View{" "}

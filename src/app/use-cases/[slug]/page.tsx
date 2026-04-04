@@ -119,7 +119,7 @@ export default async function UseCasePage({ params }: Props) {
       <section className="border-t bg-slate-50 py-12">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold">
-            Benefits of AI-generated {industry} SOPs
+            Benefits of enforcing {industry} procedures
           </h2>
           <ul className="mt-6 space-y-4">
             {uc.benefits.map((b) => (

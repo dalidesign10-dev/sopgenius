@@ -30,10 +30,10 @@ export default function PricingPage() {
       <section className="py-20 text-center">
         <div className="mx-auto max-w-3xl px-4">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Pricing That Makes Sense for Dental Practices
+            What Does It Cost When Your Team Doesn&apos;t Follow the Process?
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Start your free pilot. Upgrade when your team is ready. Every paid plan includes a 30-day money-back guarantee.
+            A single OSHA violation costs up to $16,131. A single turnover costs 50–200% of salary. DentiSOP costs less than your daily coffee run. Start free — upgrade when your team depends on it.
           </p>
 
           {/* Annual / Monthly toggle */}
@@ -171,10 +171,10 @@ export default function PricingPage() {
       <section className="mx-auto max-w-3xl px-4 pb-20 text-center">
         <div className="rounded-2xl border bg-primary/5 p-8">
           <p className="text-lg font-semibold">
-            One serious OSHA violation costs up to $16,550.
+            The average OSHA fine for a single serious violation is $16,131. Replacing one dental assistant costs $25,000+.
           </p>
           <p className="mt-2 text-muted-foreground">
-            A year of DentiSOP Clinic costs less than £950. The maths speaks for itself.
+            DentiSOP Clinic costs less than 1% of that — per year. The system pays for itself the first week your team actually follows the process.
           </p>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function PricingPage() {
               },
               {
                 q: "Is the AI-generated content actually compliant?",
-                a: "DentiSOP structures procedures with sections that map to OSHA, HIPAA, CDC, and other regulatory frameworks. We always recommend reviewing generated procedures with your compliance officer before implementation.",
+                a: "DentiSOP structures every procedure with sections mapped to OSHA, HIPAA, CDC, and state dental board frameworks. But generation is just step one — the real value is that every procedure gets assigned, tracked, and enforced across your team.",
               },
               {
                 q: "Can I cancel anytime?",

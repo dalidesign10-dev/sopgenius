@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "DentiSOP terms of service. Read before using our AI SOP generation platform.",
+    "DentiSOP terms of service. Read before using our dental operations enforcement platform.",
   robots: { index: false, follow: true },
 };
 
