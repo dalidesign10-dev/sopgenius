@@ -180,44 +180,81 @@ export default function LandingPage() {
       {/* ════════════════════════════════════════════════════════════ */}
       {/*  1 · HERO                                                   */}
       {/* ════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-slate-950 pt-20 pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.15),transparent)]" />
+      <section className="relative overflow-hidden bg-slate-950 pt-16 pb-20 lg:pt-20 lg:pb-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.08),transparent)]" />
         <div className={`${C} relative`}>
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-[2.5rem] leading-[1.1] font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Your Clinic Doesn&rsquo;t Need More Documents.{" "}
-              <span className="bg-gradient-to-r from-red-400 via-orange-400 to-amber-300 bg-clip-text text-transparent">
-                It Needs a System Your Team Actually Follows.
-              </span>
-            </h1>
-            <p className="mt-6 text-lg text-slate-300">
-              Assign every procedure. Track every read. Know who&rsquo;s compliant and who isn&rsquo;t &mdash; every single day.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/20">
-                <Link href="/signup">Take Control of Your Clinic <ArrowRight className="ml-2 h-4 w-4" /></Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="h-14 bg-transparent text-white border-slate-600 hover:bg-white/5">
-                <Link href="#system-preview">See the System in Action</Link>
-              </Button>
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* LEFT — copy */}
+            <div>
+              <h1 className="text-[2.25rem] leading-[1.1] font-extrabold tracking-tight text-white sm:text-5xl">
+                Your team follows a different process every time.{" "}
+                <span className="text-red-400">This fixes that.</span>
+              </h1>
+              <p className="mt-5 text-lg text-slate-400">
+                Assign every procedure. Track every read. See who&rsquo;s non-compliant &mdash; by name.
+              </p>
+              <div className="mt-8">
+                <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/20">
+                  <Link href="/signup">See Your Clinic&rsquo;s Gaps <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+              </div>
+              <p className="mt-4 text-sm text-slate-500">Free to start. No credit card.</p>
             </div>
 
-            {/* Icon pills */}
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              {[
-                { icon: ClipboardCheck, label: "Assign to every role" },
-                { icon: Eye, label: "Track who's read what" },
-                { icon: Users, label: "See who's non-compliant" },
-                { icon: Shield, label: "OSHA + HIPAA enforced" },
-              ].map((p) => (
-                <div key={p.label} className="flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-sm text-slate-300">
-                  <p.icon className="h-4 w-4 text-indigo-400" />
-                  {p.label}
+            {/* RIGHT — live dashboard fragment */}
+            <div className="relative">
+              <div className="rounded-xl bg-white/[0.03] border border-white/10 p-4 sm:p-5">
+                {/* Compliance score bar */}
+                <div className="mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-semibold text-slate-300">Clinic Compliance Score</span>
+                    <span className="text-sm font-bold text-red-400">34%</span>
+                  </div>
+                  <div className="h-2.5 overflow-hidden rounded-full bg-white/10">
+                    <div className="h-full rounded-full bg-gradient-to-r from-red-500 to-red-400" style={{ width: "34%" }} />
+                  </div>
                 </div>
-              ))}
-            </div>
 
-            <p className="mt-5 text-sm text-slate-500">No credit card required. Free to start.</p>
+                {/* Procedure table */}
+                <div className="rounded-lg border border-white/10 overflow-hidden">
+                  {/* Header */}
+                  <div className="hidden sm:grid grid-cols-12 gap-2 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500 border-b border-white/10">
+                    <div className="col-span-4">Procedure</div>
+                    <div className="col-span-3">Assigned</div>
+                    <div className="col-span-3">Read Status</div>
+                    <div className="col-span-2 text-right">Status</div>
+                  </div>
+                  <div className="divide-y divide-white/[0.06]">
+                    {[
+                      { name: "Instrument Sterilisation", assigned: "Sarah J., Mike R.", read: "2/2 read", readC: "text-emerald-400", status: "Current", statusC: "text-emerald-400 bg-emerald-400/10", alert: false },
+                      { name: "OSHA Exposure Control", assigned: "All Staff (6)", read: "4/6 read", readC: "text-amber-400", status: "2 pending", statusC: "text-amber-400 bg-amber-400/10", alert: false },
+                      { name: "Patient Intake", assigned: "Front Desk (3)", read: "3/3 read", readC: "text-emerald-400", status: "Current", statusC: "text-emerald-400 bg-emerald-400/10", alert: false },
+                      { name: "Hazard Communication", assigned: "Tyler B., Devon M.", read: "0/2 read", readC: "text-red-400", status: "Unread", statusC: "text-red-400 bg-red-400/10", alert: true },
+                      { name: "Emergency Response", assigned: "Not assigned", read: "\u2014", readC: "text-slate-500", status: "Missing", statusC: "text-red-400 bg-red-400/10", alert: false },
+                    ].map((row) => (
+                      <div key={row.name} className="grid grid-cols-12 gap-2 items-center px-4 py-2.5">
+                        <div className="col-span-12 sm:col-span-4 flex items-center gap-2">
+                          {row.alert && <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" /><span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" /></span>}
+                          {!row.alert && <span className="h-2 w-2 rounded-full bg-slate-600" />}
+                          <span className="text-sm font-medium text-slate-200 truncate">{row.name}</span>
+                        </div>
+                        <div className="col-span-4 sm:col-span-3"><span className="text-xs text-slate-400">{row.assigned}</span></div>
+                        <div className="col-span-4 sm:col-span-3"><span className={`text-xs font-semibold ${row.readC}`}>{row.read}</span></div>
+                        <div className="col-span-4 sm:col-span-2 flex justify-end">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${row.statusC}`}>{row.status}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Alert callout */}
+                <div className="mt-3 flex items-center gap-2 rounded-lg bg-red-500/10 border border-red-500/20 px-3 py-2">
+                  <AlertTriangle className="h-3.5 w-3.5 text-red-400 shrink-0" />
+                  <span className="text-xs text-red-300">Tyler B. hasn&rsquo;t read Hazard Communication in 6 days</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -285,6 +322,186 @@ export default function LandingPage() {
             <Button size="lg" asChild className="shadow-lg shadow-primary/20">
               <Link href="/signup">Start Running Your Clinic to Standard <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════ */}
+      {/*  2b · SYSTEM PREVIEW (dashboard — shown early)               */}
+      {/* ════════════════════════════════════════════════════════════ */}
+      <section id="system-preview" className="bg-white py-20">
+        <div className={C}>
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">This is what you get</p>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Your Entire Practice. One Dashboard.</h2>
+            <p className="mt-3 text-slate-500">Every procedure documented, assigned, and tracked &mdash; visible at a glance. No signup needed to see it.</p>
+          </div>
+          <div className="mx-auto max-w-5xl">
+            <Card className="border-0 shadow-2xl ring-1 ring-slate-200 overflow-hidden">
+              {/* Browser chrome */}
+              <div className="bg-slate-800 border-b border-slate-700 px-6 py-3 flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <span className="h-3 w-3 rounded-full bg-red-400" />
+                  <span className="h-3 w-3 rounded-full bg-amber-400" />
+                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
+                </div>
+                <div className="flex-1 mx-4 rounded-md bg-slate-700 px-3 py-1">
+                  <span className="text-xs text-slate-400 font-mono">app.dentisop.com/dashboard</span>
+                </div>
+              </div>
+              <div className="bg-slate-50 p-4 sm:p-6">
+                {/* Stats */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                  {[
+                    { icon: FileText, label: "Procedures", value: "12", sub: "+3 this month", colour: "text-indigo-600", iconBg: "bg-indigo-50" },
+                    { icon: Users, label: "Team Members", value: "6", sub: "All active", colour: "text-violet-600", iconBg: "bg-violet-50" },
+                    { icon: Eye, label: "Read Rate", value: "87%", sub: "+12% vs last month", colour: "text-emerald-600", iconBg: "bg-emerald-50" },
+                    { icon: AlertTriangle, label: "Review Overdue", value: "1", sub: "Action needed", colour: "text-red-600", iconBg: "bg-red-50" },
+                  ].map((s) => (
+                    <div key={s.label} className="rounded-xl bg-white border border-slate-200 p-3.5">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${s.iconBg}`}>
+                          <s.icon className={`h-3.5 w-3.5 ${s.colour}`} />
+                        </div>
+                        <p className="text-xs text-slate-500">{s.label}</p>
+                      </div>
+                      <p className={`text-xl font-bold ${s.colour}`}>{s.value}</p>
+                      <p className="text-[11px] text-slate-400">{s.sub}</p>
+                    </div>
+                  ))}
+                </div>
+                {/* Score bar */}
+                <div className="rounded-xl bg-white border border-slate-200 p-4 mb-5">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <Activity className="h-4 w-4 text-emerald-600" />
+                      <span className="text-sm font-semibold text-slate-800">Documentation Score</span>
+                    </div>
+                    <span className="text-sm font-bold text-emerald-600">82%</span>
+                  </div>
+                  <div className="h-2.5 overflow-hidden rounded-full bg-slate-100">
+                    <div className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400" style={{ width: "82%" }} />
+                  </div>
+                </div>
+                {/* Procedure table */}
+                <div className="rounded-xl bg-white border border-slate-200 overflow-hidden">
+                  <div className="px-4 py-3 border-b bg-slate-50 flex items-center justify-between">
+                    <span className="text-sm font-semibold text-slate-800">Procedures &amp; Team Tracking</span>
+                    <Badge variant="secondary" className="text-xs">Live</Badge>
+                  </div>
+                  <div className="hidden sm:grid grid-cols-12 gap-2 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400 border-b">
+                    <div className="col-span-4">Procedure</div>
+                    <div className="col-span-3">Assigned To</div>
+                    <div className="col-span-2">Read Status</div>
+                    <div className="col-span-3 text-right">Review</div>
+                  </div>
+                  <div className="divide-y">
+                    {[
+                      { name: "Instrument Sterilisation", assigned: "Sarah J., Mike R.", read: "2/2 read", status: "Current", sc: "text-emerald-600 bg-emerald-50", readSc: "text-emerald-600" },
+                      { name: "OSHA Exposure Control", assigned: "All Staff (6)", read: "5/6 read", status: "1 pending", sc: "text-amber-600 bg-amber-50", readSc: "text-amber-600" },
+                      { name: "Patient Intake Workflow", assigned: "Front Desk", read: "3/3 read", status: "Current", sc: "text-emerald-600 bg-emerald-50", readSc: "text-emerald-600" },
+                      { name: "Insurance Verification", assigned: "Maria T., Lisa K.", read: "1/2 read", status: "Review Due", sc: "text-amber-600 bg-amber-50", readSc: "text-amber-600" },
+                      { name: "New Hire Onboarding", assigned: "Not assigned", read: "\u2014", status: "Draft", sc: "text-blue-600 bg-blue-50", readSc: "text-slate-400" },
+                    ].map((proc) => (
+                      <div key={proc.name} className="grid grid-cols-12 gap-2 items-center px-4 py-2.5 hover:bg-slate-50/80 transition-colors">
+                        <div className="col-span-12 sm:col-span-4 flex items-center gap-2">
+                          <FileText className="h-3.5 w-3.5 text-indigo-500 shrink-0" />
+                          <span className="text-sm font-medium text-slate-800 truncate">{proc.name}</span>
+                        </div>
+                        <div className="col-span-4 sm:col-span-3"><span className="text-xs text-slate-500">{proc.assigned}</span></div>
+                        <div className="col-span-4 sm:col-span-2"><span className={`text-xs font-semibold ${proc.readSc}`}>{proc.read}</span></div>
+                        <div className="col-span-4 sm:col-span-3 flex justify-end">
+                          <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${proc.sc}`}>{proc.status}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+          <div className="mt-10 text-center">
+            <Button size="lg" asChild className="shadow-lg shadow-primary/20">
+              <Link href="/signup">Get This Dashboard for Your Practice <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════ */}
+      {/*  2c · WHAT HAPPENS WHEN YOU SIGN UP                          */}
+      {/* ════════════════════════════════════════════════════════════ */}
+      <section className="bg-slate-50 py-20">
+        <div className={C}>
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Your first 24 hours</p>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+              What Happens After You Click &ldquo;Start&rdquo;
+            </h2>
+          </div>
+          <div className="mx-auto max-w-4xl">
+            <div className="space-y-0">
+              {[
+                { time: "Minute 1", icon: BookOpen, title: "Pick your first template", desc: "Choose from 9 dental-specific templates &mdash; sterilisation, OSHA exposure control, patient intake, and more. Or describe any procedure in plain language.", colour: "bg-indigo-100 text-indigo-600" },
+                { time: "Minute 2", icon: FileText, title: "Your SOP is generated", desc: "A structured, compliance-tagged procedure with regulatory cross-references, step-by-step instructions, and role assignments. Review and edit every word.", colour: "bg-violet-100 text-violet-600" },
+                { time: "Minute 3", icon: Users, title: "Assign it to your team", desc: "Select which roles need this procedure. Every staff member sees exactly which SOPs are theirs.", colour: "bg-emerald-100 text-emerald-600" },
+                { time: "Hour 1", icon: Eye, title: "Track who&rsquo;s read it", desc: "Your dashboard shows read status by name. You know who&rsquo;s compliant and who needs a nudge.", colour: "bg-amber-100 text-amber-600" },
+                { time: "Day 1", icon: Shield, title: "You&rsquo;re inspection-ready", desc: "Export audit-ready documentation with version history, acknowledgement logs, and compliance framework tags.", colour: "bg-emerald-100 text-emerald-700" },
+              ].map((step, i) => (
+                <div key={step.time} className="flex gap-5">
+                  <div className="flex flex-col items-center">
+                    <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${step.colour}`}>
+                      <step.icon className="h-6 w-6" />
+                    </div>
+                    {i < 4 && <div className="w-0.5 flex-1 bg-slate-200 my-1" />}
+                  </div>
+                  <div className="pb-8">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">{step.time}</p>
+                    <h3 className="mt-1 text-lg font-bold text-slate-900">{step.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════ */}
+      {/*  2d · TRUST & LEGITIMACY                                     */}
+      {/* ════════════════════════════════════════════════════════════ */}
+      <section className="border-y border-slate-200 bg-white py-16">
+        <div className={C}>
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald-600">Built on real standards</p>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+              Not Generic AI. Dental Compliance Standards.
+            </h2>
+            <p className="mt-3 text-slate-500">
+              Every template and generated procedure is structured around the regulatory frameworks dental inspectors actually reference.
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { framework: "OSHA", ref: "29 CFR 1910.1030", desc: "Bloodborne pathogens, hazard communication, exposure control" },
+              { framework: "HIPAA", ref: "45 CFR Parts 160 & 164", desc: "Patient privacy, security procedures, breach protocols" },
+              { framework: "CDC", ref: "MMWR 52(RR-17)", desc: "Infection control guidelines for dental settings" },
+              { framework: "State Board", ref: "Dental Practice Act", desc: "Scope of practice, supervision, record-keeping" },
+            ].map((f) => (
+              <div key={f.framework} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <Shield className="h-5 w-5 text-emerald-600" />
+                  <span className="text-lg font-bold text-slate-900">{f.framework}</span>
+                </div>
+                <p className="text-xs font-mono text-slate-400 mb-2">{f.ref}</p>
+                <p className="text-sm text-slate-600">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mx-auto mt-8 max-w-3xl rounded-xl bg-amber-50 border border-amber-200 p-5">
+            <p className="text-sm text-amber-800">
+              <span className="font-bold">Important:</span> DentiSOP structures your SOPs around these frameworks. We always recommend your compliance officer reviews generated procedures before implementation. DentiSOP is not a substitute for professional regulatory advice.
+            </p>
           </div>
         </div>
       </section>
@@ -407,10 +624,11 @@ export default function LandingPage() {
         <div className={C}>
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
-              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-red-600">Diagnosis</p>
+              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Close the gaps</p>
               <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                How Documented Is Your Practice?
+                DentiSOP Closes Every Gap in Your Practice
               </h2>
+              <p className="mt-3 text-slate-500">Here&rsquo;s what a typical practice looks like before DentiSOP &mdash; and how quickly the system fills the gaps.</p>
             </div>
 
             <Card className="border-0 shadow-2xl ring-1 ring-slate-200">
@@ -603,102 +821,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  6d · SYSTEM PREVIEW (dashboard mockup)                      */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section id="system-preview" className="bg-slate-50 py-20">
-        <div className={C}>
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Inside the platform</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Your Clinic, Under Control</h2>
-          </div>
-          <div className="mx-auto max-w-5xl">
-            <Card className="border-0 shadow-2xl ring-1 ring-slate-200 overflow-hidden">
-              {/* Browser chrome */}
-              <div className="bg-slate-800 border-b border-slate-700 px-6 py-3 flex items-center gap-3">
-                <div className="flex gap-1.5">
-                  <span className="h-3 w-3 rounded-full bg-red-400" />
-                  <span className="h-3 w-3 rounded-full bg-amber-400" />
-                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
-                </div>
-                <div className="flex-1 mx-4 rounded-md bg-slate-700 px-3 py-1">
-                  <span className="text-xs text-slate-400 font-mono">app.dentisop.com/dashboard</span>
-                </div>
-              </div>
-              <div className="bg-slate-50 p-4 sm:p-6">
-                {/* Stats */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-                  {[
-                    { icon: FileText, label: "Procedures", value: "12", sub: "+3 this month", colour: "text-indigo-600", iconBg: "bg-indigo-50" },
-                    { icon: Users, label: "Team Members", value: "6", sub: "All active", colour: "text-violet-600", iconBg: "bg-violet-50" },
-                    { icon: Eye, label: "Read Rate", value: "87%", sub: "+12% vs last month", colour: "text-emerald-600", iconBg: "bg-emerald-50" },
-                    { icon: AlertTriangle, label: "Review Overdue", value: "1", sub: "Action needed", colour: "text-red-600", iconBg: "bg-red-50" },
-                  ].map((s) => (
-                    <div key={s.label} className="rounded-xl bg-white border border-slate-200 p-3.5">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${s.iconBg}`}>
-                          <s.icon className={`h-3.5 w-3.5 ${s.colour}`} />
-                        </div>
-                        <p className="text-xs text-slate-500">{s.label}</p>
-                      </div>
-                      <p className={`text-xl font-bold ${s.colour}`}>{s.value}</p>
-                      <p className="text-[11px] text-slate-400">{s.sub}</p>
-                    </div>
-                  ))}
-                </div>
-                {/* Score bar */}
-                <div className="rounded-xl bg-white border border-slate-200 p-4 mb-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <Activity className="h-4 w-4 text-emerald-600" />
-                      <span className="text-sm font-semibold text-slate-800">Documentation Score</span>
-                    </div>
-                    <span className="text-sm font-bold text-emerald-600">82%</span>
-                  </div>
-                  <div className="h-2.5 overflow-hidden rounded-full bg-slate-100">
-                    <div className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400" style={{ width: "82%" }} />
-                  </div>
-                </div>
-                {/* Procedure table */}
-                <div className="rounded-xl bg-white border border-slate-200 overflow-hidden">
-                  <div className="px-4 py-3 border-b bg-slate-50 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-slate-800">Procedures &amp; Team Tracking</span>
-                    <Badge variant="secondary" className="text-xs">Live</Badge>
-                  </div>
-                  {/* Column headers */}
-                  <div className="hidden sm:grid grid-cols-12 gap-2 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400 border-b">
-                    <div className="col-span-4">Procedure</div>
-                    <div className="col-span-3">Assigned To</div>
-                    <div className="col-span-2">Read Status</div>
-                    <div className="col-span-3 text-right">Review</div>
-                  </div>
-                  <div className="divide-y">
-                    {[
-                      { name: "Instrument Sterilisation", assigned: "Sarah J., Mike R.", read: "2/2 read", status: "Current", sc: "text-emerald-600 bg-emerald-50", readSc: "text-emerald-600" },
-                      { name: "OSHA Exposure Control", assigned: "All Staff (6)", read: "5/6 read", status: "1 pending", sc: "text-amber-600 bg-amber-50", readSc: "text-amber-600" },
-                      { name: "Patient Intake Workflow", assigned: "Front Desk", read: "3/3 read", status: "Current", sc: "text-emerald-600 bg-emerald-50", readSc: "text-emerald-600" },
-                      { name: "Insurance Verification", assigned: "Maria T., Lisa K.", read: "1/2 read", status: "Review Due", sc: "text-amber-600 bg-amber-50", readSc: "text-amber-600" },
-                      { name: "New Hire Onboarding", assigned: "Not assigned", read: "\u2014", status: "Draft", sc: "text-blue-600 bg-blue-50", readSc: "text-slate-400" },
-                    ].map((proc) => (
-                      <div key={proc.name} className="grid grid-cols-12 gap-2 items-center px-4 py-2.5 hover:bg-slate-50/80 transition-colors">
-                        <div className="col-span-12 sm:col-span-4 flex items-center gap-2">
-                          <FileText className="h-3.5 w-3.5 text-indigo-500 shrink-0" />
-                          <span className="text-sm font-medium text-slate-800 truncate">{proc.name}</span>
-                        </div>
-                        <div className="col-span-4 sm:col-span-3"><span className="text-xs text-slate-500">{proc.assigned}</span></div>
-                        <div className="col-span-4 sm:col-span-2"><span className={`text-xs font-semibold ${proc.readSc}`}>{proc.read}</span></div>
-                        <div className="col-span-4 sm:col-span-3 flex justify-end">
-                          <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${proc.sc}`}>{proc.status}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* system preview moved to section 2b */}
 
       {/* ════════════════════════════════════════════════════════════ */}
       {/*  7 · GOOGLE DOCS / BINDER COMPARISON                        */}
