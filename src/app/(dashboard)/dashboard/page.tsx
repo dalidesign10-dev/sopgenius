@@ -11,6 +11,8 @@ import {
   ArrowRight,
   Eye,
   XCircle,
+  Send,
+  Loader2,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -38,6 +40,8 @@ const RECOMMENDED: { title: string; templateId: string; department: string; comp
 export default function DashboardPage() {
   const [sops, setSops] = useState<SOP[]>([]);
   const [loading, setLoading] = useState(true);
+  const [sendingReminders, setSendingReminders] = useState(false);
+  const [reminderMessage, setReminderMessage] = useState<string | null>(null);
   const clinic = useClinic();
   const supabase = createClient();
 
@@ -57,6 +61,41 @@ export default function DashboardPage() {
     }
     load();
   }, [supabase]);
+
+  // ── Send Reminders handler ──
+  async function handleSendReminders() {
+    const nonCompliantList = clinic.getNonCompliantMembers();
+    if (nonCompliantList.length === 0) return;
+
+    setSendingReminders(true);
+    setReminderMessage(null);
+
+    const reminders = nonCompliantList.map(({ member, unreadSopIds }) => ({
+      email: member.email,
+      name: member.name,
+      role: member.role,
+      unreadSopIds,
+    }));
+
+    try {
+      const res = await fetch("/api/send-reminder/batch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reminders }),
+      });
+
+      if (!res.ok) throw new Error("Failed to send reminders");
+
+      const data = await res.json();
+      const count = data.sent ?? reminders.length;
+      setReminderMessage(`Reminders sent to ${count} staff member${count !== 1 ? "s" : ""}.`);
+    } catch {
+      setReminderMessage("Failed to send reminders. Please try again.");
+    } finally {
+      setSendingReminders(false);
+      setTimeout(() => setReminderMessage(null), 5000);
+    }
+  }
 
   // ── Clinic Score calculation ──
   const totalProcedures = sops.length;
@@ -323,6 +362,26 @@ export default function DashboardPage() {
                     </span>
                   </div>
                 ))}
+              </div>
+              <div className="ml-8 flex items-center gap-3">
+                <Button
+                  size="sm"
+                  onClick={handleSendReminders}
+                  disabled={sendingReminders}
+                  className="gap-2"
+                >
+                  {sendingReminders ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Send className="h-4 w-4" />
+                  )}
+                  {sendingReminders ? "Sending..." : "Send Reminders"}
+                </Button>
+                {reminderMessage && (
+                  <span className={`text-sm font-medium ${reminderMessage.startsWith("Failed") ? "text-red-600" : "text-emerald-600"}`}>
+                    {reminderMessage}
+                  </span>
+                )}
               </div>
             </div>
           )}
