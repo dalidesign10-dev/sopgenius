@@ -20,19 +20,19 @@ import { useClinic } from "@/lib/clinic-store";
 import type { SOP } from "@/types";
 
 // ── Recommended procedures every dental clinic needs ──
-const RECOMMENDED = [
-  "Instrument Sterilisation Protocol",
-  "Patient Intake & Registration",
-  "OSHA Exposure Control Plan",
-  "HIPAA Privacy Procedures",
-  "Medical Emergency Response",
-  "Infection Control Protocol",
-  "Dental Radiology Safety",
-  "Hazard Communication Plan",
-  "Front Desk Opening Procedures",
-  "Front Desk Closing Procedures",
-  "New Hire Onboarding Checklist",
-  "Patient Complaint Handling",
+const RECOMMENDED: { title: string; templateId: string; department: string; compliance: string }[] = [
+  { title: "Instrument Sterilisation Protocol", templateId: "sterilisation", department: "Clinical", compliance: "OSHA / CDC" },
+  { title: "Patient Intake & Registration", templateId: "patient-intake", department: "Front Desk", compliance: "HIPAA" },
+  { title: "OSHA Exposure Control Plan", templateId: "osha-exposure", department: "Compliance", compliance: "OSHA" },
+  { title: "HIPAA Privacy Procedures", templateId: "hipaa-privacy", department: "Compliance", compliance: "HIPAA" },
+  { title: "Medical Emergency Response", templateId: "emergency-response", department: "Clinical", compliance: "OSHA" },
+  { title: "Infection Control Protocol", templateId: "infection-control", department: "Clinical", compliance: "CDC" },
+  { title: "Dental Radiology Safety", templateId: "dental-radiology", department: "Clinical", compliance: "State Board" },
+  { title: "Hazard Communication Plan", templateId: "hazard-communication", department: "Compliance", compliance: "OSHA" },
+  { title: "Front Desk Opening Procedures", templateId: "front-desk-opening", department: "Front Desk", compliance: "" },
+  { title: "Front Desk Closing Procedures", templateId: "front-desk-closing", department: "Front Desk", compliance: "" },
+  { title: "New Hire Onboarding Checklist", templateId: "new-hire-onboarding", department: "HR", compliance: "OSHA / HIPAA" },
+  { title: "Patient Complaint Handling", templateId: "patient-complaint", department: "Front Desk", compliance: "" },
 ];
 
 export default function DashboardPage() {
@@ -63,9 +63,10 @@ export default function DashboardPage() {
   const totalTeam = clinic.team.length;
   const totalAssignments = clinic.assignments.length;
   const totalReads = clinic.reads.length;
+  const totalRecommended = RECOMMENDED.length;
 
   // Score: weighted across 3 pillars
-  const documentedScore = Math.min(totalProcedures / RECOMMENDED.length, 1);
+  const documentedScore = Math.min(totalProcedures / totalRecommended, 1);
   const assignedScore =
     totalProcedures > 0 && totalTeam > 0
       ? Math.min(totalAssignments / (totalProcedures * totalTeam), 1)
@@ -80,7 +81,7 @@ export default function DashboardPage() {
   // Missing procedures
   const existingTitles = sops.map((s) => s.title.toLowerCase());
   const missing = RECOMMENDED.filter(
-    (r) => !existingTitles.some((t) => t.includes(r.toLowerCase().slice(0, 15)))
+    (r) => !existingTitles.some((t) => t.includes(r.title.toLowerCase().slice(0, 15)))
   );
 
   // Unread assignments
@@ -165,7 +166,7 @@ export default function DashboardPage() {
               <div>
                 <p className="text-xs font-medium text-slate-500">Documented</p>
                 <p className="text-lg font-bold text-slate-900">
-                  {totalProcedures}/{RECOMMENDED.length}
+                  {totalProcedures}/{totalRecommended}
                 </p>
                 <Progress
                   value={documentedScore * 100}
@@ -326,9 +327,9 @@ export default function DashboardPage() {
             </div>
           )}
 
-          {missing.length > 0 && totalProcedures > 0 && (
+          {missing.length > 0 && (
             <Link
-              href="/dashboard/create"
+              href="#missing"
               className="flex items-center gap-3 rounded-lg border border-red-200 bg-red-50/50 p-4 transition-colors hover:bg-red-50"
             >
               <XCircle className="h-5 w-5 text-red-500" />
@@ -337,8 +338,7 @@ export default function DashboardPage() {
                   {missing.length} recommended procedure{missing.length !== 1 ? "s" : ""} still missing
                 </p>
                 <p className="text-sm text-slate-500">
-                  {missing.slice(0, 3).join(", ")}
-                  {missing.length > 3 ? `, +${missing.length - 3} more` : ""}
+                  Scroll down to create them with one click.
                 </p>
               </div>
               <ArrowRight className="h-4 w-4 text-slate-400" />
@@ -346,6 +346,40 @@ export default function DashboardPage() {
           )}
         </CardContent>
       </Card>
+
+      {/* ── Still Missing ── */}
+      {missing.length > 0 && (
+        <Card id="missing">
+          <CardHeader>
+            <CardTitle className="text-lg">Still Missing</CardTitle>
+            <p className="text-sm text-slate-500">
+              These recommended procedures haven&apos;t been documented yet. Click Create to generate one instantly.
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {missing.map((proc) => (
+                <Link
+                  key={proc.templateId}
+                  href={`/dashboard/create?quick=${proc.templateId}`}
+                  className="flex items-center justify-between rounded-lg border border-dashed border-slate-200 px-4 py-3 transition-colors hover:border-primary hover:bg-slate-50"
+                >
+                  <div className="min-w-0">
+                    <p className="font-medium text-sm text-slate-900">{proc.title}</p>
+                    <p className="text-xs text-slate-500">
+                      {proc.department}{proc.compliance ? ` · ${proc.compliance}` : ""}
+                    </p>
+                  </div>
+                  <span className="flex items-center gap-1 text-xs font-medium text-primary shrink-0 ml-3">
+                    <PlusCircle className="h-3.5 w-3.5" />
+                    Create
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       {/* ── Recent Procedures ── */}
       {sops.length > 0 && (

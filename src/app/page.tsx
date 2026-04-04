@@ -150,7 +150,7 @@ const FAQS = [
   },
   {
     q: "Is this just an AI chatbot?",
-    a: "No. DentiSOP is a complete operations system\u00a0\u2014\u00a0procedure library, compliance mapping, team assignments, read-tracking, review scheduling, and audit-ready exports. The AI helps you draft; the system helps you run your clinic.",
+    a: "No. DentiSOP is an execution enforcement system\u00a0\u2014\u00a0it assigns procedures to your team, tracks who\u2019s read them, flags non-compliance by name, and ensures your clinic runs to the same standard every day. AI helps draft the procedures; the system makes sure your team actually follows them.",
   },
 ];
 
@@ -185,30 +185,30 @@ export default function LandingPage() {
         <div className={`${C} relative`}>
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-[2.5rem] leading-[1.1] font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              If Your Best Assistant Quits Tomorrow,{" "}
+              Your Clinic Doesn&rsquo;t Need More Documents.{" "}
               <span className="bg-gradient-to-r from-red-400 via-orange-400 to-amber-300 bg-clip-text text-transparent">
-                Does Your Clinic Still Run?
+                It Needs a System Your Team Actually Follows.
               </span>
             </h1>
             <p className="mt-6 text-lg text-slate-300">
-              Document every procedure. Standardise every workflow. Be inspection-ready today.
+              Assign every procedure. Track every read. Know who&rsquo;s compliant and who isn&rsquo;t &mdash; every single day.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/20">
-                <Link href="/signup">Build Your Clinic System <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="/signup">Take Control of Your Clinic <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="h-14 bg-transparent text-white border-slate-600 hover:bg-white/5">
-                <Link href="#sample-procedure">See a Real Procedure</Link>
+                <Link href="#system-preview">See the System in Action</Link>
               </Button>
             </div>
 
             {/* Icon pills */}
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {[
-                { icon: Zap, label: "60-second generation" },
-                { icon: Shield, label: "OSHA + HIPAA mapped" },
-                { icon: Users, label: "Team tracking built-in" },
-                { icon: Clock, label: "Annual review alerts" },
+                { icon: ClipboardCheck, label: "Assign to every role" },
+                { icon: Eye, label: "Track who's read what" },
+                { icon: Users, label: "See who's non-compliant" },
+                { icon: Shield, label: "OSHA + HIPAA enforced" },
               ].map((p) => (
                 <div key={p.label} className="flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-sm text-slate-300">
                   <p.icon className="h-4 w-4 text-indigo-400" />
@@ -217,7 +217,7 @@ export default function LandingPage() {
               ))}
             </div>
 
-            <p className="mt-5 text-sm text-slate-500">No credit card. First procedure documented in under 60 seconds.</p>
+            <p className="mt-5 text-sm text-slate-500">No credit card required. Free to start.</p>
           </div>
         </div>
       </section>
@@ -241,7 +241,7 @@ export default function LandingPage() {
           <div className="mx-auto max-w-2xl text-center mb-12">
             <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Real output</p>
             <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              This Is What Your Procedures Should Look Like
+              This Is What Your Team Should Be Following
             </h2>
           </div>
 
@@ -279,17 +279,11 @@ export default function LandingPage() {
             </Card>
           </div>
 
-          {/* Big stat CTA */}
+          {/* CTA */}
           <div className="mt-10 text-center">
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-6xl font-black text-primary">47</span>
-              <div className="text-left">
-                <p className="text-lg font-bold text-slate-900">seconds</p>
-                <p className="text-sm text-slate-500">to generate this procedure</p>
-              </div>
-            </div>
-            <Button size="lg" asChild className="mt-6 shadow-lg shadow-primary/20">
-              <Link href="/signup">Generate One Like This <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <p className="text-sm font-semibold text-slate-600 mb-4">This procedure is documented, assigned, and tracked. Is yours?</p>
+            <Button size="lg" asChild className="shadow-lg shadow-primary/20">
+              <Link href="/signup">Start Running Your Clinic to Standard <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
         </div>
@@ -466,17 +460,17 @@ export default function LandingPage() {
       <section className="bg-white py-20">
         <div className={C}>
           <div className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">The fix</p>
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">The system</p>
             <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              Your Clinic&rsquo;s Operating System
+              Make Sure Your Team Actually Follows the Process
             </h2>
           </div>
           <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: FolderOpen, t: "Procedure Library", d: "One searchable location for every workflow." },
-              { icon: Shield, t: "Compliance Mapping", d: "Tagged to OSHA, HIPAA, CDC, ADA." },
-              { icon: RefreshCw, t: "Version Control", d: "Update once, everyone sees it." },
-              { icon: Lock, t: "Audit-Ready Exports", d: "PDF + Word with compliance refs." },
+              { icon: ClipboardCheck, t: "Assign by Role", d: "Every staff member knows exactly which procedures are theirs." },
+              { icon: Eye, t: "Track Reads", d: "See who's read what — and who hasn't." },
+              { icon: AlertTriangle, t: "Flag Non-Compliance", d: "Dashboard shows who's behind, by name." },
+              { icon: Shield, t: "Enforce Standards", d: "OSHA, HIPAA, CDC — mapped and monitored." },
             ].map((item) => (
               <Card key={item.t} className="border-slate-100 text-center transition-all hover:border-primary/30 hover:shadow-lg group">
                 <CardContent className="pt-8 pb-6">
@@ -536,8 +530,11 @@ export default function LandingPage() {
       <section className="border-y border-indigo-100 bg-gradient-to-r from-indigo-50 via-white to-indigo-50 py-14">
         <div className={`${C} mx-auto max-w-3xl text-center`}>
           <p className="text-2xl font-bold leading-snug text-slate-900 sm:text-3xl">
-            Not a document generator.<br />
-            <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">The system your clinic runs on.</span>
+            If your team doesn&rsquo;t follow the process,{" "}
+            <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">the process doesn&rsquo;t exist.</span>
+          </p>
+          <p className="mt-4 text-lg text-slate-600">
+            DentiSOP makes sure they follow it.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             {[
@@ -561,8 +558,8 @@ export default function LandingPage() {
       <section className="bg-white py-20">
         <div className={C}>
           <div className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-indigo-600">Daily operations</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Used Every Day. Not Once.</h2>
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-indigo-600">Execution layer</p>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Your Team Uses It Every Day. Not Once.</h2>
           </div>
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
             {[
@@ -609,11 +606,11 @@ export default function LandingPage() {
       {/* ════════════════════════════════════════════════════════════ */}
       {/*  6d · SYSTEM PREVIEW (dashboard mockup)                      */}
       {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-slate-50 py-20">
+      <section id="system-preview" className="bg-slate-50 py-20">
         <div className={C}>
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Inside the platform</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Your Clinic, Organised</h2>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Your Clinic, Under Control</h2>
           </div>
           <div className="mx-auto max-w-5xl">
             <Card className="border-0 shadow-2xl ring-1 ring-slate-200 overflow-hidden">
@@ -743,13 +740,13 @@ export default function LandingPage() {
         <div className={C}>
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">How it works</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Three Steps. Done.</h2>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Document. Assign. Enforce.</h2>
           </div>
           <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-3">
             {[
-              { n: "01", icon: BookOpen, t: "Describe", d: "Pick a template or type in plain language." },
-              { n: "02", icon: Zap, t: "Generate", d: "Structured, compliant procedure in under 60 seconds." },
-              { n: "03", icon: Users, t: "Deploy", d: "Assign to staff. Track reads. Be inspection-ready." },
+              { n: "01", icon: BookOpen, t: "Document", d: "Pick a template. Your procedure is structured in seconds." },
+              { n: "02", icon: Users, t: "Assign", d: "Assign to the right roles. Everyone knows what's theirs." },
+              { n: "03", icon: Eye, t: "Enforce", d: "Track reads. Flag non-compliance. Run your clinic to standard." },
             ].map((s) => (
               <div key={s.n} className="text-center group">
                 <div className="relative mx-auto flex h-18 w-18 items-center justify-center rounded-2xl bg-primary/10 group-hover:bg-primary/15 transition-colors" style={{ height: "4.5rem", width: "4.5rem" }}>
@@ -863,20 +860,20 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.12),transparent)]" />
         <div className={`${C} relative`}>
           <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-6 text-sm font-bold uppercase tracking-widest text-red-400">Stop gambling</p>
+            <p className="mb-6 text-sm font-bold uppercase tracking-widest text-red-400">Stop hoping</p>
             <h2 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-              Your Next Inspector Won&rsquo;t Send a Calendar Invite.
+              Hope Is Not a System. Control Is.
             </h2>
             <p className="mt-5 text-lg text-slate-400">
-              Every day without documented procedures is a gamble.
+              Right now, you&rsquo;re hoping your team follows the process. Hoping someone remembers the steps. Hoping the inspector doesn&rsquo;t show up.
             </p>
             <p className="mt-3 font-medium text-white">
-              Stop running your clinic on memory.
+              Replace hope with a system that enforces it.
             </p>
             <div className="mt-8">
               <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/25">
                 <Link href="/signup">
-                  Standardise Your Clinic Now
+                  Take Control Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
