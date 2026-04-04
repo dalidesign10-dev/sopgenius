@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/server";
+import { AssignmentPanel } from "@/components/dashboard/assignment-panel";
 import type { SOP, SOPContent } from "@/types";
 
 export const metadata: Metadata = {
@@ -82,9 +83,9 @@ export default async function SOPViewerPage({
       {/* Back button */}
       <div>
         <Button asChild variant="ghost" size="sm">
-          <Link href="/dashboard">
+          <Link href="/dashboard/procedures">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Dashboard
+            Back to Procedures
           </Link>
         </Button>
       </div>
@@ -133,6 +134,9 @@ export default async function SOPViewerPage({
           <div className="text-red-600 font-semibold">⚠ Annual review overdue ({days} days since last update)</div>
         )}
       </div>
+
+      {/* Team Assignment Panel */}
+      <AssignmentPanel sopId={id} />
 
       {/* Review alert */}
       {needsReview && (
