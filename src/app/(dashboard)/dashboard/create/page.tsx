@@ -21,23 +21,23 @@ import {
   Loader2,
   Check,
   FileText,
-  Users,
+  Shield,
   ShieldCheck,
-  Server,
-  DollarSign,
+  Syringe,
   ClipboardList,
-  Truck,
+  Users,
+  Phone,
   AlertTriangle,
-  BookOpen,
+  Heart,
 } from "lucide-react";
 
-// ── Template definitions ──────────────────────────────────────────────
+// ── Dental-specific templates ──────────────────────────────────────
 
 interface TemplateOption {
   id: string;
   title: string;
   description: string;
-  industry: string;
+  category: string;
   icon: React.ReactNode;
   prefill: {
     processDescription: string;
@@ -45,128 +45,201 @@ interface TemplateOption {
     department: string;
     complexity: string;
     targetAudience: string;
+    complianceFrameworks: string[];
   };
 }
 
 const TEMPLATES: TemplateOption[] = [
   {
-    id: "onboarding",
-    title: "Employee Onboarding",
-    description: "Standardize your new hire orientation and training process.",
-    industry: "HR",
-    icon: <Users className="h-5 w-5" />,
+    id: "sterilisation",
+    title: "Instrument Sterilisation Protocol",
+    description: "Step-by-step instrument cleaning, packaging, and autoclave sterilisation process.",
+    category: "Clinical",
+    icon: <Syringe className="h-5 w-5" />,
     prefill: {
       processDescription:
-        "Employee onboarding process from offer acceptance through the first 90 days, including orientation, training, system access setup, and performance check-ins.",
-      industry: "Other",
-      department: "HR",
-      complexity: "Intermediate",
-      targetAudience: "New Employees",
-    },
-  },
-  {
-    id: "support-escalation",
-    title: "Customer Support Escalation",
-    description: "Define clear paths for escalating customer issues.",
-    industry: "Customer Support",
-    icon: <AlertTriangle className="h-5 w-5" />,
-    prefill: {
-      processDescription:
-        "Customer support escalation process including triage criteria, tier-based routing, SLA timelines, and resolution tracking.",
-      industry: "Technology/SaaS",
-      department: "Customer Support",
+        "Complete instrument sterilisation protocol for a dental practice, covering collection of used instruments, ultrasonic cleaning, hand scrubbing, corrosion inhibitor application, packaging, autoclave loading and cycle selection, biological monitoring, storage, and documentation of each sterilisation batch.",
+      industry: "Dental",
+      department: "Clinical",
       complexity: "Intermediate",
       targetAudience: "All Staff",
+      complianceFrameworks: ["OSHA", "CDC Guidelines", "HTM 01-05"],
     },
   },
   {
-    id: "inventory",
-    title: "Inventory Management",
-    description: "Track stock levels, ordering, and warehouse operations.",
-    industry: "Retail / Logistics",
-    icon: <Truck className="h-5 w-5" />,
-    prefill: {
-      processDescription:
-        "Inventory management covering stock receiving, storage, cycle counts, reorder triggers, and discrepancy resolution.",
-      industry: "Retail",
-      department: "Operations",
-      complexity: "Advanced",
-      targetAudience: "Experienced Staff",
-    },
-  },
-  {
-    id: "deployment",
-    title: "Software Deployment",
-    description: "Standardize code releases and rollback procedures.",
-    industry: "Technology",
-    icon: <Server className="h-5 w-5" />,
-    prefill: {
-      processDescription:
-        "Software deployment pipeline including code review, staging verification, production release, monitoring, and rollback procedures.",
-      industry: "Technology/SaaS",
-      department: "IT",
-      complexity: "Advanced",
-      targetAudience: "Experienced Staff",
-    },
-  },
-  {
-    id: "financial-reporting",
-    title: "Financial Reporting",
-    description: "Ensure accurate and timely financial statements.",
-    industry: "Finance",
-    icon: <DollarSign className="h-5 w-5" />,
-    prefill: {
-      processDescription:
-        "Monthly financial reporting process including data collection, reconciliation, report generation, review, and submission to stakeholders.",
-      industry: "Finance",
-      department: "Finance",
-      complexity: "Advanced",
-      targetAudience: "Experienced Staff",
-    },
-  },
-  {
-    id: "quality-control",
-    title: "Quality Control",
-    description: "Maintain product quality through systematic inspection.",
-    industry: "Manufacturing",
+    id: "patient-intake",
+    title: "Patient Intake & Registration",
+    description: "New and returning patient check-in, medical history, and consent workflow.",
+    category: "Front Desk",
     icon: <ClipboardList className="h-5 w-5" />,
     prefill: {
       processDescription:
-        "Quality control inspection process for manufactured goods including incoming material checks, in-process inspections, final testing, and non-conformance handling.",
-      industry: "Manufacturing",
-      department: "Quality Assurance",
-      complexity: "Intermediate",
+        "Patient intake and registration procedure for a dental practice, including greeting the patient, verifying identity and insurance, collecting and reviewing medical history form, obtaining informed consent, entering data into the practice management system, and notifying the clinical team the patient is ready.",
+      industry: "Dental",
+      department: "Front Desk",
+      complexity: "Basic",
       targetAudience: "All Staff",
+      complianceFrameworks: ["HIPAA"],
     },
   },
   {
-    id: "data-backup",
-    title: "Data Backup & Recovery",
-    description: "Protect critical data with reliable backup procedures.",
-    industry: "Technology",
+    id: "osha-exposure",
+    title: "OSHA Exposure Control Plan",
+    description: "Bloodborne pathogen exposure prevention, response, and reporting.",
+    category: "Compliance",
+    icon: <Shield className="h-5 w-5" />,
+    prefill: {
+      processDescription:
+        "OSHA Bloodborne Pathogen Exposure Control Plan for a dental practice, covering exposure determination by job classification, universal precautions, engineering and work practice controls, PPE requirements, hepatitis B vaccination policy, post-exposure evaluation and follow-up, sharps injury log, employee training schedule, and annual plan review.",
+      industry: "Dental",
+      department: "Compliance",
+      complexity: "Advanced",
+      targetAudience: "All Staff",
+      complianceFrameworks: ["OSHA", "CDC Guidelines"],
+    },
+  },
+  {
+    id: "hipaa-privacy",
+    title: "HIPAA Privacy Procedures",
+    description: "Patient data handling, access controls, and breach response.",
+    category: "Compliance",
     icon: <ShieldCheck className="h-5 w-5" />,
     prefill: {
       processDescription:
-        "Data backup and disaster recovery procedures including scheduled backups, verification, offsite storage, and recovery testing.",
-      industry: "Technology/SaaS",
-      department: "IT",
+        "HIPAA privacy procedures for a dental practice, covering Notice of Privacy Practices distribution, minimum necessary standard, patient access to records, authorisation for disclosures, electronic PHI safeguards, workstation security, social media policy, breach identification and notification procedures, staff training requirements, and documentation retention.",
+      industry: "Dental",
+      department: "Compliance",
       complexity: "Advanced",
-      targetAudience: "Experienced Staff",
+      targetAudience: "All Staff",
+      complianceFrameworks: ["HIPAA"],
     },
   },
   {
-    id: "incident-response",
-    title: "Incident Response",
-    description: "Respond to security incidents quickly and effectively.",
-    industry: "Cybersecurity",
+    id: "emergency-response",
+    title: "Medical Emergency Response",
+    description: "Protocols for syncope, allergic reactions, cardiac arrest, and other emergencies.",
+    category: "Clinical",
+    icon: <Heart className="h-5 w-5" />,
+    prefill: {
+      processDescription:
+        "Medical emergency response procedures for a dental practice, covering emergency kit contents and checks, team roles and assignments, protocols for syncope, anaphylaxis, cardiac arrest, seizure, hypoglycaemia, and aspiration, emergency drug dosages, oxygen administration, AED use, when to call emergency services, post-incident documentation, and quarterly emergency drills.",
+      industry: "Dental",
+      department: "Clinical",
+      complexity: "Advanced",
+      targetAudience: "All Staff",
+      complianceFrameworks: ["OSHA", "ADA Standards"],
+    },
+  },
+  {
+    id: "infection-control",
+    title: "Infection Control Protocol",
+    description: "Daily infection prevention including PPE, surface disinfection, and waste handling.",
+    category: "Clinical",
+    icon: <Shield className="h-5 w-5" />,
+    prefill: {
+      processDescription:
+        "Infection control protocol for a dental practice, covering hand hygiene procedures, PPE donning and doffing sequence, operatory setup and barrier placement, surface disinfection between patients, dental unit waterline management, regulated waste segregation and disposal, laundry handling, and daily/weekly cleaning checklists.",
+      industry: "Dental",
+      department: "Clinical",
+      complexity: "Intermediate",
+      targetAudience: "All Staff",
+      complianceFrameworks: ["OSHA", "CDC Guidelines", "EPA"],
+    },
+  },
+  {
+    id: "front-desk-opening",
+    title: "Front Desk Opening Procedures",
+    description: "Morning checklist from unlocking the door to first patient arrival.",
+    category: "Front Desk",
+    icon: <ClipboardList className="h-5 w-5" />,
+    prefill: {
+      processDescription:
+        "Front desk morning opening procedures for a dental practice, covering building access and alarm deactivation, lights and HVAC, computer and phone system startup, checking voicemail and after-hours messages, reviewing the day's schedule, confirming appointments, printing route slips or day sheets, preparing patient forms, verifying insurance eligibility for the day's patients, and morning huddle preparation.",
+      industry: "Dental",
+      department: "Front Desk",
+      complexity: "Basic",
+      targetAudience: "All Staff",
+      complianceFrameworks: [],
+    },
+  },
+  {
+    id: "front-desk-closing",
+    title: "Front Desk Closing Procedures",
+    description: "End-of-day checklist from last patient to lockup.",
+    category: "Front Desk",
+    icon: <ClipboardList className="h-5 w-5" />,
+    prefill: {
+      processDescription:
+        "Front desk end-of-day closing procedures for a dental practice, covering reconciling the day's payments and deposits, posting charges and adjustments, confirming next-day appointments, forwarding phones to after-hours service, running end-of-day reports, backing up data, securing patient records, shutting down computers and equipment, setting the alarm, and locking the building.",
+      industry: "Dental",
+      department: "Front Desk",
+      complexity: "Basic",
+      targetAudience: "All Staff",
+      complianceFrameworks: ["HIPAA"],
+    },
+  },
+  {
+    id: "new-hire-onboarding",
+    title: "New Hire Onboarding Checklist",
+    description: "First-week orientation covering compliance training, systems access, and shadowing.",
+    category: "HR",
+    icon: <Users className="h-5 w-5" />,
+    prefill: {
+      processDescription:
+        "New hire onboarding checklist for a dental practice, covering pre-arrival preparation, first-day orientation, practice tour, introduction to team, OSHA and HIPAA compliance training, practice management software training, phone system training, role-specific shadowing schedule, uniform and badge setup, emergency procedure review, 30/60/90-day check-in milestones.",
+      industry: "Dental",
+      department: "HR",
+      complexity: "Intermediate",
+      targetAudience: "All Staff",
+      complianceFrameworks: ["OSHA", "HIPAA"],
+    },
+  },
+  {
+    id: "patient-complaint",
+    title: "Patient Complaint Handling",
+    description: "Receive, escalate, resolve, and document patient concerns.",
+    category: "Front Desk",
+    icon: <Phone className="h-5 w-5" />,
+    prefill: {
+      processDescription:
+        "Patient complaint handling procedure for a dental practice, covering receiving the complaint (in person, phone, online), active listening and de-escalation, documenting the complaint, escalation criteria and chain of command, resolution options and authority levels, follow-up communication with the patient, logging in the complaint tracking system, and identifying patterns for practice improvement.",
+      industry: "Dental",
+      department: "Front Desk",
+      complexity: "Intermediate",
+      targetAudience: "All Staff",
+      complianceFrameworks: [],
+    },
+  },
+  {
+    id: "hazard-communication",
+    title: "Hazard Communication Plan",
+    description: "Chemical safety, SDS management, labelling, and staff training.",
+    category: "Compliance",
     icon: <AlertTriangle className="h-5 w-5" />,
     prefill: {
       processDescription:
-        "Security incident response plan covering detection, containment, eradication, recovery, and post-incident review.",
-      industry: "Technology/SaaS",
-      department: "IT",
-      complexity: "Advanced",
-      targetAudience: "Experienced Staff",
+        "OSHA Hazard Communication Plan for a dental practice, covering chemical inventory list, Safety Data Sheet management and accessibility, container labelling requirements, employee training on chemical hazards, PPE for chemical handling, spill response procedures, and annual review and update of the plan.",
+      industry: "Dental",
+      department: "Compliance",
+      complexity: "Intermediate",
+      targetAudience: "All Staff",
+      complianceFrameworks: ["OSHA"],
+    },
+  },
+  {
+    id: "dental-radiology",
+    title: "Dental Radiology Safety",
+    description: "X-ray protocols, lead apron use, equipment QA, and exposure documentation.",
+    category: "Clinical",
+    icon: <ShieldCheck className="h-5 w-5" />,
+    prefill: {
+      processDescription:
+        "Dental radiology safety protocol covering ALARA principle, patient selection criteria, lead apron and thyroid collar use, positioning and technique for periapical, bitewing, and panoramic radiographs, digital sensor or film handling, equipment quality assurance checks, radiation exposure logging, and staff dosimetry badge programme.",
+      industry: "Dental",
+      department: "Clinical",
+      complexity: "Intermediate",
+      targetAudience: "All Staff",
+      complianceFrameworks: ["OSHA", "State Dental Board"],
     },
   },
 ];
@@ -185,7 +258,7 @@ interface FormData {
 
 const INITIAL_FORM: FormData = {
   processDescription: "",
-  industry: "",
+  industry: "Dental",
   department: "",
   complianceFrameworks: [],
   complexity: "Intermediate",
@@ -194,10 +267,10 @@ const INITIAL_FORM: FormData = {
 };
 
 const LOADING_MESSAGES = [
-  "Analyzing your process...",
-  "Structuring SOP sections...",
-  "Adding compliance notes...",
-  "Finalizing your SOP...",
+  "Analysing your procedure...",
+  "Structuring sections...",
+  "Adding compliance references...",
+  "Finalising your procedure...",
 ];
 
 // ── Step indicator ────────────────────────────────────────────────────
@@ -245,7 +318,7 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
 
 // ── Page component ────────────────────────────────────────────────────
 
-export default function CreateSOPPage() {
+export default function CreateProcedurePage() {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
@@ -304,7 +377,7 @@ export default function CreateSOPPage() {
 
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
-        throw new Error(body.error || "Failed to generate SOP");
+        throw new Error(body.error || "Failed to generate procedure");
       }
 
       const data = await res.json();
@@ -326,7 +399,7 @@ export default function CreateSOPPage() {
       const { data: { user } } = await supabase.auth.getUser();
 
       if (!user) {
-        setError("You must be logged in to save SOPs.");
+        setError("You must be logged in to save procedures.");
         setSaving(false);
         return;
       }
@@ -335,7 +408,7 @@ export default function CreateSOPPage() {
         .from("sops")
         .insert({
           user_id: user.id,
-          title: generatedSOP.header?.title || "Untitled SOP",
+          title: generatedSOP.header?.title || "Untitled Procedure",
           description: form.processDescription,
           industry: form.industry,
           department: form.department,
@@ -351,7 +424,7 @@ export default function CreateSOPPage() {
       router.push(`/dashboard/sop/${data.id}`);
     } catch (err: any) {
       console.error("Save error:", err);
-      setError(err.message ?? "Failed to save SOP.");
+      setError(err.message ?? "Failed to save procedure.");
       setSaving(false);
     }
   }
@@ -361,6 +434,9 @@ export default function CreateSOPPage() {
     setSopId(null);
     handleGenerate();
   }
+
+  // Group templates by category
+  const categories = ["Clinical", "Front Desk", "Compliance", "HR"];
 
   // ── Render ──────────────────────────────────────────────────────────
 
@@ -372,58 +448,62 @@ export default function CreateSOPPage() {
       {step === 1 && (
         <div>
           <div className="mb-6 text-center">
-            <h1 className="text-2xl font-bold">Choose a Template</h1>
+            <h1 className="text-2xl font-bold">New Procedure</h1>
             <p className="mt-1 text-muted-foreground">
-              Pick a template to get started quickly, or start from scratch.
+              Choose a template to document a procedure, or describe one from scratch.
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Start from Scratch */}
-            <Card
-              className="cursor-pointer border-dashed hover:border-primary hover:shadow-md transition-all"
-              onClick={() => selectTemplate(null)}
-            >
-              <CardContent className="flex flex-col items-center justify-center py-10 text-center">
-                <FileText className="mb-3 h-8 w-8 text-muted-foreground" />
-                <h3 className="font-semibold">Start from Scratch</h3>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Build your SOP without a template
+          {/* Start from Scratch */}
+          <Card
+            className="cursor-pointer border-dashed hover:border-primary hover:shadow-md transition-all mb-6"
+            onClick={() => selectTemplate(null)}
+          >
+            <CardContent className="flex items-center gap-4 py-5">
+              <FileText className="h-8 w-8 text-muted-foreground" />
+              <div>
+                <h3 className="font-semibold">Describe your own procedure</h3>
+                <p className="text-sm text-muted-foreground">
+                  Write a description and we&apos;ll structure it into a complete procedure document.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+              <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground" />
+            </CardContent>
+          </Card>
 
-            {TEMPLATES.map((tpl) => (
-              <Card
-                key={tpl.id}
-                className={`cursor-pointer hover:border-primary hover:shadow-md transition-all ${
-                  selectedTemplate === tpl.id ? "border-primary ring-2 ring-primary/20" : ""
-                }`}
-                onClick={() => selectTemplate(tpl.id)}
-              >
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                      {tpl.icon}
-                    </div>
-                    <div className="min-w-0">
-                      <h3 className="font-semibold text-sm leading-tight">
-                        {tpl.title}
-                      </h3>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-xs text-muted-foreground line-clamp-2">
-                    {tpl.description}
-                  </p>
-                  <Badge variant="secondary" className="mt-3 text-[10px]">
-                    {tpl.industry}
-                  </Badge>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {/* Templates grouped by category */}
+          {categories.map((cat) => {
+            const catTemplates = TEMPLATES.filter((t) => t.category === cat);
+            if (catTemplates.length === 0) return null;
+            return (
+              <div key={cat} className="mb-6">
+                <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                  {cat}
+                </h2>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {catTemplates.map((tpl) => (
+                    <Card
+                      key={tpl.id}
+                      className="cursor-pointer hover:border-primary hover:shadow-md transition-all"
+                      onClick={() => selectTemplate(tpl.id)}
+                    >
+                      <CardContent className="flex items-start gap-3 py-4">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                          {tpl.icon}
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="font-semibold text-sm">{tpl.title}</h3>
+                          <p className="mt-0.5 text-xs text-muted-foreground line-clamp-2">
+                            {tpl.description}
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
 
@@ -431,9 +511,9 @@ export default function CreateSOPPage() {
       {step === 2 && (
         <div>
           <div className="mb-6">
-            <h1 className="text-2xl font-bold">SOP Details</h1>
+            <h1 className="text-2xl font-bold">Procedure Details</h1>
             <p className="mt-1 text-muted-foreground">
-              Provide details about the process you want to document.
+              Describe what your team does. We&apos;ll turn it into a structured procedure.
             </p>
           </div>
 
@@ -447,12 +527,12 @@ export default function CreateSOPPage() {
             {/* Process Description */}
             <div>
               <label className="mb-1.5 block text-sm font-medium">
-                Process Description <span className="text-destructive">*</span>
+                What does your team do? <span className="text-destructive">*</span>
               </label>
               <textarea
                 rows={6}
                 className="w-full rounded-lg border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
-                placeholder="Describe the business process you want to document as an SOP. Be as detailed as possible..."
+                placeholder="Describe the procedure step by step. For example: 'After each patient, the dental assistant collects used instruments, runs them through the ultrasonic cleaner for 10 minutes, then...'"
                 value={form.processDescription}
                 onChange={(e) =>
                   setForm((prev) => ({
@@ -571,7 +651,7 @@ export default function CreateSOPPage() {
             {/* Target Audience */}
             <div>
               <label className="mb-1.5 block text-sm font-medium">
-                Target Audience
+                Who follows this procedure?
               </label>
               <select
                 className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
@@ -584,10 +664,13 @@ export default function CreateSOPPage() {
                 }
               >
                 {[
-                  "New Employees",
-                  "Experienced Staff",
-                  "Management",
                   "All Staff",
+                  "Dentist",
+                  "Dental Assistant",
+                  "Hygienist",
+                  "Front Desk",
+                  "Office Manager",
+                  "New Hires",
                 ].map((aud) => (
                   <option key={aud} value={aud}>
                     {aud}
@@ -607,7 +690,7 @@ export default function CreateSOPPage() {
               <textarea
                 rows={3}
                 className="w-full rounded-lg border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
-                placeholder="Any extra context, specific requirements, or preferences..."
+                placeholder="Any specific requirements, equipment, or details for your practice..."
                 value={form.additionalNotes}
                 onChange={(e) =>
                   setForm((prev) => ({
@@ -633,7 +716,7 @@ export default function CreateSOPPage() {
                 }
               >
                 <Sparkles className="mr-2 h-4 w-4" />
-                Generate SOP
+                Generate Procedure
               </Button>
             </div>
           </div>
@@ -648,7 +731,7 @@ export default function CreateSOPPage() {
             <div className="absolute inset-0 h-16 w-16 animate-spin rounded-full border-4 border-transparent border-t-primary" />
             <Sparkles className="absolute inset-0 m-auto h-6 w-6 text-primary" />
           </div>
-          <h2 className="text-xl font-semibold">Generating Your SOP</h2>
+          <h2 className="text-xl font-semibold">Building Your Procedure</h2>
           <p className="mt-3 text-muted-foreground animate-pulse">
             {LOADING_MESSAGES[loadingMsg]}
           </p>
@@ -670,9 +753,9 @@ export default function CreateSOPPage() {
         <div>
           <div className="mb-6 flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold">Review Your SOP</h1>
+              <h1 className="text-2xl font-bold">Review Your Procedure</h1>
               <p className="mt-1 text-muted-foreground">
-                Review the generated SOP below and save or regenerate.
+                Check the procedure below, then save it to your clinic.
               </p>
             </div>
             <div className="flex gap-2">
@@ -686,7 +769,7 @@ export default function CreateSOPPage() {
                 ) : (
                   <Check className="mr-2 h-4 w-4" />
                 )}
-                Save SOP
+                Save Procedure
               </Button>
             </div>
           </div>
@@ -707,7 +790,7 @@ export default function CreateSOPPage() {
               ) : (
                 <Check className="mr-2 h-4 w-4" />
               )}
-              Save SOP
+              Save Procedure
             </Button>
           </div>
         </div>

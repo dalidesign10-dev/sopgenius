@@ -42,11 +42,13 @@ interface ClinicStore {
   assignProcedure: (sopId: string, memberId: string) => void;
   unassignProcedure: (sopId: string, memberId: string) => void;
   markRead: (sopId: string, memberId: string) => void;
+  resetReadsForProcedure: (sopId: string) => void;
   getAssignedMembers: (sopId: string) => TeamMember[];
   getReadMembers: (sopId: string) => string[];
   getMemberAssignments: (memberId: string) => string[];
   getMemberReads: (memberId: string) => string[];
   isRead: (sopId: string, memberId: string) => boolean;
+  getNonCompliantMembers: () => { member: TeamMember; unreadSopIds: string[] }[];
 }
 
 const ClinicContext = createContext<ClinicStore | null>(null);
@@ -175,11 +177,32 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
     [reads]
   );
 
+  const resetReadsForProcedure = useCallback((sopId: string) => {
+    setReads((prev) => prev.filter((r) => r.sopId !== sopId));
+  }, []);
+
   const isRead = useCallback(
     (sopId: string, memberId: string) =>
       reads.some((r) => r.sopId === sopId && r.memberId === memberId),
     [reads]
   );
+
+  const getNonCompliantMembers = useCallback(() => {
+    return team
+      .map((member) => {
+        const assignedSopIds = assignments
+          .filter((a) => a.memberId === member.id)
+          .map((a) => a.sopId);
+        const readSopIds = reads
+          .filter((r) => r.memberId === member.id)
+          .map((r) => r.sopId);
+        const unreadSopIds = assignedSopIds.filter(
+          (sopId) => !readSopIds.includes(sopId)
+        );
+        return { member, unreadSopIds };
+      })
+      .filter((entry) => entry.unreadSopIds.length > 0);
+  }, [team, assignments, reads]);
 
   return (
     <ClinicContext.Provider
@@ -192,11 +215,13 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
         assignProcedure,
         unassignProcedure,
         markRead,
+        resetReadsForProcedure,
         getAssignedMembers,
         getReadMembers,
         getMemberAssignments,
         getMemberReads,
         isRead,
+        getNonCompliantMembers,
       }}
     >
       {children}

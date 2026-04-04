@@ -86,6 +86,9 @@ export default function DashboardPage() {
   // Unread assignments
   const unreadCount = totalAssignments - totalReads;
 
+  // Non-compliant staff (by name)
+  const nonCompliant = clinic.getNonCompliantMembers();
+
   // Score colour
   const scoreColour =
     clinicScore >= 70
@@ -299,16 +302,26 @@ export default function DashboardPage() {
             </Link>
           )}
 
-          {unreadCount > 0 && (
-            <div className="flex items-center gap-3 rounded-lg border border-amber-200 bg-amber-50/50 p-4">
-              <Eye className="h-5 w-5 text-amber-600" />
-              <div className="flex-1">
+          {nonCompliant.length > 0 && (
+            <div className="rounded-lg border border-amber-200 bg-amber-50/50 p-4 space-y-3">
+              <div className="flex items-center gap-3">
+                <Eye className="h-5 w-5 text-amber-600" />
                 <p className="font-medium text-slate-900">
-                  {unreadCount} unread assignment{unreadCount !== 1 ? "s" : ""}
+                  {nonCompliant.length} staff member{nonCompliant.length !== 1 ? "s" : ""} not compliant
                 </p>
-                <p className="text-sm text-slate-500">
-                  Some team members haven&apos;t read their assigned procedures yet.
-                </p>
+              </div>
+              <div className="space-y-2 ml-8">
+                {nonCompliant.map(({ member, unreadSopIds }) => (
+                  <div key={member.id} className="flex items-center justify-between text-sm">
+                    <div>
+                      <span className="font-medium text-slate-900">{member.name}</span>
+                      <span className="text-slate-500"> · {member.role}</span>
+                    </div>
+                    <span className="text-amber-700 font-medium">
+                      {unreadSopIds.length} unread
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           )}
