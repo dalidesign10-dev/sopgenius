@@ -186,19 +186,38 @@ export default function LandingPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* LEFT — copy */}
             <div>
+              <p className="inline-flex items-center gap-2 rounded-full bg-red-500/10 border border-red-500/20 px-4 py-1.5 text-sm font-semibold text-red-400 mb-6">
+                <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" /><span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" /></span>
+                Most dental clinics fail audits because of missing SOPs
+              </p>
               <h1 className="text-[2.25rem] leading-[1.1] font-extrabold tracking-tight text-white sm:text-5xl">
-                Your team follows a different process every time.{" "}
-                <span className="text-red-400">This fixes that.</span>
+                The Dental Operations System.{" "}
+                <span className="text-red-400">Train staff 3x faster. Stay audit&#8209;ready.</span>
               </h1>
               <p className="mt-5 text-lg text-slate-400">
-                Assign every procedure. Track every read. See who&rsquo;s non-compliant &mdash; by name.
+                Pre-built SOPs for sterilisation, patient intake, and emergencies. Assign to your team, track who&rsquo;s read them, flag non&#8209;compliance by name.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/20">
                   <Link href="/signup">See Your Clinic&rsquo;s Gaps <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
+                <a href="#sample-procedure" className="text-sm font-semibold text-slate-400 hover:text-white transition-colors underline underline-offset-4 decoration-slate-600 hover:decoration-white">See a real SOP output &darr;</a>
               </div>
-              <p className="mt-4 text-sm text-slate-500">Free to start. No credit card.</p>
+              <p className="mt-4 text-sm text-slate-500">Free to start. No credit card. Setup takes 2 minutes.</p>
+
+              {/* ROI proof strip */}
+              <div className="mt-8 flex flex-wrap gap-6 border-t border-white/10 pt-6">
+                {[
+                  { value: "2 min", label: "to document a procedure" },
+                  { value: "1 day", label: "new hire onboarding vs 2-3 weeks" },
+                  { value: "100%", label: "read-tracking coverage" },
+                ].map((s) => (
+                  <div key={s.label}>
+                    <p className="text-xl font-black text-white">{s.value}</p>
+                    <p className="text-xs text-slate-500">{s.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* RIGHT — live dashboard fragment */}
@@ -269,6 +288,26 @@ export default function LandingPage() {
           <span className="flex items-center gap-2"><UserX className="h-4 w-4 opacity-80" />$23,650&ndash;$94,600 per DA replacement</span>
         </div>
       </div>
+
+      {/* ── HOW IT WORKS (3-step micro-strip) ────────────────────── */}
+      <section className="bg-white py-14 border-b border-slate-100">
+        <div className={C}>
+          <p className="text-center text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">How it works</p>
+          <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-3 text-center">
+            {[
+              { n: "1", title: "Pick a template", desc: "Choose from pre-built dental SOPs — sterilisation, intake, emergencies, OSHA, and more." },
+              { n: "2", title: "Assign to your team", desc: "Select which roles need it. Staff see exactly which procedures are theirs." },
+              { n: "3", title: "Track compliance", desc: "See who read what, who's behind, and export audit-ready docs in one click." },
+            ].map((s) => (
+              <div key={s.n}>
+                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white text-sm font-black mb-3">{s.n}</div>
+                <h3 className="text-base font-bold text-slate-900">{s.title}</h3>
+                <p className="mt-1 text-sm text-slate-500">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ════════════════════════════════════════════════════════════ */}
       {/*  2 · SAMPLE PROCEDURE (collapsible)                         */}
