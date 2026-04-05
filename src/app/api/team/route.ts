@@ -81,7 +81,7 @@ export async function POST(request: Request) {
           Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: process.env.RESEND_FROM_EMAIL || "DentiSOP <noreply@dentisop.com>",
+          from: process.env.RESEND_FROM_EMAIL || "DentiSOP <onboarding@resend.dev>",
           to: email.toLowerCase().trim(),
           subject: `You're invited to join ${clinicName} on DentiSOP`,
           html: `
