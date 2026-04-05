@@ -187,7 +187,7 @@ export default function LandingPage() {
                 <span className="text-red-400">to One Standard</span>
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-slate-400">
-                Find missing procedures, generate role-based SOPs, assign them to staff, and keep organized records&mdash;in one system built for dental practices.
+                Find missing procedures, generate role-based SOPs, assign them to staff, and keep organized records&mdash;in one system built for U.S. dental practices.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/20">
@@ -196,6 +196,7 @@ export default function LandingPage() {
                 <a href="#sample-sop" className="text-sm font-semibold text-slate-400 hover:text-white transition-colors underline underline-offset-4 decoration-slate-600 hover:decoration-white">View Sample SOP &darr;</a>
               </div>
               <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500">
+                <span className="flex items-center gap-1.5">🇺🇸 Built for U.S. practices</span>
                 <span className="flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />PHI-free platform</span>
                 <span className="flex items-center gap-1.5"><BadgeCheck className="h-3.5 w-3.5 text-blue-400" />30-day money-back guarantee</span>
                 <span className="flex items-center gap-1.5"><Lock className="h-3.5 w-3.5 text-slate-400" />256-bit encryption</span>

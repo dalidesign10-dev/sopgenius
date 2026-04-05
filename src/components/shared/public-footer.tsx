@@ -12,7 +12,7 @@ export function PublicFooter() {
               DentiSOP
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              Dental compliance and SOP software. Document procedures, assign them to staff, and track acknowledgments.
+              SOP software built for U.S. dental practices. Document procedures, assign them to staff, and track acknowledgments.
             </p>
           </div>
 
