@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dental Office SOPs: Assign, Track, and Enforce by Role | DentiSOP",
+  title: "Dental Office SOPs: Assign, Track, and Manage by Role | DentiSOP",
   description:
-    "Dental office SOPs that are assigned by role, tracked with read receipts, and enforced with non-compliance flags. Know who has read what — by name.",
+    "Dental office SOPs that are assigned by role, tracked with read receipts and flags. Know who has read what — by name.",
 };
 
 const prioritySops = [
@@ -37,7 +37,7 @@ const prioritySops = [
   },
   {
     title: "HIPAA Privacy and Security",
-    why: "Federal law. Violations carry fines from $100 to $50,000 per incident. You need proof every staff member read the policy.",
+    why: "Federal law. Violations carry fines from $100 to $50,000 per incident. You need records showing every staff member reviewed the policy.",
     covers:
       "Patient data handling, electronic records access, breach notification, business associate agreements, staff training.",
   },
@@ -70,10 +70,10 @@ export default function DentalOfficeSopsPage() {
         {/* Hero */}
         <section className="border-b bg-gradient-to-b from-amber-50 to-white px-6 py-20 text-center">
           <Badge variant="secondary" className="mb-4">
-            Enforcement guide for dental practices
+            Accountability guide for dental practices
           </Badge>
           <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Dental Office SOPs That Are Assigned, Tracked, and Enforced
+            Dental Office SOPs That Are Assigned, Tracked, and Managed
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             You know your practice needs dental office SOPs. The real question is
@@ -85,19 +85,19 @@ export default function DentalOfficeSopsPage() {
         {/* Why SOPs matter */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Why Dental Office SOPs Fail Without Enforcement
+            Why Dental Office SOPs Fail Without Management
           </h2>
           <p className="mt-4 text-muted-foreground">
             Dental office SOPs are not just paperwork. But without role-based
             assignments, read tracking, and non-compliance flags, they are
-            documents that nobody opens. Here is what enforcement actually does
+            documents that nobody opens. Here is what accountability actually looks like
             for your practice:
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
                 icon: ShieldCheck,
-                title: "Prove Compliance by Name",
+                title: "Track Acknowledgments by Name",
                 desc: "OSHA requires documented training. With read receipts and acknowledgments, you can show exactly who reviewed each procedure and when.",
               },
               {
@@ -107,13 +107,13 @@ export default function DentalOfficeSopsPage() {
               },
               {
                 icon: HeartPulse,
-                title: "Enforce Patient Safety Protocols",
+                title: "Track Patient Safety Protocols",
                 desc: "Assign sterilization and infection control SOPs to clinical staff. Flag anyone who has not acknowledged the latest update.",
               },
               {
                 icon: Scale,
                 title: "Reduce Liability with a Paper Trail",
-                desc: "Every read receipt and compliance flag is logged. If something goes wrong, you have proof your practice enforced established protocols.",
+                desc: "Every read receipt and compliance flag is logged. If something goes wrong, you have documentation showing your practice communicated established protocols.",
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
@@ -133,10 +133,10 @@ export default function DentalOfficeSopsPage() {
         <section className="border-y bg-gray-50 px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold">
-              Which Dental Office SOPs to Enforce First
+              Which Dental Office SOPs to Manage First
             </h2>
             <p className="mt-4 text-muted-foreground">
-              You cannot enforce everything at once. Start with the SOPs that
+              You cannot track everything at once. Start with the SOPs that
               are legally required or carry the highest risk — and assign them
               to the right roles immediately.
             </p>
@@ -153,7 +153,7 @@ export default function DentalOfficeSopsPage() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <p className="text-sm">
-                      <span className="font-medium">Why enforce it first:</span>{" "}
+                      <span className="font-medium">Why track it first:</span>{" "}
                       <span className="text-muted-foreground">{sop.why}</span>
                     </p>
                     <p className="text-sm">
@@ -172,12 +172,12 @@ export default function DentalOfficeSopsPage() {
         {/* Compliance requirements */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Compliance Requirements You Must Enforce
+            Compliance Requirements You Must Manage
           </h2>
           <p className="mt-4 text-muted-foreground">
             Three federal agencies set the rules for dental practices. Your
             dental office SOPs need to address requirements from all three —
-            and you need proof every staff member has read them.
+            and you need records showing every staff member has reviewed them.
           </p>
           <div className="mt-8 grid gap-8 sm:grid-cols-3">
             {[
@@ -237,10 +237,10 @@ export default function DentalOfficeSopsPage() {
         <section className="border-y bg-gray-50 px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold">
-              How to Enforce SOPs in Your Practice
+              How to Manage SOPs in Your Practice
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Creating the document is half the work. Enforcing it is the other
+              Creating the document is half the work. Tracking it is the other
               half. Here is what actually works:
             </p>
             <div className="mt-8 space-y-6">
@@ -279,7 +279,7 @@ export default function DentalOfficeSopsPage() {
         <section className="bg-amber-50 px-6 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold">
-              Ready to Enforce Compliance Across Your Practice?
+              Ready to Manage Compliance Across Your Practice?
             </h2>
             <p className="mt-4 text-muted-foreground">
               DentiSOP assigns dental office SOPs by role, tracks every read

@@ -59,7 +59,7 @@ export default function TemplatesPage() {
           </h1>
           <p className="text-lg text-muted-foreground mb-12 max-w-3xl">
             Start with a dental-specific template, customize it with AI, and
-            export an OSHA, HIPAA, or CDC-compliant SOP in minutes. Each
+            export an OSHA, HIPAA, or CDC-referenced SOP in minutes. Each
             template includes real clinical and administrative procedures,
             example steps, and best practices drawn from dental industry
             standards. Explore our{" "}

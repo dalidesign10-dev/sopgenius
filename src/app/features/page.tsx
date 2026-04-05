@@ -12,9 +12,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Features — Assign, Track & Enforce Every Dental Procedure",
+  title: "Features — Assign, Track & Manage Every Dental Procedure",
   description:
-    "DentiSOP enforces compliance across your dental practice. Assign SOPs by role, track who's read what, flag non-compliance by name, and keep your team accountable every day.",
+    "DentiSOP supports documentation workflows across your dental practice. Assign SOPs by role, track who's read what, flag gaps by name, and keep your team accountable every day.",
 };
 
 const features = [
@@ -29,14 +29,14 @@ const features = [
     icon: Eye,
     title: "Read Receipts & Acknowledgements",
     description:
-      "Know exactly who opened, read, and acknowledged every procedure. Not just 'sent' — confirmed read. Your compliance binder means nothing if nobody's opened it. Now you'll know for certain.",
+      "Know exactly who opened, read, and acknowledged every procedure. Not just 'sent' — confirmed read. Your compliance binder means nothing if nobody's opened it. Now you can see who has acknowledged the procedure. Acknowledgment tracking helps document communication. It does not replace required training records, supervision, or compliance review.",
     link: { href: "/signup", label: "Start tracking" },
   },
   {
     icon: AlertTriangle,
     title: "Non-Compliance Flags by Staff Name",
     description:
-      "See exactly who hasn't read their assigned procedures — by name. No more guessing, no more asking around. Your dashboard shows red flags the moment someone falls behind, so you can act before it becomes an audit issue.",
+      "See exactly who hasn't read their assigned procedures — by name. No more guessing, no more asking around. Your dashboard shows red flags the moment someone falls behind, so you can act before it becomes a documentation gap.",
     link: { href: "/signup", label: "See the dashboard" },
   },
   {
@@ -55,9 +55,9 @@ const features = [
   },
   {
     icon: ShieldCheck,
-    title: "OSHA, HIPAA & CDC — Built Into Every Procedure",
+    title: "OSHA, HIPAA & CDC — Referenced in Every Procedure",
     description:
-      "Every generated SOP maps to the regulatory frameworks that matter: OSHA 29 CFR 1910, HIPAA §164.308, CDC dental guidelines, and state dental board requirements. Compliance isn't an add-on — it's the foundation.",
+      "Every generated SOP is structured around the documentation frameworks that matter: OSHA 29 CFR 1910, HIPAA §164.308, CDC dental guidelines, and state dental board requirements. Documentation support isn't an add-on — it's the foundation.",
     link: { href: "/templates", label: "Browse templates" },
   },
 ];
@@ -70,12 +70,12 @@ export default function FeaturesPage() {
         <div className="mx-auto max-w-4xl px-6 py-16 sm:py-24">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
             Your team doesn&apos;t need more documents. They need a system that
-            holds them accountable.
+            helps your team stay on track.
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             DentiSOP goes beyond generation. Every procedure is assigned by
             role, tracked for reads, and flagged when someone falls behind.
-            This is how compliant clinics actually operate.
+            This is how organized clinics keep procedures visible, assigned, and current.
           </p>
 
           <div className="mt-16 space-y-16">
@@ -109,7 +109,7 @@ export default function FeaturesPage() {
               doesn&apos;t exist.
             </h2>
             <p className="mt-2 text-gray-600">
-              DentiSOP makes sure they follow it. Assign. Track. Enforce.
+              DentiSOP helps you stay on top of it. Assign. Track. Manage.
             </p>
             <Link
               href="/signup"

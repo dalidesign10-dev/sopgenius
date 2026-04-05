@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function PublicNav() {
@@ -32,6 +32,10 @@ export function PublicNav() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          <span className="flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-700">
+            <ShieldCheck className="h-3 w-3" />
+            PHI-Free Platform
+          </span>
           <Link href="/login">
             <Button variant="ghost" size="sm">Log In</Button>
           </Link>

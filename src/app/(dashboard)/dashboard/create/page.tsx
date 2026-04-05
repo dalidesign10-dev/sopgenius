@@ -51,19 +51,19 @@ interface TemplateOption {
 
 const TEMPLATES: TemplateOption[] = [
   {
-    id: "sterilisation",
-    title: "Instrument Sterilisation Protocol",
-    description: "Step-by-step instrument cleaning, packaging, and autoclave sterilisation process.",
+    id: "sterilization",
+    title: "Instrument Sterilization Protocol",
+    description: "Step-by-step instrument cleaning, packaging, and autoclave sterilization process.",
     category: "Clinical",
     icon: <Syringe className="h-5 w-5" />,
     prefill: {
       processDescription:
-        "Complete instrument sterilisation protocol for a dental practice, covering collection of used instruments, ultrasonic cleaning, hand scrubbing, corrosion inhibitor application, packaging, autoclave loading and cycle selection, biological monitoring, storage, and documentation of each sterilisation batch.",
+        "Complete instrument sterilization protocol for a dental practice, covering collection of used instruments, ultrasonic cleaning, hand scrubbing, corrosion inhibitor application, packaging, autoclave loading and cycle selection, biological monitoring, storage, and documentation of each sterilization batch.",
       industry: "Dental",
       department: "Clinical",
       complexity: "Intermediate",
       targetAudience: "All Staff",
-      complianceFrameworks: ["OSHA", "CDC Guidelines", "HTM 01-05"],
+      complianceFrameworks: ["OSHA", "CDC Guidelines"],
     },
   },
   {
@@ -106,7 +106,7 @@ const TEMPLATES: TemplateOption[] = [
     icon: <ShieldCheck className="h-5 w-5" />,
     prefill: {
       processDescription:
-        "HIPAA privacy procedures for a dental practice, covering Notice of Privacy Practices distribution, minimum necessary standard, patient access to records, authorisation for disclosures, electronic PHI safeguards, workstation security, social media policy, breach identification and notification procedures, staff training requirements, and documentation retention.",
+        "HIPAA privacy procedures for a dental practice, covering Notice of Privacy Practices distribution, minimum necessary standard, patient access to records, authorization for disclosures, electronic PHI safeguards, workstation security, social media policy, breach identification and notification procedures, staff training requirements, and documentation retention.",
       industry: "Dental",
       department: "Compliance",
       complexity: "Advanced",
@@ -122,7 +122,7 @@ const TEMPLATES: TemplateOption[] = [
     icon: <Heart className="h-5 w-5" />,
     prefill: {
       processDescription:
-        "Medical emergency response procedures for a dental practice, covering emergency kit contents and checks, team roles and assignments, protocols for syncope, anaphylaxis, cardiac arrest, seizure, hypoglycaemia, and aspiration, emergency drug dosages, oxygen administration, AED use, when to call emergency services, post-incident documentation, and quarterly emergency drills.",
+        "Medical emergency response procedures for a dental practice, covering emergency kit contents and checks, team roles and assignments, protocols for syncope, anaphylaxis, cardiac arrest, seizure, hypoglycemia, and aspiration, emergency drug dosages, oxygen administration, AED use, when to call emergency services, post-incident documentation, and quarterly emergency drills.",
       industry: "Dental",
       department: "Clinical",
       complexity: "Advanced",
@@ -213,12 +213,12 @@ const TEMPLATES: TemplateOption[] = [
   {
     id: "hazard-communication",
     title: "Hazard Communication Plan",
-    description: "Chemical safety, SDS management, labelling, and staff training.",
+    description: "Chemical safety, SDS management, labeling, and staff training.",
     category: "Compliance",
     icon: <AlertTriangle className="h-5 w-5" />,
     prefill: {
       processDescription:
-        "OSHA Hazard Communication Plan for a dental practice, covering chemical inventory list, Safety Data Sheet management and accessibility, container labelling requirements, employee training on chemical hazards, PPE for chemical handling, spill response procedures, and annual review and update of the plan.",
+        "OSHA Hazard Communication Plan for a dental practice, covering chemical inventory list, Safety Data Sheet management and accessibility, container labeling requirements, employee training on chemical hazards, PPE for chemical handling, spill response procedures, and annual review and update of the plan.",
       industry: "Dental",
       department: "Compliance",
       complexity: "Intermediate",
@@ -234,7 +234,7 @@ const TEMPLATES: TemplateOption[] = [
     icon: <ShieldCheck className="h-5 w-5" />,
     prefill: {
       processDescription:
-        "Dental radiology safety protocol covering ALARA principle, patient selection criteria, lead apron and thyroid collar use, positioning and technique for periapical, bitewing, and panoramic radiographs, digital sensor or film handling, equipment quality assurance checks, radiation exposure logging, and staff dosimetry badge programme.",
+        "Dental radiology safety protocol covering ALARA principle, patient selection criteria, lead apron and thyroid collar use, positioning and technique for periapical, bitewing, and panoramic radiographs, digital sensor or film handling, equipment quality assurance checks, radiation exposure logging, and staff dosimetry badge program.",
       industry: "Dental",
       department: "Clinical",
       complexity: "Intermediate",
@@ -267,10 +267,10 @@ const INITIAL_FORM: FormData = {
 };
 
 const LOADING_MESSAGES = [
-  "Analysing your procedure...",
+  "Analyzing your procedure...",
   "Structuring sections...",
   "Adding compliance references...",
-  "Finalising your procedure...",
+  "Finalizing your procedure...",
 ];
 
 // ── Step indicator ────────────────────────────────────────────────────
@@ -572,6 +572,14 @@ function CreateProcedureContent() {
               <label className="mb-1.5 block text-sm font-medium">
                 What does your team do? <span className="text-destructive">*</span>
               </label>
+              <div className="mb-2 flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+                <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                <span>
+                  <strong>Do not include patient names, medical records, or
+                  other protected health information (PHI).</strong> Describe
+                  the procedure, not individual patients.
+                </span>
+              </div>
               <textarea
                 rows={6}
                 className="w-full rounded-lg border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"

@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dental SOP Software That Enforces Compliance by Name | DentiSOP",
+  title: "Dental SOP Software That Tracks Documentation by Name | DentiSOP",
   description:
-    "Dental SOP software that assigns every procedure by role, tracks who has read what, and flags non-compliance by name. Stop hoping your team follows SOPs — enforce it.",
+    "Dental SOP software that assigns every procedure by role, tracks who has read what, and flags non-compliance by name. Stop hoping your team follows SOPs — track it.",
 };
 
 export default function DentalSopSoftwarePage() {
@@ -31,10 +31,10 @@ export default function DentalSopSoftwarePage() {
         {/* Hero */}
         <section className="border-b bg-gradient-to-b from-blue-50 to-white px-6 py-20 text-center">
           <Badge variant="secondary" className="mb-4">
-            Execution enforcement for dental practices
+            Execution tracking for dental practices
           </Badge>
           <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Dental SOP Software That Enforces Every Procedure by Name
+            Dental SOP Software That Tracks Every Procedure by Name
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             Your team won&apos;t follow a 40-page Word doc buried in a shared
@@ -57,19 +57,19 @@ export default function DentalSopSoftwarePage() {
         {/* Problem */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Why SOPs Without Enforcement Fail in Dental Practices
+            Why SOPs Without Tracking Fail in Dental Practices
           </h2>
           <p className="mt-4 text-muted-foreground">
             You already have SOPs. The problem is nobody reads them, nobody is
-            held accountable, and you have no way to prove compliance. Here is
+            held accountable, and you have no way to document your team's engagement. Here is
             what we hear from office managers every week:
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
-              "SOPs exist but you cannot prove anyone read them",
+              "SOPs exist but you cannot show anyone read them",
               "No way to know which staff members are non-compliant",
               "New hires get verbal training with zero tracking",
-              "OSHA inspector asks for proof of training and you have none",
+              "OSHA inspector asks for training records and you have none",
             ].map((problem) => (
               <div key={problem} className="flex items-start gap-3">
                 <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
@@ -83,7 +83,7 @@ export default function DentalSopSoftwarePage() {
         <section className="border-y bg-gray-50 px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold">
-              How DentiSOP Dental SOP Software Enforces Compliance
+              How DentiSOP Dental SOP Software Tracks Documentation
             </h2>
             <p className="mt-4 text-muted-foreground">
               Assign every procedure to the right role. Track who has read it.
@@ -127,7 +127,7 @@ export default function DentalSopSoftwarePage() {
         {/* Features */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Enforcement Features for Dental Practices
+            Tracking Features for Dental Practices
           </h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2">
             {[
@@ -144,7 +144,7 @@ export default function DentalSopSoftwarePage() {
               {
                 icon: AlertTriangle,
                 title: "Non-Compliance Flags by Name",
-                desc: "See which team members have overdue reads or unacknowledged procedures. Address gaps before they become audit findings.",
+                desc: "See which team members have overdue reads or unacknowledged procedures. Address gaps before they become documentation gaps.",
               },
               {
                 icon: ShieldCheck,
@@ -158,8 +158,8 @@ export default function DentalSopSoftwarePage() {
               },
               {
                 icon: FileText,
-                title: "Audit-Ready Documentation",
-                desc: "Every read receipt, assignment, and acknowledgment is logged. Export compliance reports for OSHA, HIPAA, or state board audits instantly.",
+                title: "Organized Documentation",
+                desc: "Every read receipt, assignment, and acknowledgment is logged. Export documentation records for your team's review.",
               },
             ].map((feature) => (
               <div key={feature.title} className="flex gap-4">
@@ -179,13 +179,13 @@ export default function DentalSopSoftwarePage() {
         <section className="border-y bg-blue-50 px-6 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold">
-              Stop Hoping. Start Enforcing.
+              Stop Hoping. Start Tracking.
             </h2>
             <p className="mt-4 text-muted-foreground">
               OSHA inspections happen. State board audits happen. When they do,
-              you need proof that every team member read and acknowledged every
+              you need organized records showing team engagement with every
               required procedure. DentiSOP dental SOP software gives you that
-              proof with names, dates, and compliance scores.
+              documentation with names, dates, and tracking scores.
             </p>
             <div className="mt-8">
               <Button asChild size="lg">
@@ -204,7 +204,7 @@ export default function DentalSopSoftwarePage() {
           </h2>
           <p className="mt-4 text-muted-foreground">
             Start with a free plan that includes 3 SOPs. Upgrade when your
-            practice needs full enforcement tracking. No contracts, no setup fees, cancel anytime.
+            practice needs full documentation tracking. No contracts, no setup fees, cancel anytime.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button asChild variant="outline" size="lg">

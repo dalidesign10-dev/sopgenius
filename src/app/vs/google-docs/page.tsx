@@ -5,9 +5,9 @@ import { PublicFooter } from "@/components/shared/public-footer";
 import { CheckCircle, XCircle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "DentiSOP vs Google Docs — SOPs Need Enforcement, Not a Text Editor",
+  title: "DentiSOP vs Google Docs — SOPs Need Accountability, Not a Text Editor",
   description:
-    "Google Docs has no assignments, no read tracking, no compliance structure, and no accountability. DentiSOP enforces SOPs across your dental team with role-based tracking.",
+    "Google Docs has no assignments, no read tracking, no compliance structure, and no accountability. DentiSOP tracks SOPs across your dental team with role-based tracking.",
 };
 
 const rows = [
@@ -16,8 +16,8 @@ const rows = [
   { feature: "Non-compliance alerts", dentisop: true, competitor: false },
   { feature: "Compliance scoring per staff member", dentisop: true, competitor: false },
   { feature: "OSHA/HIPAA/CDC template library", dentisop: true, competitor: false },
-  { feature: "Version control with audit trail", dentisop: true, competitor: false },
-  { feature: "Weekly enforcement reports", dentisop: true, competitor: false },
+  { feature: "Version control with change log", dentisop: true, competitor: false },
+  { feature: "Weekly accountability reports", dentisop: true, competitor: false },
   { feature: "Regulatory mapping", dentisop: true, competitor: false },
   { feature: "Free to start", dentisop: true, competitor: true },
   { feature: "Works offline", dentisop: false, competitor: true },
@@ -43,7 +43,7 @@ export default function VsGoogleDocsPage() {
             Google Docs is where SOPs go to die. You write them, share a link,
             and hope someone reads them. No assignments. No tracking. No
             accountability. No compliance structure. DentiSOP turns SOPs from
-            static documents into enforced operational standards.
+            static documents into tracked operational standards.
           </p>
 
           <div className="mt-12 overflow-x-auto">
@@ -79,7 +79,7 @@ export default function VsGoogleDocsPage() {
               team&apos;s adherence to HIPAA workflows.
             </p>
             <p>
-              Google Docs is a text editor. DentiSOP is an execution enforcement
+              Google Docs is a text editor. DentiSOP is an execution tracking
               platform. You assign SOPs by role, track who reads what and when,
               flag non-compliance automatically, and get weekly reports that show
               exactly where your practice stands &mdash; before an inspector
@@ -93,7 +93,7 @@ export default function VsGoogleDocsPage() {
             </h2>
             <p className="mt-3 text-gray-600">
               Move from hoping people read the doc to knowing they did &mdash;
-              with timestamps, scores, and enforcement built in.
+              with timestamps, scores, and accountability built in.
             </p>
             <Link
               href="/signup"

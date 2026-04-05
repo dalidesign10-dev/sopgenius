@@ -24,6 +24,9 @@ import {
   History,
   Download,
   Zap,
+  ShieldCheck,
+  BadgeCheck,
+  Lock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
@@ -65,7 +68,7 @@ const PLANS = [
       "3 procedures per month",
       "2 pre-built templates",
       "PDF export",
-      "OSHA & HIPAA basics",
+      "OSHA & HIPAA documentation basics",
     ],
     cta: "Start Free",
     href: "/signup",
@@ -99,8 +102,7 @@ const PLANS = [
       "Everything in Clinic",
       "Up to 15 users, 5 locations",
       "Custom branding on exports",
-      "Compliance audit trail",
-      "HIPAA BAA included",
+      "Version history and change log",
       "Priority support (24-hour response)",
     ],
     cta: "Standardize All Locations",
@@ -112,11 +114,11 @@ const PLANS = [
 const FAQS = [
   {
     q: "How does DentiSOP support OSHA and HIPAA documentation?",
-    a: "Every template and generated procedure is structured around the documentation frameworks that OSHA, HIPAA, CDC, and state boards reference\u2014including regulatory cross-references and role assignments. DentiSOP helps you organize and maintain these records, but we always recommend your compliance lead or advisor reviews procedures before implementation.",
+    a: "Every template and generated procedure is structured around common U.S. dental documentation workflows that reference OSHA, HIPAA, CDC, and state-board expectations. DentiSOP helps your practice organize, assign, update, and maintain these records, but final review remains with your compliance lead or advisor.",
   },
   {
     q: "How is this different from Google Docs or a binder?",
-    a: "Google Docs gives you a blank page. A binder collects dust. DentiSOP provides dental-specific templates, regulatory framework tagging, version history, team assignment, read-acknowledgment tracking, and exportable audit-ready documentation\u2014all in one system.",
+    a: "Google Docs gives you a blank page. A binder collects dust. DentiSOP provides dental-specific templates, regulatory framework tagging, version history, team assignment, and read-acknowledgment tracking\u2014all in one system.",
   },
   {
     q: "Is AI involved? Is the output just generic ChatGPT text?",
@@ -136,7 +138,11 @@ const FAQS = [
   },
   {
     q: "Do you support multi-location practices?",
-    a: "Yes. The Multi-Location plan supports up to 5 locations and 15 users, with custom branding on exports and a centralized compliance audit trail. Need more? Contact us about Enterprise.",
+    a: "Yes. The Multi-Location plan supports up to 5 locations and 15 users, with custom branding on exports and a centralized version history. Need more? Contact us about Enterprise.",
+  },
+  {
+    q: "Does acknowledgment tracking prove staff were fully trained or that a procedure was followed?",
+    a: "No. DentiSOP tracks assignment and acknowledgment so your practice can keep organized documentation records. It does not replace required training records, supervision, or compliance review, and it does not prove a procedure was followed in practice.",
   },
   {
     q: "Is DentiSOP a substitute for legal or compliance advice?",
@@ -181,7 +187,7 @@ export default function LandingPage() {
                 <span className="text-red-400">to One Standard</span>
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-slate-400">
-                Find missing procedures, generate role-based SOPs, assign them to staff, and keep audit-ready records&mdash;in one system built for dental practices.
+                Find missing procedures, generate role-based SOPs, assign them to staff, and keep organized records&mdash;in one system built for dental practices.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/20">
@@ -189,7 +195,12 @@ export default function LandingPage() {
                 </Button>
                 <a href="#sample-sop" className="text-sm font-semibold text-slate-400 hover:text-white transition-colors underline underline-offset-4 decoration-slate-600 hover:decoration-white">View Sample SOP &darr;</a>
               </div>
-              <p className="mt-6 text-sm text-slate-500 leading-relaxed">
+              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500">
+                <span className="flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />PHI-free platform</span>
+                <span className="flex items-center gap-1.5"><BadgeCheck className="h-3.5 w-3.5 text-blue-400" />30-day money-back guarantee</span>
+                <span className="flex items-center gap-1.5"><Lock className="h-3.5 w-3.5 text-slate-400" />256-bit encryption</span>
+              </div>
+              <p className="mt-3 text-sm text-slate-500 leading-relaxed">
                 Structured around OSHA, HIPAA, CDC, and state-board documentation workflows. Final review stays with your compliance lead.
               </p>
             </div>
@@ -258,12 +269,12 @@ export default function LandingPage() {
         <div className={C}>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm text-slate-600">
             {[
-              { icon: Shield, label: "OSHA-aligned templates" },
+              { icon: Shield, label: "OSHA-referenced templates" },
               { icon: Shield, label: "HIPAA documentation support" },
               { icon: Shield, label: "CDC infection control workflows" },
               { icon: FileText, label: "Version history" },
               { icon: Eye, label: "Read acknowledgment tracking" },
-              { icon: Download, label: "Exportable audit records" },
+              { icon: Download, label: "Exportable documentation records" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-2">
                 <item.icon className="h-4 w-4 text-slate-400" />
@@ -293,7 +304,7 @@ export default function LandingPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-lg font-bold text-slate-900">Practice Documentation Assessment</h3>
-                    <p className="text-sm text-red-500 font-medium">High-risk &middot; Not inspection-ready</p>
+                    <p className="text-sm text-red-500 font-medium">High-risk &middot; Documentation gaps detected</p>
                   </div>
                   <div className="text-right">
                     <p className="text-5xl font-black text-red-600">{pct}%</p>
@@ -336,13 +347,13 @@ export default function LandingPage() {
         <div className={C}>
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">How it works</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Identify. Document. Enforce.</h2>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Identify. Document. Manage.</h2>
           </div>
           <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-3">
             {[
               { n: "01", icon: Search, t: "Identify Gaps", d: "See which procedures your practice is missing. Choose from pre-built dental templates or describe any workflow in plain language." },
               { n: "02", icon: FileText, t: "Generate and Customize", d: "Get a structured, role-based SOP with regulatory references in seconds. Edit every word before publishing." },
-              { n: "03", icon: ClipboardCheck, t: "Assign, Track, Prove", d: "Assign procedures by role. Track who has read them. Export acknowledgment logs and audit-ready documentation." },
+              { n: "03", icon: ClipboardCheck, t: "Assign, Track, Document", d: "Assign procedures by role. Track who has read them. Export acknowledgment logs for your records." },
             ].map((s) => (
               <div key={s.n} className="text-center group">
                 <div className="relative mx-auto flex items-center justify-center rounded-2xl bg-primary/10 group-hover:bg-primary/15 transition-colors" style={{ height: "4.5rem", width: "4.5rem" }}>
@@ -365,7 +376,7 @@ export default function LandingPage() {
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Execution, not just documentation</p>
             <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Documentation Is Only Useful If Your Team Actually Follows It</h2>
-            <p className="mt-3 text-slate-500">Assign procedures by role. See who has read them. Flag who hasn&rsquo;t. Export proof when you need it.</p>
+            <p className="mt-3 text-slate-500">Assign procedures by role. See who has read them. Flag who hasn&rsquo;t. Export documentation records when you need them.</p>
           </div>
           <div className="mx-auto max-w-5xl">
             <Card className="border-0 shadow-2xl ring-1 ring-slate-200 overflow-hidden">
@@ -384,19 +395,19 @@ export default function LandingPage() {
                 {/* Stats */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
                   {[
-                    { icon: FileText, label: "Procedures", value: "12", sub: "+3 this month", colour: "text-indigo-600", iconBg: "bg-indigo-50" },
-                    { icon: Users, label: "Team Members", value: "6", sub: "All active", colour: "text-violet-600", iconBg: "bg-violet-50" },
-                    { icon: Eye, label: "Read Rate", value: "87%", sub: "+12% vs last month", colour: "text-emerald-600", iconBg: "bg-emerald-50" },
-                    { icon: AlertTriangle, label: "Review Overdue", value: "1", sub: "Action needed", colour: "text-red-600", iconBg: "bg-red-50" },
+                    { icon: FileText, label: "Procedures", value: "12", sub: "+3 this month", color: "text-indigo-600", iconBg: "bg-indigo-50" },
+                    { icon: Users, label: "Team Members", value: "6", sub: "All active", color: "text-violet-600", iconBg: "bg-violet-50" },
+                    { icon: Eye, label: "Read Rate", value: "87%", sub: "+12% vs last month", color: "text-emerald-600", iconBg: "bg-emerald-50" },
+                    { icon: AlertTriangle, label: "Review Overdue", value: "1", sub: "Action needed", color: "text-red-600", iconBg: "bg-red-50" },
                   ].map((s) => (
                     <div key={s.label} className="rounded-xl bg-white border border-slate-200 p-3.5">
                       <div className="flex items-center gap-2 mb-1.5">
                         <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${s.iconBg}`}>
-                          <s.icon className={`h-3.5 w-3.5 ${s.colour}`} />
+                          <s.icon className={`h-3.5 w-3.5 ${s.color}`} />
                         </div>
                         <p className="text-xs text-slate-500">{s.label}</p>
                       </div>
-                      <p className={`text-xl font-bold ${s.colour}`}>{s.value}</p>
+                      <p className={`text-xl font-bold ${s.color}`}>{s.value}</p>
                       <p className="text-[11px] text-slate-400">{s.sub}</p>
                     </div>
                   ))}
@@ -486,7 +497,7 @@ export default function LandingPage() {
                   {[
                     { icon: ClipboardCheck, label: "Standardize sterilization" },
                     { icon: Users, label: "All clinical staff" },
-                    { icon: Shield, label: "CDC + OSHA aligned" },
+                    { icon: Shield, label: "Structured around CDC + OSHA workflows" },
                     { icon: FileText, label: "29 CFR 1910.1030" },
                   ].map((chip) => (
                     <div key={chip.label} className="flex items-center gap-2 rounded-lg bg-white/80 border border-slate-100 px-3 py-2">
@@ -498,6 +509,9 @@ export default function LandingPage() {
               </CardHeader>
               <CollapsibleSOP />
             </Card>
+            <p className="mt-3 text-center text-xs text-slate-400">
+              This is a sample starting point. All generated procedures should be reviewed and approved by your practice before use.
+            </p>
           </div>
 
           <div className="mt-10 text-center">
@@ -536,7 +550,7 @@ export default function LandingPage() {
                   { cap: "Read acknowledgment tracking", binder: false, ai: false, ds: true },
                   { cap: "Version history", binder: false, ai: false, ds: true },
                   { cap: "Review reminders", binder: false, ai: false, ds: true },
-                  { cap: "Exportable audit records", binder: false, ai: false, ds: true },
+                  { cap: "Exportable documentation records", binder: false, ai: false, ds: true },
                   { cap: "Structured, editable output", binder: false, ai: "partial", ds: true },
                 ].map((r) => (
                   <tr key={r.cap} className="hover:bg-slate-50/60">
@@ -548,6 +562,52 @@ export default function LandingPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════ */}
+      {/*  7b · TRUST BLOCK + DOES/DOES NOT + PHI GUARDRAIL            */}
+      {/* ════════════════════════════════════════════════════════════ */}
+      <section className="bg-slate-50 py-16 border-y border-slate-200">
+        <div className={C}>
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 text-center">Built for Real U.S. Dental Documentation Workflows</h2>
+            <p className="mt-4 text-slate-600 text-center">
+              DentiSOP is designed to help dental practices organize, assign, update, and maintain procedure documentation across clinical and administrative workflows. It supports documentation workflows that reference OSHA, HIPAA, CDC, and state-board expectations, while final review remains with your practice.
+            </p>
+
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-6">
+                <h3 className="font-bold text-slate-900 flex items-center gap-2"><CheckCircle className="h-5 w-5 text-emerald-600" />What DentiSOP Does</h3>
+                <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0 text-emerald-500" />Helps identify missing procedures</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0 text-emerald-500" />Helps generate editable procedure drafts</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0 text-emerald-500" />Helps assign them by role</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0 text-emerald-500" />Helps track acknowledgments</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0 text-emerald-500" />Helps maintain documentation records</li>
+                </ul>
+              </div>
+              <div className="rounded-xl border border-red-200 bg-red-50/50 p-6">
+                <h3 className="font-bold text-slate-900 flex items-center gap-2"><ShieldAlert className="h-5 w-5 text-red-500" />What DentiSOP Does Not Do</h3>
+                <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 shrink-0 text-red-400" />Does not guarantee compliance</li>
+                  <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 shrink-0 text-red-400" />Does not replace required training records</li>
+                  <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 shrink-0 text-red-400" />Does not replace supervision or legal review</li>
+                  <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 shrink-0 text-red-400" />Does not store patient records</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50/50 p-5">
+              <div className="flex items-start gap-3">
+                <ShieldCheck className="h-5 w-5 mt-0.5 shrink-0 text-amber-600" />
+                <div>
+                  <p className="font-semibold text-slate-900">PHI-Free Platform</p>
+                  <p className="mt-1 text-sm text-slate-600">DentiSOP is for procedure and operations documentation only. Do not enter patient names, dates of birth, medical record numbers, insurance IDs, treatment details, or any other protected health information.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -604,7 +664,7 @@ export default function LandingPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-slate-500">
-            Need SSO, custom frameworks, or a HIPAA BAA?{" "}
+            Need SSO, custom frameworks, or dedicated support?{" "}
             <Link href="/contact" className="font-medium text-primary underline">Talk to us about Enterprise</Link>.
           </p>
         </div>
@@ -644,7 +704,7 @@ export default function LandingPage() {
               <span className="text-slate-400">Run Your Practice to One Standard.</span>
             </h2>
             <p className="mt-5 text-lg text-slate-400">
-              Find the gaps. Document the procedures. Assign them to your team. Prove they were followed.
+              Find the gaps. Document the procedures. Assign them to your team. Keep records showing they were communicated.
             </p>
             <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
               <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/25">

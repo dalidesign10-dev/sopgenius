@@ -66,7 +66,8 @@ export default function PrivacyPage() {
                 <li>
                   <strong className="text-gray-900">Anthropic</strong> — AI
                   generation (your process descriptions are sent to Anthropic to
-                  generate SOPs)
+                  generate SOPs; do not include patient names, medical records,
+                  or other protected health information in your descriptions)
                 </li>
                 <li>
                   <strong className="text-gray-900">Vercel</strong> — hosting

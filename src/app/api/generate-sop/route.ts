@@ -48,7 +48,7 @@ When generating a procedure, always include these sections:
 7. Procedure Steps: Detailed, numbered step-by-step instructions with action, responsible role, expected outcome, and notes
 8. Flowchart Description: A text-based description of the process flow
 9. Quality Control Checks: Verification points throughout the process
-10. Compliance Notes: Relevant regulatory considerations (OSHA, HIPAA, CDC, State Board, CQC, etc.)
+10. Compliance Notes: Relevant regulatory considerations (OSHA, HIPAA, CDC, State Board, etc.)
 11. Related Documents: References to other procedures or documents
 12. Revision History: Table for tracking changes
 

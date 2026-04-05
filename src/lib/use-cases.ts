@@ -20,7 +20,7 @@ export const USE_CASES: UseCase[] = [
     h1: "SOP Generator for Solo Dental Practices",
     intro: [
       "Running a solo dental practice means wearing every hat — clinician, employer, compliance officer, and business owner. Without a dedicated team to manage regulatory requirements, it is easy for critical procedures to fall through the cracks. OSHA exposure control plans, HIPAA privacy policies, and clinical protocols all demand written documentation, yet most solo practitioners lack the time or resources to build these from scratch.",
-      "DentiSOP helps solo dental practitioners turn their clinical and administrative workflows into clear, structured standard operating procedures. Describe how your office handles a process — from instrument sterilisation to patient intake — and receive a formatted SOP with numbered steps, role assignments, compliance references, and training checkpoints that your team can follow from day one.",
+      "DentiSOP helps solo dental practitioners turn their clinical and administrative workflows into clear, structured standard operating procedures. Describe how your office handles a process — from instrument sterilization to patient intake — and receive a formatted SOP with numbered steps, role assignments, compliance references, and training checkpoints that your team can follow from day one.",
     ],
     processes: [
       "Instrument sterilization and autoclave monitoring",
@@ -33,7 +33,7 @@ export const USE_CASES: UseCase[] = [
     benefits: [
       "Stay OSHA and HIPAA compliance-ready with documented procedures that map to federal and state requirements",
       "Ensure every team member follows the same clinical and administrative steps regardless of who trained them",
-      "Reduce reliance on expensive consultants by generating audit-quality SOPs in-house",
+      "Reduce reliance on expensive consultants by generating structured, organized SOPs in-house",
       "Prepare for state dental board inspections and DEA audits with organized, up-to-date documentation",
     ],
     relatedTemplates: [
@@ -52,7 +52,7 @@ export const USE_CASES: UseCase[] = [
     h1: "SOP Generator for DSOs and Multi-Location Dental Groups",
     intro: [
       "Dental service organizations and multi-location groups face a unique challenge: every office must deliver the same standard of care and compliance, yet each location may have different staff, equipment, and workflows. Without centralized documentation, inconsistencies creep in — one office follows an outdated sterilization protocol while another skips steps during patient onboarding, exposing the entire organization to regulatory risk.",
-      "DentiSOP gives DSO operations teams a fast way to create standardised procedures that every location can adopt. Generate SOPs for clinical workflows, front-office operations, and compliance programs, then roll them out across your network with confidence that each site is following the same playbook.",
+      "DentiSOP gives DSO operations teams a fast way to create standardized procedures that every location can adopt. Generate SOPs for clinical workflows, front-office operations, and compliance programs, then roll them out across your network with confidence that each site is following the same playbook.",
     ],
     processes: [
       "Standardized clinical protocols across all locations",
@@ -83,13 +83,13 @@ export const USE_CASES: UseCase[] = [
       "Create OSHA, HIPAA, and CDC-aligned compliance SOPs for your dental practice. Document exposure control plans, infection control protocols, and annual training requirements.",
     h1: "Generate Dental Compliance SOPs for OSHA, HIPAA, and CDC Requirements",
     intro: [
-      "Dental practices operate under overlapping layers of regulation — OSHA's Bloodborne Pathogens Standard, HIPAA's Privacy and Security Rules, CDC infection prevention guidelines, state dental board mandates, and DEA controlled substance requirements. Compliance officers and practice owners must maintain written programs for each, update them when regulations change, and prove that staff have been trained on every policy.",
+      "Dental practices operate under overlapping layers of regulation — OSHA's Bloodborne Pathogens Standard, HIPAA's Privacy and Security Rules, CDC infection prevention guidelines, state dental board mandates, and DEA controlled substance requirements. Compliance officers and practice owners must maintain written programs for each, update them when regulations change, and keep records showing staff received procedures on every policy.",
       "DentiSOP helps dental compliance professionals generate structured procedures that address specific regulatory requirements. Describe the compliance area you need to document and receive a detailed SOP with regulatory references, responsible-party assignments, documentation checklists, and training verification steps — ready for your next OSHA inspection or HIPAA risk assessment.",
     ],
     processes: [
       "OSHA exposure control plan development and annual review",
       "HIPAA privacy and security policy documentation",
-      "CDC-based infection control and sterilization protocols",
+      "CDC-referenced infection control and sterilization protocols",
       "Regulated medical waste segregation and disposal",
       "Medical emergency preparedness and response drills",
       "Annual compliance training documentation and staff sign-off",

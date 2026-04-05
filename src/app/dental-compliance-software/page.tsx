@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dental Compliance Software That Enforces by Name | DentiSOP",
+  title: "Dental Compliance Software That Tracks by Name | DentiSOP",
   description:
     "Dental compliance software that assigns OSHA, HIPAA, and CDC procedures by role, tracks read receipts, flags non-compliance by name, and gives you a real-time clinic compliance score.",
 };
@@ -32,7 +32,7 @@ export default function DentalComplianceSoftwarePage() {
         {/* Hero */}
         <section className="border-b bg-gradient-to-b from-red-50 to-white px-6 py-20 text-center">
           <Badge variant="secondary" className="mb-4">
-            Compliance enforcement platform
+            Compliance tracking platform
           </Badge>
           <h1 className="mx-auto max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl">
             Dental Compliance Software That Tracks Every Staff Member by Name
@@ -58,17 +58,17 @@ export default function DentalComplianceSoftwarePage() {
         {/* Compliance challenges */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            Compliance Without Enforcement Is Just Paperwork
+            Compliance Without Tracking Is Just Paperwork
           </h2>
           <p className="mt-4 text-muted-foreground">
             Dental practices face compliance requirements from multiple agencies.
-            Most office managers create the documents but have no way to prove
-            their team actually read them. Here is what makes compliance so
-            difficult without enforcement:
+            Most office managers create the documents but have no way to track
+            whether their team actually read them. Here is what makes compliance so
+            difficult without tracking:
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
-              "OSHA requires proof of annual training — not just that it exists",
+              "OSHA requires documentation of annual training — not just that it exists",
               "HIPAA demands documented acknowledgment from every staff member",
               "No way to know which team members are non-compliant right now",
               "State dental boards ask for training records you cannot produce",
@@ -87,7 +87,7 @@ export default function DentalComplianceSoftwarePage() {
         <section className="border-y bg-gray-50 px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold">
-              What Each Agency Requires — and How DentiSOP Enforces It
+              What Each Agency Requires — and How DentiSOP Tracks It
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
               {[
@@ -121,7 +121,7 @@ export default function DentalComplianceSoftwarePage() {
                   requirements: [
                     "Infection prevention assigned to clinical roles",
                     "Sterilization monitoring with tracking",
-                    "Hand hygiene protocols enforced",
+                    "Hand hygiene protocols tracked",
                     "PPE procedures with acknowledgments",
                     "Waterline testing assigned and tracked",
                     "Compliance score updated automatically",
@@ -156,7 +156,7 @@ export default function DentalComplianceSoftwarePage() {
         {/* How DentiSOP helps */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            How DentiSOP Enforces Compliance Across Your Practice
+            How DentiSOP Tracks Compliance Across Your Practice
           </h2>
           <p className="mt-4 text-muted-foreground">
             DentiSOP is not a compliance consultant. It is dental compliance
@@ -174,7 +174,7 @@ export default function DentalComplianceSoftwarePage() {
               {
                 icon: CheckCircle,
                 title: "Read Receipts by Name",
-                desc: "Every time a team member opens and acknowledges a procedure, it is logged with their name and a timestamp. You have proof for any auditor.",
+                desc: "Every time a team member opens and acknowledges a procedure, it is logged with their name and a timestamp. You have organized records ready for review.",
               },
               {
                 icon: CalendarCheck,
@@ -193,8 +193,8 @@ export default function DentalComplianceSoftwarePage() {
               },
               {
                 icon: FileText,
-                title: "Audit-Ready Compliance Reports",
-                desc: "Export reports showing every assignment, read receipt, and acknowledgment. Names, dates, and timestamps — ready for OSHA, HIPAA, or state board review.",
+                title: "Documentation Reports",
+                desc: "Export reports showing every assignment, read receipt, and acknowledgment. Names, dates, and timestamps — organized for your team's review.",
               },
             ].map((feature) => (
               <div key={feature.title} className="flex gap-4">
@@ -219,9 +219,9 @@ export default function DentalComplianceSoftwarePage() {
             <p className="mt-4 text-muted-foreground">
               OSHA inspections in dental practices are increasing. Patient
               complaints trigger HIPAA investigations. The practices that
-              survive these without stress are the ones that can prove every
-              staff member read every required procedure. That is what dental
-              compliance software with enforcement does for you.
+              survive these without stress are the ones with organized records showing
+              staff engagement with required procedures. That is what dental
+              compliance software with tracking does for you.
             </p>
             <div className="mt-8 flex justify-center gap-4 flex-wrap">
               <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium shadow-sm">

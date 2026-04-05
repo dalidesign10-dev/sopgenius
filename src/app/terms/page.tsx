@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "DentiSOP terms of service. Read before using our dental operations enforcement platform.",
+    "DentiSOP terms of service. Read before using our dental operations documentation platform.",
   robots: { index: false, follow: true },
 };
 
@@ -82,6 +82,11 @@ export default function TermsPage() {
                   Use the service to generate content that is harmful, abusive,
                   or violates the rights of others
                 </li>
+                <li>
+                  Enter protected health information (PHI), including patient
+                  names, medical record numbers, treatment details, insurance
+                  IDs, or any data that could identify a patient
+                </li>
               </ul>
             </section>
 
@@ -105,8 +110,27 @@ export default function TermsPage() {
               <p className="mt-3">
                 Paid plans are billed on a recurring basis. You authorize us to
                 charge your payment method at the start of each billing cycle.
-                Refunds are handled on a case-by-case basis. You can cancel your
+                All paid plans include a 30-day money-back guarantee — if
+                you are not satisfied within 30 days of your initial purchase,
+                contact us at support@dentisop.com for a full refund. After
+                the 30-day guarantee period, refunds for remaining subscription
+                time are handled on a case-by-case basis. You can cancel your
                 subscription at any time from your account settings.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900">
+                AI-generated content
+              </h2>
+              <p className="mt-3">
+                DentiSOP uses artificial intelligence to draft standard
+                operating procedures based on your descriptions. AI-generated
+                content is a starting point, not a finished compliance
+                document. You are responsible for reviewing, editing, and
+                approving all generated procedures before use. DentiSOP is not
+                a substitute for professional legal, regulatory, or compliance
+                advice.
               </p>
             </section>
 

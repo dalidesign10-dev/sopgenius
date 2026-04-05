@@ -23,7 +23,7 @@ import type { SOP } from "@/types";
 
 // ── Recommended procedures every dental clinic needs ──
 const RECOMMENDED: { title: string; templateId: string; department: string; compliance: string }[] = [
-  { title: "Instrument Sterilisation Protocol", templateId: "sterilisation", department: "Clinical", compliance: "OSHA / CDC" },
+  { title: "Instrument Sterilization Protocol", templateId: "sterilization", department: "Clinical", compliance: "OSHA / CDC" },
   { title: "Patient Intake & Registration", templateId: "patient-intake", department: "Front Desk", compliance: "HIPAA" },
   { title: "OSHA Exposure Control Plan", templateId: "osha-exposure", department: "Compliance", compliance: "OSHA" },
   { title: "HIPAA Privacy Procedures", templateId: "hipaa-privacy", department: "Compliance", compliance: "HIPAA" },
@@ -129,8 +129,8 @@ export default function DashboardPage() {
   // Non-compliant staff (by name)
   const nonCompliant = clinic.getNonCompliantMembers();
 
-  // Score colour
-  const scoreColour =
+  // Score color
+  const scoreColor =
     clinicScore >= 70
       ? "text-emerald-600"
       : clinicScore >= 40
@@ -178,10 +178,10 @@ export default function DashboardPage() {
                 strokeWidth="10"
                 strokeDasharray={`${clinicScore * 3.267} 326.7`}
                 strokeLinecap="round"
-                className={scoreColour}
+                className={scoreColor}
               />
             </svg>
-            <span className={`absolute text-3xl font-bold ${scoreColour}`}>
+            <span className={`absolute text-3xl font-bold ${scoreColor}`}>
               {clinicScore}%
             </span>
           </div>
@@ -299,7 +299,7 @@ export default function DashboardPage() {
                   Create your first procedure
                 </p>
                 <p className="text-sm text-slate-500">
-                  Start with a sterilisation protocol or patient intake process.
+                  Start with a sterilization protocol or patient intake process.
                 </p>
               </div>
               <ArrowRight className="h-4 w-4 text-slate-400" />

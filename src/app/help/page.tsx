@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 export const metadata: Metadata = {
   title: "Help Center — DentiSOP",
   description:
-    "Find answers about using DentiSOP to assign, track, and enforce dental practice procedures across your team.",
+    "Find answers about using DentiSOP to assign, track, and manage dental practice procedures across your team.",
 };
 
 const faqCategories = [
@@ -15,7 +15,7 @@ const faqCategories = [
     questions: [
       {
         q: "What is DentiSOP?",
-        a: "DentiSOP is an execution enforcement system for dental practices. It helps you document procedures with AI, assign them to the right team members by role, track who's read what, and flag non-compliance by name. It's not just a document tool — it's the system your team uses every day.",
+        a: "DentiSOP is a documentation and tracking system for dental practices. It helps you document procedures with AI, assign them to the right team members by role, track who's read what, and flag non-compliance by name. It's not just a document tool — it's the system your team uses every day.",
       },
       {
         q: "Do I need an account to use DentiSOP?",
@@ -23,7 +23,7 @@ const faqCategories = [
       },
       {
         q: "What formats can I export my SOPs in?",
-        a: "You can export SOPs as PDF, Word (.docx), and Markdown files depending on your plan. PDFs are formatted for compliance binders and state board audits.",
+        a: "You can export SOPs as PDF, Word (.docx), and Markdown files depending on your plan. PDFs are formatted for compliance binders and state board documentation.",
       },
       {
         q: "Is there a free plan?",
@@ -69,11 +69,11 @@ const faqCategories = [
       },
       {
         q: "Can I export SOPs for compliance binders?",
-        a: "Yes. Export to PDF or Word for inclusion in OSHA compliance binders, state board audit folders, or office procedure manuals.",
+        a: "Yes. Export to PDF or Word for inclusion in OSHA compliance binders, state board documentation folders, or office procedure manuals.",
       },
       {
-        q: "Are exported PDFs formatted for audits?",
-        a: "Yes. PDF exports include headers, revision dates, page numbers, and clean formatting suitable for state board audits and regulatory inspections.",
+        q: "Are exported PDFs formatted for documentation?",
+        a: "Yes. PDF exports include headers, revision dates, page numbers, and clean formatting suitable for state board documentation and regulatory inspections.",
       },
     ],
   },

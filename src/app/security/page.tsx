@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 export const metadata: Metadata = {
   title: "Security",
   description:
-    "Learn how DentiSOP protects your dental practice data. HIPAA-aware SOP formatting, hosted on Vercel, database on Supabase, with row-level security and encrypted connections.",
+    "Learn how DentiSOP protects your dental practice data. HIPAA-referenced SOP formatting, hosted on Vercel, database on Supabase, with row-level security and encrypted connections.",
 };
 
 export default function SecurityPage() {
@@ -82,17 +82,29 @@ export default function SecurityPage() {
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900">
-                HIPAA Compliance Note
+                HIPAA &amp; Protected Health Information (PHI)
               </h2>
               <p className="mt-3">
-                DentiSOP helps dental practices format SOPs that align with
-                HIPAA requirements, but DentiSOP is not itself a covered entity
-                or business associate under HIPAA. Our platform is designed for
-                documenting processes and procedures — users describe how
-                workflows operate, not individual patient data. No protected
-                health information (PHI) is stored in DentiSOP. If your SOPs
-                describe patient-facing processes, they document the procedure
-                itself, not patient records.
+                DentiSOP is a procedure documentation tool. It helps your
+                team describe <strong className="text-gray-900">how</strong>{" "}
+                workflows operate — not individual patient data.
+              </p>
+              <p className="mt-3">
+                <strong className="text-gray-900">
+                  Do not enter protected health information (PHI) into
+                  DentiSOP.
+                </strong>{" "}
+                This includes patient names, medical record numbers, treatment
+                details, insurance IDs, or any data that could identify a
+                patient. DentiSOP is not designed to store, transmit, or
+                process PHI, and our Terms of Service prohibit it.
+              </p>
+              <p className="mt-3">
+                Because the platform is PHI-free by design, a HIPAA Business
+                Associate Agreement (BAA) is not required. If you have
+                questions about how DentiSOP fits into your practice&apos;s
+                compliance program, consult your compliance officer or
+                attorney.
               </p>
             </section>
 

@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dental SOP Templates with Built-In Enforcement | DentiSOP",
+  title: "Dental SOP Templates with Built-In Accountability | DentiSOP",
   description:
-    "Dental SOP templates that come with role assignments, read tracking, and non-compliance flags built in. Assign to your team and enforce from day one.",
+    "Dental SOP templates that come with role assignments, read tracking, and non-compliance flags built in. Assign to your team and track from day one.",
 };
 
 const templateCategories = [
@@ -82,10 +82,10 @@ export default function DentalSopTemplatePage() {
         {/* Hero */}
         <section className="border-b bg-gradient-to-b from-green-50 to-white px-6 py-20 text-center">
           <Badge variant="secondary" className="mb-4">
-            Templates with enforcement built in
+            Templates with accountability built in
           </Badge>
           <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Dental SOP Templates You Can Assign, Track, and Enforce
+            Dental SOP Templates You Can Assign, Track, and Manage
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             Stop starting from scratch. Pick a dental SOP template, assign it to
@@ -107,7 +107,7 @@ export default function DentalSopTemplatePage() {
         {/* What makes a good template */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            What Makes an Enforceable Dental SOP Template
+            What Makes a Trackable Dental SOP Template
           </h2>
           <p className="mt-4 text-muted-foreground">
             A dental SOP template is only useful if you can assign it, track
@@ -160,7 +160,7 @@ export default function DentalSopTemplatePage() {
             <p className="mt-4 text-muted-foreground">
               We organize templates into four categories that cover everything a
               dental practice needs. Pick a starting point, assign it to the
-              right roles, and start enforcing compliance immediately.
+              right roles, and start tracking documentation immediately.
             </p>
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               {templateCategories.map((cat) => (
@@ -191,11 +191,11 @@ export default function DentalSopTemplatePage() {
         {/* How to enforce */}
         <section className="mx-auto max-w-4xl px-6 py-16">
           <h2 className="text-3xl font-bold">
-            How to Deploy and Enforce a Dental SOP Template
+            How to Deploy and Track a Dental SOP Template
           </h2>
           <p className="mt-4 text-muted-foreground">
             A template is a starting point. Here is how to turn it into an
-            enforced procedure across your team:
+            tracked procedure across your team:
           </p>
           <ol className="mt-8 space-y-6">
             {[
@@ -239,12 +239,12 @@ export default function DentalSopTemplatePage() {
         <section className="border-y bg-green-50 px-6 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold">
-              Stop Distributing. Start Enforcing.
+              Stop Distributing. Start Tracking.
             </h2>
             <p className="mt-4 text-muted-foreground">
               Every dental SOP template you send without tracking is a procedure
-              nobody can prove was read. Pick a template, assign it by role,
-              and enforce compliance from day one.
+              nobody can show was read. Pick a template, assign it by role,
+              and track documentation from day one.
             </p>
             <div className="mt-8">
               <Button asChild size="lg">

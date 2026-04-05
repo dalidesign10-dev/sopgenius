@@ -173,7 +173,7 @@ export default async function TemplateDetailPage({ params }: Props) {
           {/* Why Use AI */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-4">
-              Why use AI to create and enforce this procedure?
+              Why use AI to create and manage this procedure?
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               {template.whyUseAI}

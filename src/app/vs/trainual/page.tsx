@@ -5,7 +5,7 @@ import { PublicFooter } from "@/components/shared/public-footer";
 import { CheckCircle, XCircle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "DentiSOP vs Trainual — Dental-Specific Compliance Enforcement",
+  title: "DentiSOP vs Trainual — Dental-Specific Documentation & Tracking",
   description:
     "Trainual is generic SMB onboarding. DentiSOP is built for dental practices with OSHA/HIPAA templates, compliance scoring, role-based SOP assignments, and read tracking.",
 };
@@ -18,7 +18,7 @@ const rows = [
   { feature: "Non-compliance flagging & alerts", dentisop: true, competitor: false },
   { feature: "Compliance scoring per staff member", dentisop: true, competitor: false },
   { feature: "Regulatory mapping (OSHA, HIPAA, CDC)", dentisop: true, competitor: false },
-  { feature: "Weekly enforcement reports", dentisop: true, competitor: false },
+  { feature: "Weekly accountability reports", dentisop: true, competitor: false },
   { feature: "Multi-location support", dentisop: true, competitor: true },
   { feature: "Starts under $50/month", dentisop: true, competitor: false },
 ];
@@ -42,8 +42,8 @@ export default function VsTrainualPage() {
           <p className="mt-6 text-lg text-gray-600">
             Trainual is a solid onboarding tool for generic small businesses.
             But dental practices don&apos;t need generic &mdash; they need OSHA
-            compliance, HIPAA enforcement, and role-based SOP assignments that
-            actually get tracked and enforced. That&apos;s DentiSOP.
+            compliance, HIPAA accountability, and role-based SOP assignments that
+            actually get tracked. That&apos;s DentiSOP.
           </p>
 
           <div className="mt-12 overflow-x-auto">
@@ -74,7 +74,7 @@ export default function VsTrainualPage() {
             <p>
               Trainual treats your sterilization protocol the same as a coffee
               shop&apos;s opening checklist. There&apos;s no regulatory mapping,
-              no compliance scoring, and no way to prove your hygienist actually
+              no compliance scoring, and no way to show your hygienist actually
               read the updated OSHA bloodborne pathogen procedure last Tuesday.
             </p>
             <p>
@@ -88,11 +88,11 @@ export default function VsTrainualPage() {
 
           <div className="mt-16 rounded-2xl bg-blue-50 px-8 py-10 text-center">
             <h2 className="text-2xl font-bold text-gray-900">
-              Stop onboarding. Start enforcing.
+              Stop onboarding. Start tracking.
             </h2>
             <p className="mt-3 text-gray-600">
               Switch from generic onboarding to dental-specific compliance
-              enforcement in under 10 minutes.
+              tracking in under 10 minutes.
             </p>
             <Link
               href="/signup"

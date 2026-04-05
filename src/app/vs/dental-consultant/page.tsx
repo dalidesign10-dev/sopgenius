@@ -5,18 +5,18 @@ import { PublicFooter } from "@/components/shared/public-footer";
 import { CheckCircle, XCircle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "DentiSOP vs Dental Consultants — Daily Enforcement at 1/50th the Cost",
+  title: "DentiSOP vs Dental Consultants — Daily Accountability at 1/50th the Cost",
   description:
-    "Dental consultants charge $5K-$25K, deliver a binder, and leave. DentiSOP enforces SOPs daily with role assignments, read tracking, and compliance scoring for under $50/month.",
+    "Dental consultants charge $5K-$25K, deliver a binder, and leave. DentiSOP tracks SOPs daily with role assignments, read tracking, and compliance scoring for under $50/month.",
 };
 
 const rows = [
   { feature: "OSHA/HIPAA/CDC procedures included", dentisop: true, competitor: true },
   { feature: "Role-based SOP assignments", dentisop: true, competitor: false },
-  { feature: "Daily enforcement & read tracking", dentisop: true, competitor: false },
+  { feature: "Daily accountability & read tracking", dentisop: true, competitor: false },
   { feature: "Compliance scoring per staff member", dentisop: true, competitor: false },
   { feature: "Non-compliance alerts", dentisop: true, competitor: false },
-  { feature: "Weekly enforcement reports", dentisop: true, competitor: false },
+  { feature: "Weekly accountability reports", dentisop: true, competitor: false },
   { feature: "Scales across multiple locations", dentisop: true, competitor: false },
   { feature: "Updates when regulations change", dentisop: true, competitor: false },
   { feature: "Under $50/month", dentisop: true, competitor: false },
@@ -44,7 +44,7 @@ export default function VsDentalConsultantPage() {
             hand you a binder, and leave. Six months later that binder is
             collecting dust and your team is back to old habits. DentiSOP is the
             consultant in a box &mdash; at 1/50th the cost with daily
-            enforcement built in.
+            accountability built in.
           </p>
 
           <div className="mt-12 overflow-x-auto">
@@ -85,7 +85,7 @@ export default function VsDentalConsultantPage() {
               tracked by read status, and scored for compliance. When regulations
               change, templates update automatically. When someone falls behind,
               you get an alert &mdash; not a surprise during an inspection.
-              That&apos;s not consulting. That&apos;s enforcement.
+              That&apos;s not consulting. That&apos;s accountability.
             </p>
           </div>
 
@@ -95,12 +95,12 @@ export default function VsDentalConsultantPage() {
               <div>
                 <p className="text-gray-500">Dental consultant</p>
                 <p className="mt-1 text-2xl font-bold text-gray-900">$5K&ndash;$25K</p>
-                <p className="text-gray-500">One-time visit, no ongoing enforcement</p>
+                <p className="text-gray-500">One-time visit, no ongoing tracking</p>
               </div>
               <div>
                 <p className="text-blue-600 font-medium">DentiSOP</p>
                 <p className="mt-1 text-2xl font-bold text-blue-600">&lt;$50/mo</p>
-                <p className="text-gray-500">Daily enforcement, unlimited updates</p>
+                <p className="text-gray-500">Daily tracking, unlimited updates</p>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function VsDentalConsultantPage() {
               Fire the binder. Hire the platform.
             </h2>
             <p className="mt-3 text-gray-600">
-              Get the procedures of a $25K consultant with the daily enforcement
+              Get the procedures of a $25K consultant with the daily accountability
               no consultant can provide &mdash; for less than your monthly coffee
               budget.
             </p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { CookieBanner } from "@/components/shared/cookie-banner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | DentiSOP",
   },
   description:
-    "Dental compliance and SOP software for practice owners and office managers. Find documentation gaps, generate OSHA- and HIPAA-aligned procedures, assign them to staff, and track read acknowledgments. Free to start.",
+    "Dental compliance and SOP software for practice owners and office managers. Find documentation gaps, generate OSHA- and HIPAA-referenced procedures, assign them to staff, and track read acknowledgments. Free to start.",
   keywords: [
     "dental compliance software",
     "dental SOP software",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DentiSOP — Dental Compliance and SOP Software",
     description:
-      "Find documentation gaps, generate OSHA- and HIPAA-aligned procedures, assign them to staff, and track acknowledgments. Built for dental practices.",
+      "Find documentation gaps, generate OSHA- and HIPAA-referenced procedures, assign them to staff, and track acknowledgments. Built for dental practices.",
     type: "website",
     siteName: "DentiSOP",
     url: baseUrl,
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DentiSOP — Dental Compliance and SOP Software",
     description:
-      "Find documentation gaps, generate OSHA- and HIPAA-aligned procedures, assign them to staff, and track acknowledgments. Built for dental practices.",
+      "Find documentation gaps, generate OSHA- and HIPAA-referenced procedures, assign them to staff, and track acknowledgments. Built for dental practices.",
   },
   robots: {
     index: true,
@@ -66,19 +67,25 @@ const organizationSchema = {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
-      name: "Starter Plan",
+      name: "Starter",
     },
     {
       "@type": "Offer",
-      price: "97",
+      price: "79",
       priceCurrency: "USD",
-      name: "Practice Plan",
+      name: "Clinic",
     },
     {
       "@type": "Offer",
-      price: "197",
+      price: "149",
       priceCurrency: "USD",
-      name: "Group Plan",
+      name: "Multi-Clinic",
+    },
+    {
+      "@type": "Offer",
+      price: "597",
+      priceCurrency: "USD",
+      name: "Enterprise",
     },
   ],
 };
@@ -98,7 +105,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }

@@ -112,7 +112,7 @@ export default function PricingPage() {
                   <p className="text-sm text-muted-foreground">{plan.description}</p>
                   <div className="mt-4">
                     <span className="text-4xl font-bold">
-                      {displayPrice === 0 ? "Free" : `\u00a3${displayPrice}`}
+                      {displayPrice === 0 ? "Free" : `$${displayPrice}`}
                     </span>
                     {displayPrice > 0 && (
                       <span className="text-muted-foreground">/mo</span>
@@ -120,12 +120,12 @@ export default function PricingPage() {
                   </div>
                   {annual && plan.price > 0 && plan.annualPrice < plan.price && (
                     <p className="mt-1 text-sm text-green-600">
-                      or {"\u00a3"}{plan.price}/mo monthly — save {"\u00a3"}{(plan.price - plan.annualPrice) * 12}/yr
+                      or ${plan.price}/mo monthly — save ${(plan.price - plan.annualPrice) * 12}/yr
                     </p>
                   )}
                   {!annual && plan.annualPrice > 0 && plan.annualPrice < plan.price && (
                     <p className="mt-1 text-sm text-muted-foreground">
-                      or {"\u00a3"}{plan.annualPrice}/mo billed annually
+                      or ${plan.annualPrice}/mo billed annually
                     </p>
                   )}
                 </CardHeader>
@@ -184,7 +184,7 @@ export default function PricingPage() {
                 <span className="text-4xl font-bold">Custom</span>
               </div>
               <p className="mt-1 text-sm text-muted-foreground">
-                Tailored pricing for your organisation
+                Tailored pricing for your organization
               </p>
             </CardHeader>
             <CardContent className="flex flex-1 flex-col">
@@ -242,19 +242,19 @@ export default function PricingPage() {
               },
               {
                 q: "Is the AI-generated content actually compliant?",
-                a: "DentiSOP structures every procedure with sections mapped to OSHA, HIPAA, CDC, and state dental board frameworks. But generation is just step one — the real value is that every procedure gets assigned, tracked, and enforced across your team.",
+                a: "DentiSOP structures every procedure with sections mapped to OSHA, HIPAA, CDC, and state dental board frameworks. But generation is just step one — the real value is that every procedure gets assigned, tracked, and managed across your team.",
               },
               {
                 q: "Can I cancel anytime?",
                 a: "Absolutely. No long-term contracts. Cancel from your billing dashboard and retain access until the end of your billing period.",
               },
               {
-                q: "Do you offer a HIPAA BAA?",
-                a: "Yes — HIPAA Business Associate Agreements are included with Multi-Clinic and Enterprise plans. Contact us for details.",
+                q: "Does DentiSOP handle patient data (PHI)?",
+                a: "No. DentiSOP documents procedures, not patient records. Do not enter protected health information (PHI) into the platform. Because DentiSOP is PHI-free by design, a HIPAA Business Associate Agreement is not required.",
               },
               {
                 q: "Do you offer discounts for dental schools or nonprofits?",
-                a: "Yes. Contact us at support@dentisop.com for special pricing for dental schools, nonprofits, and government organisations.",
+                a: "Yes. Contact us at support@dentisop.com for special pricing for dental schools, nonprofits, and government organizations.",
               },
             ].map(({ q, a }) => (
               <details

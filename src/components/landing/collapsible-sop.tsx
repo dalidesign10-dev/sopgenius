@@ -6,32 +6,36 @@ import { CardContent } from "@/components/ui/card";
 
 const steps = [
   {
-    title: "Transport contaminated instruments",
-    desc: "Place used instruments in a puncture-resistant, color-coded container. Transport to the sterilization area immediately after the procedure.",
+    title: "Point-of-use pre-treatment",
+    desc: "At chairside, spray or wipe instruments with enzymatic foam immediately after use to prevent bioburden from drying. Place in a puncture-resistant, leak-proof transport container with a lid and carry to the sterilization area.",
   },
   {
-    title: "Pre-clean and rinse",
-    desc: "Wearing heavy-duty utility gloves, scrub instruments under running water using a long-handled brush. Remove all visible debris.",
+    title: "Automated cleaning (ultrasonic or washer-disinfector)",
+    desc: "Wearing heavy-duty utility gloves, face protection, and a gown, load instruments into the ultrasonic cleaner with fresh enzymatic solution. Run a full cycle (6\u201310 min) per manufacturer\u2019s IFU. The CDC recommends automated cleaning equipment over hand scrubbing to reduce sharps-injury risk (CDC MMWR 2003, §III.B).",
   },
   {
-    title: "Ultrasonic cleaning cycle",
-    desc: "Submerge instruments in the ultrasonic cleaner with enzymatic solution. Run a full cycle (6\u201310 minutes) per manufacturer\u2019s instructions.",
+    title: "Rinse, inspect, and dry",
+    desc: "Rinse instruments thoroughly with distilled or deionized water. Visually inspect each instrument for residual debris under adequate lighting; re-clean any instrument that fails inspection. Dry completely before packaging to prevent wet packs.",
   },
   {
-    title: "Rinse and inspect",
-    desc: "Rinse instruments thoroughly with distilled water. Visually inspect each instrument under magnification for residual debris. Re-clean if necessary.",
+    title: "Package with chemical indicators",
+    desc: "Arrange instruments in sterilization cassettes or FDA-cleared pouches. Place a Class 5 chemical integrator inside each package. Seal pouches and label with sterilizer ID, cycle number, date, and operator initials.",
   },
   {
-    title: "Package for autoclaving",
-    desc: "Place instruments in sterilization pouches or cassettes. Include a Class 5 integrator in each package. Seal pouches and label with date, cycle number, and operator initials.",
+    title: "Load autoclave and run cycle",
+    desc: "Load without overcrowding per manufacturer\u2019s IFU. Use correct cycle for load type: 132\u00a0\u00b0C (270\u00a0\u00b0F) for 4 min (pre-vacuum, wrapped) or 121\u00a0\u00b0C (250\u00a0\u00b0F) for 30 min (gravity, wrapped). Do not exceed the maximum load weight.",
   },
   {
-    title: "Load and run autoclave",
-    desc: "Load the autoclave without overcrowding. Run at 134\u00a0\u00b0C / 18 minutes (pre-vacuum) or 121\u00a0\u00b0C / 30 minutes (gravity). Record cycle parameters in the sterilization log.",
+    title: "Biological monitoring (spore test)",
+    desc: "Place a biological indicator (BI) in the most challenging location of the load at least weekly and with every implantable-device load (CDC MMWR 2003, §III.D). Incubate per manufacturer\u2019s instructions. Record pass/fail in the sterilization log.",
   },
   {
-    title: "Store sterilized instruments",
-    desc: "After the drying cycle, store sealed packages in a clean, dry, covered area. Rotate stock using first-in-first-out. Packages are valid for 12 months if seal integrity is maintained.",
+    title: "Failed spore-test protocol",
+    desc: "If a BI result is positive: remove the sterilizer from service immediately. Quarantine all items processed since the last negative BI. Re-run the spore test after checking loading, packaging, and cycle parameters. Do not return the unit to service until a confirmed negative result is obtained. Document the failure, corrective actions, and retest outcome.",
+  },
+  {
+    title: "Verify, log, and store",
+    desc: "After the drying phase, verify package integrity and check the external chemical indicator on each package. Record all cycle data in the sterilization log (date, cycle number, operator, BI result). Store sealed packages in a clean, dry, covered area using first-in-first-out rotation.",
   },
 ];
 

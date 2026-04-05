@@ -32,10 +32,10 @@ const notifications = [
   {
     id: 1,
     title: "SOP Review Overdue",
-    desc: "Instrument Sterilisation Protocol needs annual review",
+    desc: "Instrument Sterilization Protocol needs annual review",
     time: "2h ago",
     icon: AlertTriangle,
-    colour: "text-red-500 bg-red-50",
+    color: "text-red-500 bg-red-50",
     read: false,
   },
   {
@@ -44,7 +44,7 @@ const notifications = [
     desc: "Sarah Johnson accepted your invite",
     time: "5h ago",
     icon: CheckCircle2,
-    colour: "text-emerald-500 bg-emerald-50",
+    color: "text-emerald-500 bg-emerald-50",
     read: false,
   },
   {
@@ -53,7 +53,7 @@ const notifications = [
     desc: "HIPAA Privacy Procedures is now live",
     time: "1d ago",
     icon: FileText,
-    colour: "text-indigo-500 bg-indigo-50",
+    color: "text-indigo-500 bg-indigo-50",
     read: true,
   },
 ];
@@ -163,7 +163,7 @@ export function Header({ onMenuClick }: HeaderProps) {
                         key={n.id}
                         className={`flex gap-3 px-4 py-3 border-b last:border-0 transition-colors hover:bg-slate-50 ${!n.read ? "bg-indigo-50/30" : ""}`}
                       >
-                        <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${n.colour}`}>
+                        <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${n.color}`}>
                           <n.icon className="h-4 w-4" />
                         </div>
                         <div className="min-w-0 flex-1">

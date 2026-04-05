@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ShieldCheck } from "lucide-react";
 
 export function PublicFooter() {
   return (
@@ -59,6 +60,11 @@ export function PublicFooter() {
         </div>
 
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
+          <div className="mb-4 flex items-center justify-center gap-1.5 text-emerald-600">
+            <ShieldCheck className="h-4 w-4" />
+            <span className="font-medium">PHI-Free Platform</span>
+            <span className="text-muted-foreground">— DentiSOP documents procedures, never patient data.</span>
+          </div>
           <p>&copy; {new Date().getFullYear()} DentiSOP. All rights reserved.</p>
           <p className="mt-2">support@dentisop.com</p>
         </div>
