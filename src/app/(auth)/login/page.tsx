@@ -32,7 +32,19 @@ export default function LoginPage() {
         return;
       }
 
-      router.push("/dashboard");
+      // Check if user is a team member — route to portal
+      const { data: teamMember } = await supabase
+        .from("team_members")
+        .select("id")
+        .eq("user_id", (await supabase.auth.getUser()).data.user?.id)
+        .limit(1)
+        .maybeSingle();
+
+      if (teamMember) {
+        router.push("/portal");
+      } else {
+        router.push("/dashboard");
+      }
     } catch {
       setError("An unexpected error occurred. Please try again.");
     } finally {

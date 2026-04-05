@@ -29,15 +29,18 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Redirect unauthenticated users away from dashboard
-  if (!user && request.nextUrl.pathname.startsWith("/dashboard")) {
+  // Redirect unauthenticated users away from protected routes
+  if (!user && (request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/portal"))) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     return NextResponse.redirect(url);
   }
 
-  // Redirect authenticated users away from auth pages
+  // Redirect authenticated users away from auth pages (but not team-join)
   if (user && (request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/signup")) {
+    // Check if user is a team member or admin
+    // For simplicity, redirect to /dashboard — the portal page itself handles
+    // redirecting team members if they land on /dashboard
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
     return NextResponse.redirect(url);
