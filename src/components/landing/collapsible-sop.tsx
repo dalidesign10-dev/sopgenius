@@ -7,7 +7,7 @@ import { CardContent } from "@/components/ui/card";
 const steps = [
   {
     title: "Transport contaminated instruments",
-    desc: "Place used instruments in a puncture-resistant, colour-coded container. Transport to the sterilisation area immediately after the procedure.",
+    desc: "Place used instruments in a puncture-resistant, color-coded container. Transport to the sterilization area immediately after the procedure.",
   },
   {
     title: "Pre-clean and rinse",
@@ -23,14 +23,14 @@ const steps = [
   },
   {
     title: "Package for autoclaving",
-    desc: "Place instruments in sterilisation pouches or cassettes. Include a Class 5 integrator in each package. Seal pouches and label with date, cycle number, and operator initials.",
+    desc: "Place instruments in sterilization pouches or cassettes. Include a Class 5 integrator in each package. Seal pouches and label with date, cycle number, and operator initials.",
   },
   {
     title: "Load and run autoclave",
-    desc: "Load the autoclave without overcrowding. Run at 134\u00a0\u00b0C / 18 minutes (pre-vacuum) or 121\u00a0\u00b0C / 30 minutes (gravity). Record cycle parameters in the sterilisation log.",
+    desc: "Load the autoclave without overcrowding. Run at 134\u00a0\u00b0C / 18 minutes (pre-vacuum) or 121\u00a0\u00b0C / 30 minutes (gravity). Record cycle parameters in the sterilization log.",
   },
   {
-    title: "Store sterilised instruments",
+    title: "Store sterilized instruments",
     desc: "After the drying cycle, store sealed packages in a clean, dry, covered area. Rotate stock using first-in-first-out. Packages are valid for 12 months if seal integrity is maintained.",
   },
 ];
@@ -59,7 +59,6 @@ export function CollapsibleSOP() {
         ))}
       </ol>
 
-      {/* Toggle */}
       <button
         onClick={() => setExpanded(!expanded)}
         className="flex w-full items-center justify-center gap-2 border-t bg-slate-50 py-3 text-sm font-semibold text-primary transition-colors hover:bg-slate-100"

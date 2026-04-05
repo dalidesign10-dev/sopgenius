@@ -11,7 +11,7 @@ export function PublicFooter() {
               DentiSOP
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              The system your clinic runs on. Standardise procedures, train staff faster, and stay compliance-ready.
+              Dental compliance and SOP software. Document procedures, assign them to staff, and track acknowledgments.
             </p>
           </div>
 
@@ -34,7 +34,7 @@ export function PublicFooter() {
               <li><Link href="/dental-compliance-software" className="hover:text-foreground">Compliance Software</Link></li>
               <li><Link href="/guides" className="hover:text-foreground">Guides &amp; Checklists</Link></li>
               <li><Link href="/guides/dental-osha-compliance-checklist" className="hover:text-foreground">OSHA Compliance Checklist</Link></li>
-              <li><Link href="/help" className="hover:text-foreground">Help Centre</Link></li>
+              <li><Link href="/help" className="hover:text-foreground">Help Center</Link></li>
             </ul>
           </div>
 

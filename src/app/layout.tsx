@@ -16,30 +16,32 @@ export const metadata: Metadata = {
     template: "%s | DentiSOP",
   },
   description:
-    "Document, standardise, and train on every procedure in your dental practice. OSHA, HIPAA, and CDC-aligned SOPs — generated in seconds. Start your free pilot.",
+    "Dental compliance and SOP software for practice owners and office managers. Find documentation gaps, generate OSHA- and HIPAA-aligned procedures, assign them to staff, and track read acknowledgments. Free to start.",
   keywords: [
-    "dental sop software",
-    "dental sop template",
-    "dental office policy and procedure manual",
     "dental compliance software",
-    "dental office procedures",
-    "osha dental compliance",
-    "hipaa dental office",
+    "dental SOP software",
+    "dental office policies and procedures",
+    "HIPAA compliance dental practice",
+    "OSHA compliance dental office",
     "dental staff training software",
+    "dental procedure documentation software",
+    "infection control dental checklist",
+    "dental office policy and procedure manual",
+    "dental SOP template",
   ],
   openGraph: {
-    title: "DentiSOP — The Operations System Built for Dental Practices",
+    title: "DentiSOP — Dental Compliance and SOP Software",
     description:
-      "Document, standardise, and train on every procedure in your dental practice. OSHA, HIPAA, and CDC-aligned SOPs — generated in seconds.",
+      "Find documentation gaps, generate OSHA- and HIPAA-aligned procedures, assign them to staff, and track acknowledgments. Built for dental practices.",
     type: "website",
     siteName: "DentiSOP",
     url: baseUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "DentiSOP — The Operations System Built for Dental Practices",
+    title: "DentiSOP — Dental Compliance and SOP Software",
     description:
-      "Document, standardise, and train on every procedure in your dental practice. OSHA, HIPAA, and CDC-aligned SOPs — generated in seconds.",
+      "Find documentation gaps, generate OSHA- and HIPAA-aligned procedures, assign them to staff, and track acknowledgments. Built for dental practices.",
   },
   robots: {
     index: true,
@@ -58,7 +60,7 @@ const organizationSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
-    "The operations system built for dental practices. Document, standardise, and train on every clinical, administrative, and compliance procedure.",
+    "Dental compliance and SOP software. Find documentation gaps, generate procedures, assign to staff, and track acknowledgments.",
   offers: [
     {
       "@type": "Offer",

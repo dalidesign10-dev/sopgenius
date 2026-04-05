@@ -10,26 +10,20 @@ import {
   X,
   Check,
   ShieldAlert,
-  DollarSign,
   UserX,
-  FolderOpen,
-  RefreshCw,
-  Lock,
-  Flame,
-  CircleAlert,
   BookOpen,
-  Zap,
   Eye,
-  Target,
   FileText,
-  UserPlus,
-  HelpCircle,
   CreditCard,
-  MessageCircle,
   BarChart3,
   ClipboardCheck,
-  TrendingUp,
   Activity,
+  Search,
+  RefreshCw,
+  Bell,
+  History,
+  Download,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
@@ -43,10 +37,10 @@ const C = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8";
 /* ── DATA ─────────────────────────────────────────────────────────── */
 
 const SCORE_ITEMS = [
-  { name: "Instrument Sterilisation Protocol", status: "missing" },
+  { name: "Instrument Sterilization Protocol", status: "missing" },
   { name: "OSHA Exposure Control Plan", status: "missing" },
   { name: "HIPAA Privacy Procedures", status: "missing" },
-  { name: "Bloodborne Pathogens Programme", status: "missing" },
+  { name: "Bloodborne Pathogens Program", status: "missing" },
   { name: "Hazard Communication Plan", status: "missing" },
   { name: "Emergency Response Protocol", status: "missing" },
   { name: "Patient Intake Workflow", status: "draft" },
@@ -61,56 +55,44 @@ const SCORE_ITEMS = [
   { name: "Patient Complaint Handling", status: "missing" },
 ] as { name: string; status: "missing" | "draft" | "complete" }[];
 
-const BEFORE = [
-  "Procedures live in people\u2019s heads",
-  "New hires shadow for 2\u20133 weeks",
-  "Every handover is different",
-  "Compliance docs outdated or missing",
-  "No proof staff read protocols",
-  "Key person leaves \u2192 knowledge gone",
-];
-const AFTER = [
-  "Every procedure documented and assigned",
-  "Workflows assigned from day one",
-  "Same standard, every time",
-  "Compliance docs always current",
-  "Digital acknowledgements tracked",
-  "Knowledge stays with the practice forever",
-];
-
 const PLANS = [
   {
     name: "Starter",
-    price: "\u00a30",
+    price: "$0",
     period: "",
-    desc: "See it in action. No commitment.",
-    features: ["3 procedures/month", "2 templates", "PDF export", "OSHA & HIPAA basics"],
+    desc: "See the system in action. No commitment.",
+    features: [
+      "3 procedures per month",
+      "2 pre-built templates",
+      "PDF export",
+      "OSHA & HIPAA basics",
+    ],
     cta: "Start Free",
     href: "/signup",
     pop: false,
   },
   {
     name: "Clinic",
-    price: "\u00a379",
-    annual: "\u00a359",
+    price: "$97",
+    annual: "$79",
     period: "/mo",
-    desc: "Everything for one location.",
+    desc: "Everything for one practice.",
     features: [
       "Unlimited procedures",
-      "All templates + frameworks",
-      "PDF, Word, Markdown exports",
+      "All templates and frameworks",
+      "PDF, Word, and Markdown exports",
       "Version history",
-      "Team tracking & acknowledgements",
+      "Team assignment and read tracking",
       "30-day money-back guarantee",
     ],
-    cta: "Build Your System",
+    cta: "Start Your Pilot",
     href: "/signup?plan=practice",
     pop: true,
   },
   {
-    name: "Multi-Clinic",
-    price: "\u00a3149",
-    annual: "\u00a3119",
+    name: "Multi-Location",
+    price: "$197",
+    annual: "$159",
     period: "/mo",
     desc: "For group practices and DSOs.",
     features: [
@@ -121,7 +103,7 @@ const PLANS = [
       "HIPAA BAA included",
       "Priority support (24-hour response)",
     ],
-    cta: "Standardise All Locations",
+    cta: "Standardize All Locations",
     href: "/signup?plan=group",
     pop: false,
   },
@@ -129,28 +111,36 @@ const PLANS = [
 
 const FAQS = [
   {
-    q: "Will these procedures satisfy an OSHA inspector?",
-    a: "DentiSOP structures every procedure around OSHA, HIPAA, and CDC documentation requirements\u00a0\u2014\u00a0including the regulatory cross-references inspectors look for. We always recommend your compliance officer reviews before implementation.",
+    q: "How does DentiSOP support OSHA and HIPAA documentation?",
+    a: "Every template and generated procedure is structured around the documentation frameworks that OSHA, HIPAA, CDC, and state boards reference\u2014including regulatory cross-references and role assignments. DentiSOP helps you organize and maintain these records, but we always recommend your compliance lead or advisor reviews procedures before implementation.",
   },
   {
     q: "How is this different from Google Docs or a binder?",
-    a: "Google Docs gives you a blank page. A binder collects dust. DentiSOP gives you dental-specific templates, compliance tagging, version history, team acknowledgement tracking, and audit-ready exports\u00a0\u2014\u00a0all in one system.",
+    a: "Google Docs gives you a blank page. A binder collects dust. DentiSOP provides dental-specific templates, regulatory framework tagging, version history, team assignment, read-acknowledgment tracking, and exportable audit-ready documentation\u2014all in one system.",
   },
   {
-    q: "I don\u2019t have time to learn another tool.",
-    a: "Describe any procedure in plain language. DentiSOP structures it into a professional, compliant document in under 60 seconds. Most office managers document their first procedure within 2 minutes.",
+    q: "Is AI involved? Is the output just generic ChatGPT text?",
+    a: "AI helps draft the initial procedure, but DentiSOP is not a chatbot. Every output is structured around dental-specific compliance frameworks with role assignments, step-by-step instructions, and regulatory references. You review and edit every word before assigning it to your team.",
   },
   {
-    q: "Is the output actually usable?",
-    a: "Scroll up and read the sterilisation protocol on this page. That\u2019s a real DentiSOP output\u00a0\u2014\u00a0not a mockup.",
+    q: "Can I edit the generated procedures?",
+    a: "Yes. Every procedure is fully editable. Add steps, change language, adjust role assignments, update regulatory references\u2014the output is yours to customize for your practice.",
   },
   {
-    q: "What if I cancel?",
-    a: "Every paid plan has a 30-day money-back guarantee. Cancel anytime. You keep every procedure you\u2019ve exported.",
+    q: "How long does setup take?",
+    a: "Most office managers document their first procedure within 2 minutes. Pick a template, customize it, and assign it to your team. No onboarding calls or implementation projects required.",
   },
   {
-    q: "Is this just an AI chatbot?",
-    a: "No. DentiSOP is an execution enforcement system\u00a0\u2014\u00a0it assigns procedures to your team, tracks who\u2019s read them, flags non-compliance by name, and ensures your clinic runs to the same standard every day. AI helps draft the procedures; the system makes sure your team actually follows them.",
+    q: "What happens if I cancel?",
+    a: "Every paid plan includes a 30-day money-back guarantee. Cancel anytime. You keep every procedure you\u2019ve exported.",
+  },
+  {
+    q: "Do you support multi-location practices?",
+    a: "Yes. The Multi-Location plan supports up to 5 locations and 15 users, with custom branding on exports and a centralized compliance audit trail. Need more? Contact us about Enterprise.",
+  },
+  {
+    q: "Is DentiSOP a substitute for legal or compliance advice?",
+    a: "No. DentiSOP helps you structure, organize, and maintain the documentation that regulatory bodies expect. It is not legal advice, and generated procedures should be reviewed by your compliance lead or advisor before implementation.",
   },
 ];
 
@@ -186,38 +176,22 @@ export default function LandingPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* LEFT — copy */}
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-red-500/10 border border-red-500/20 px-4 py-1.5 text-sm font-semibold text-red-400 mb-6">
-                <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" /><span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" /></span>
-                Most dental clinics fail audits because of missing SOPs
-              </p>
               <h1 className="text-[2.25rem] leading-[1.1] font-extrabold tracking-tight text-white sm:text-5xl">
-                The Dental Operations System.{" "}
-                <span className="text-red-400">Train staff 3x faster. Stay audit&#8209;ready.</span>
+                Run Your Dental Practice{" "}
+                <span className="text-red-400">to One Standard</span>
               </h1>
-              <p className="mt-5 text-lg text-slate-400">
-                Pre-built SOPs for sterilisation, patient intake, and emergencies. Assign to your team, track who&rsquo;s read them, flag non&#8209;compliance by name.
+              <p className="mt-5 text-lg leading-relaxed text-slate-400">
+                Find missing procedures, generate role-based SOPs, assign them to staff, and keep audit-ready records&mdash;in one system built for dental practices.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/20">
-                  <Link href="/signup">See Your Clinic&rsquo;s Gaps <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  <Link href="/signup">Run My Gap Check <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
-                <a href="#sample-procedure" className="text-sm font-semibold text-slate-400 hover:text-white transition-colors underline underline-offset-4 decoration-slate-600 hover:decoration-white">See a real SOP output &darr;</a>
+                <a href="#sample-sop" className="text-sm font-semibold text-slate-400 hover:text-white transition-colors underline underline-offset-4 decoration-slate-600 hover:decoration-white">View Sample SOP &darr;</a>
               </div>
-              <p className="mt-4 text-sm text-slate-500">Free to start. No credit card. Setup takes 2 minutes.</p>
-
-              {/* ROI proof strip */}
-              <div className="mt-8 flex flex-wrap gap-6 border-t border-white/10 pt-6">
-                {[
-                  { value: "2 min", label: "to document a procedure" },
-                  { value: "1 day", label: "new hire onboarding vs 2-3 weeks" },
-                  { value: "100%", label: "read-tracking coverage" },
-                ].map((s) => (
-                  <div key={s.label}>
-                    <p className="text-xl font-black text-white">{s.value}</p>
-                    <p className="text-xs text-slate-500">{s.label}</p>
-                  </div>
-                ))}
-              </div>
+              <p className="mt-6 text-sm text-slate-500 leading-relaxed">
+                Structured around OSHA, HIPAA, CDC, and state-board documentation workflows. Final review stays with your compliance lead.
+              </p>
             </div>
 
             {/* RIGHT — live dashboard fragment */}
@@ -226,7 +200,7 @@ export default function LandingPage() {
                 {/* Compliance score bar */}
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-slate-300">Clinic Compliance Score</span>
+                    <span className="text-sm font-semibold text-slate-300">Practice Documentation Score</span>
                     <span className="text-sm font-bold text-red-400">34%</span>
                   </div>
                   <div className="h-2.5 overflow-hidden rounded-full bg-white/10">
@@ -236,7 +210,6 @@ export default function LandingPage() {
 
                 {/* Procedure table */}
                 <div className="rounded-lg border border-white/10 overflow-hidden">
-                  {/* Header */}
                   <div className="hidden sm:grid grid-cols-12 gap-2 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500 border-b border-white/10">
                     <div className="col-span-4">Procedure</div>
                     <div className="col-span-3">Assigned</div>
@@ -245,7 +218,7 @@ export default function LandingPage() {
                   </div>
                   <div className="divide-y divide-white/[0.06]">
                     {[
-                      { name: "Instrument Sterilisation", assigned: "Sarah J., Mike R.", read: "2/2 read", readC: "text-emerald-400", status: "Current", statusC: "text-emerald-400 bg-emerald-400/10", alert: false },
+                      { name: "Instrument Sterilization", assigned: "Sarah J., Mike R.", read: "2/2 read", readC: "text-emerald-400", status: "Current", statusC: "text-emerald-400 bg-emerald-400/10", alert: false },
                       { name: "OSHA Exposure Control", assigned: "All Staff (6)", read: "4/6 read", readC: "text-amber-400", status: "2 pending", statusC: "text-amber-400 bg-amber-400/10", alert: false },
                       { name: "Patient Intake", assigned: "Front Desk (3)", read: "3/3 read", readC: "text-emerald-400", status: "Current", statusC: "text-emerald-400 bg-emerald-400/10", alert: false },
                       { name: "Hazard Communication", assigned: "Tyler B., Devon M.", read: "0/2 read", readC: "text-red-400", status: "Unread", statusC: "text-red-400 bg-red-400/10", alert: true },
@@ -278,31 +251,23 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── RISK BAR (icon-stat strip) ───────────────────────────── */}
-      <div className="bg-red-600 py-3.5">
-        <div className={`${C} flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white md:flex-row md:gap-10`}>
-          <span className="flex items-center gap-2"><ShieldAlert className="h-4 w-4 opacity-80" />$16,550 per OSHA violation</span>
-          <span className="hidden text-red-300 md:inline">|</span>
-          <span className="flex items-center gap-2"><DollarSign className="h-4 w-4 opacity-80" />$2.19M HIPAA penalty cap</span>
-          <span className="hidden text-red-300 md:inline">|</span>
-          <span className="flex items-center gap-2"><UserX className="h-4 w-4 opacity-80" />$23,650&ndash;$94,600 per DA replacement</span>
-        </div>
-      </div>
-
-      {/* ── HOW IT WORKS (3-step micro-strip) ────────────────────── */}
-      <section className="bg-white py-14 border-b border-slate-100">
+      {/* ════════════════════════════════════════════════════════════ */}
+      {/*  2 · TRUST / STANDARDS STRIP                                 */}
+      {/* ════════════════════════════════════════════════════════════ */}
+      <section className="border-b border-slate-200 bg-slate-50 py-8">
         <div className={C}>
-          <p className="text-center text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">How it works</p>
-          <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-3 text-center">
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm text-slate-600">
             {[
-              { n: "1", title: "Pick a template", desc: "Choose from pre-built dental SOPs — sterilisation, intake, emergencies, OSHA, and more." },
-              { n: "2", title: "Assign to your team", desc: "Select which roles need it. Staff see exactly which procedures are theirs." },
-              { n: "3", title: "Track compliance", desc: "See who read what, who's behind, and export audit-ready docs in one click." },
-            ].map((s) => (
-              <div key={s.n}>
-                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white text-sm font-black mb-3">{s.n}</div>
-                <h3 className="text-base font-bold text-slate-900">{s.title}</h3>
-                <p className="mt-1 text-sm text-slate-500">{s.desc}</p>
+              { icon: Shield, label: "OSHA-aligned templates" },
+              { icon: Shield, label: "HIPAA documentation support" },
+              { icon: Shield, label: "CDC infection control workflows" },
+              { icon: FileText, label: "Version history" },
+              { icon: Eye, label: "Read acknowledgment tracking" },
+              { icon: Download, label: "Exportable audit records" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-2">
+                <item.icon className="h-4 w-4 text-slate-400" />
+                <span className="font-medium">{item.label}</span>
               </div>
             ))}
           </div>
@@ -310,70 +275,97 @@ export default function LandingPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════ */}
-      {/*  2 · SAMPLE PROCEDURE (collapsible)                         */}
+      {/*  3 · GAP-CHECK / DIAGNOSIS                                   */}
       {/* ════════════════════════════════════════════════════════════ */}
-      <section id="sample-procedure" className="bg-slate-50 py-20">
+      <section className="bg-white py-20">
         <div className={C}>
-          <div className="mx-auto max-w-2xl text-center mb-12">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Real output</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              This Is What Your Team Should Be Following
-            </h2>
-          </div>
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-red-600">Documentation gaps</p>
+              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+                Most Practices Are Missing Critical Procedures
+              </h2>
+              <p className="mt-3 text-slate-500">This is what a typical dental practice looks like before DentiSOP. How many of these are documented at yours?</p>
+            </div>
 
-          <div className="mx-auto max-w-3xl">
-            <Card className="border-0 shadow-2xl ring-1 ring-primary/20 overflow-hidden">
-              <CardHeader className="border-b bg-gradient-to-r from-slate-50 to-primary/5">
-                <div className="flex flex-wrap items-center justify-between gap-3">
+            <Card className="border-0 shadow-2xl ring-1 ring-slate-200">
+              <CardHeader className="border-b bg-gradient-to-r from-slate-50 to-red-50/30">
+                <div className="flex items-center justify-between">
                   <div>
-                    <Badge className="mb-2 border-primary/20 bg-primary/10 text-primary hover:bg-primary/15">Real Output</Badge>
-                    <h3 className="text-xl font-bold text-slate-900">Instrument Sterilisation Protocol</h3>
-                    <p className="mt-1 text-sm text-slate-500">PROC-STER-001 &middot; v1.0</p>
+                    <h3 className="text-lg font-bold text-slate-900">Practice Documentation Assessment</h3>
+                    <p className="text-sm text-red-500 font-medium">High-risk &middot; Not inspection-ready</p>
                   </div>
-                  <div className="flex gap-1.5">
-                    <Badge variant="outline" className="text-xs">OSHA</Badge>
-                    <Badge variant="outline" className="text-xs">CDC</Badge>
-                    <Badge variant="outline" className="text-xs">State Board</Badge>
+                  <div className="text-right">
+                    <p className="text-5xl font-black text-red-600">{pct}%</p>
+                    <Badge variant="destructive" className="mt-1 text-xs">AT RISK</Badge>
                   </div>
                 </div>
-                {/* Icon chips */}
-                <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {[
-                    { icon: Target, label: "Standardise sterilisation" },
-                    { icon: Users, label: "All clinical staff" },
-                    { icon: Shield, label: "CDC + OSHA compliant" },
-                    { icon: FileText, label: "29 CFR 1910.1030" },
-                  ].map((chip) => (
-                    <div key={chip.label} className="flex items-center gap-2 rounded-lg bg-white/80 border border-slate-100 px-3 py-2">
-                      <chip.icon className="h-4 w-4 text-primary shrink-0" />
-                      <span className="text-xs font-medium text-slate-700">{chip.label}</span>
-                    </div>
-                  ))}
+                <div className="mt-5 h-4 overflow-hidden rounded-full bg-slate-200">
+                  <div className="h-full rounded-full bg-gradient-to-r from-red-500 to-red-400" style={{ width: `${pct}%` }} />
                 </div>
               </CardHeader>
-              <CollapsibleSOP />
+              <CardContent className="pb-6 pt-5">
+                <div className="grid gap-1.5 sm:grid-cols-2">
+                  {SCORE_ITEMS.map((item) => {
+                    const t = tag(item.status);
+                    return (
+                      <div key={item.name} className="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-slate-50">
+                        <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${dot(item.status)}`} />
+                        <span className="flex-1 text-sm text-slate-700">{item.name}</span>
+                        <span className={`text-xs font-semibold ${t.c}`}>{t.t}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mt-6 border-t pt-5 text-center">
+                  <p className="text-lg font-bold text-red-700">{missing} of {SCORE_ITEMS.length} procedures undocumented</p>
+                  <Button size="lg" className="mt-4" asChild>
+                    <Link href="/signup">Run My Gap Check <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
-          </div>
-
-          {/* CTA */}
-          <div className="mt-10 text-center">
-            <p className="text-sm font-semibold text-slate-600 mb-4">This procedure is documented, assigned, and tracked. Is yours?</p>
-            <Button size="lg" asChild className="shadow-lg shadow-primary/20">
-              <Link href="/signup">Start Running Your Clinic to Standard <ArrowRight className="ml-2 h-4 w-4" /></Link>
-            </Button>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════════ */}
-      {/*  2b · SYSTEM PREVIEW (dashboard — shown early)               */}
+      {/*  4 · HOW IT WORKS (3 steps)                                  */}
       {/* ════════════════════════════════════════════════════════════ */}
-      <section id="system-preview" className="bg-white py-20">
+      <section className="bg-slate-50 py-20 border-y border-slate-200">
+        <div className={C}>
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">How it works</p>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Identify. Document. Enforce.</h2>
+          </div>
+          <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-3">
+            {[
+              { n: "01", icon: Search, t: "Identify Gaps", d: "See which procedures your practice is missing. Choose from pre-built dental templates or describe any workflow in plain language." },
+              { n: "02", icon: FileText, t: "Generate and Customize", d: "Get a structured, role-based SOP with regulatory references in seconds. Edit every word before publishing." },
+              { n: "03", icon: ClipboardCheck, t: "Assign, Track, Prove", d: "Assign procedures by role. Track who has read them. Export acknowledgment logs and audit-ready documentation." },
+            ].map((s) => (
+              <div key={s.n} className="text-center group">
+                <div className="relative mx-auto flex items-center justify-center rounded-2xl bg-primary/10 group-hover:bg-primary/15 transition-colors" style={{ height: "4.5rem", width: "4.5rem" }}>
+                  <s.icon className="h-8 w-8 text-primary" />
+                  <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-black text-white">{s.n}</span>
+                </div>
+                <h3 className="mt-5 text-lg font-bold text-slate-900">{s.t}</h3>
+                <p className="mt-2 text-sm text-slate-500">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════ */}
+      {/*  5 · DASHBOARD PROOF                                         */}
+      {/* ════════════════════════════════════════════════════════════ */}
+      <section className="bg-white py-20">
         <div className={C}>
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">This is what you get</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Your Entire Practice. One Dashboard.</h2>
-            <p className="mt-3 text-slate-500">Every procedure documented, assigned, and tracked &mdash; visible at a glance. No signup needed to see it.</p>
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Execution, not just documentation</p>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Documentation Is Only Useful If Your Team Actually Follows It</h2>
+            <p className="mt-3 text-slate-500">Assign procedures by role. See who has read them. Flag who hasn&rsquo;t. Export proof when you need it.</p>
           </div>
           <div className="mx-auto max-w-5xl">
             <Card className="border-0 shadow-2xl ring-1 ring-slate-200 overflow-hidden">
@@ -436,7 +428,7 @@ export default function LandingPage() {
                   </div>
                   <div className="divide-y">
                     {[
-                      { name: "Instrument Sterilisation", assigned: "Sarah J., Mike R.", read: "2/2 read", status: "Current", sc: "text-emerald-600 bg-emerald-50", readSc: "text-emerald-600" },
+                      { name: "Instrument Sterilization", assigned: "Sarah J., Mike R.", read: "2/2 read", status: "Current", sc: "text-emerald-600 bg-emerald-50", readSc: "text-emerald-600" },
                       { name: "OSHA Exposure Control", assigned: "All Staff (6)", read: "5/6 read", status: "1 pending", sc: "text-amber-600 bg-amber-50", readSc: "text-amber-600" },
                       { name: "Patient Intake Workflow", assigned: "Front Desk", read: "3/3 read", status: "Current", sc: "text-emerald-600 bg-emerald-50", readSc: "text-emerald-600" },
                       { name: "Insurance Verification", assigned: "Maria T., Lisa K.", read: "1/2 read", status: "Review Due", sc: "text-amber-600 bg-amber-50", readSc: "text-amber-600" },
@@ -459,507 +451,132 @@ export default function LandingPage() {
               </div>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════ */}
+      {/*  6 · SAMPLE SOP                                              */}
+      {/* ════════════════════════════════════════════════════════════ */}
+      <section id="sample-sop" className="bg-slate-50 py-20 border-y border-slate-200">
+        <div className={C}>
+          <div className="mx-auto max-w-2xl text-center mb-12">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Real output</p>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+              This Is What the Output Actually Looks Like
+            </h2>
+            <p className="mt-3 text-slate-500">Not a mockup. Not generic AI text. This is a real DentiSOP procedure&mdash;structured, assignable, and ready for your team.</p>
+          </div>
+
+          <div className="mx-auto max-w-3xl">
+            <Card className="border-0 shadow-2xl ring-1 ring-primary/20 overflow-hidden">
+              <CardHeader className="border-b bg-gradient-to-r from-slate-50 to-primary/5">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <Badge className="mb-2 border-primary/20 bg-primary/10 text-primary hover:bg-primary/15">Real Output</Badge>
+                    <h3 className="text-xl font-bold text-slate-900">Instrument Sterilization Protocol</h3>
+                    <p className="mt-1 text-sm text-slate-500">PROC-STER-001 &middot; v1.0</p>
+                  </div>
+                  <div className="flex gap-1.5">
+                    <Badge variant="outline" className="text-xs">OSHA</Badge>
+                    <Badge variant="outline" className="text-xs">CDC</Badge>
+                    <Badge variant="outline" className="text-xs">State Board</Badge>
+                  </div>
+                </div>
+                <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {[
+                    { icon: ClipboardCheck, label: "Standardize sterilization" },
+                    { icon: Users, label: "All clinical staff" },
+                    { icon: Shield, label: "CDC + OSHA aligned" },
+                    { icon: FileText, label: "29 CFR 1910.1030" },
+                  ].map((chip) => (
+                    <div key={chip.label} className="flex items-center gap-2 rounded-lg bg-white/80 border border-slate-100 px-3 py-2">
+                      <chip.icon className="h-4 w-4 text-primary shrink-0" />
+                      <span className="text-xs font-medium text-slate-700">{chip.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardHeader>
+              <CollapsibleSOP />
+            </Card>
+          </div>
+
           <div className="mt-10 text-center">
+            <p className="text-sm text-slate-600 mb-4">This procedure is documented, assigned, and tracked. Are yours?</p>
             <Button size="lg" asChild className="shadow-lg shadow-primary/20">
-              <Link href="/signup">Get This Dashboard for Your Practice <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <Link href="/signup">Run My Gap Check <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════════ */}
-      {/*  2c · WHAT HAPPENS WHEN YOU SIGN UP                          */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-slate-50 py-20">
-        <div className={C}>
-          <div className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Your first 24 hours</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              What Happens After You Click &ldquo;Start&rdquo;
-            </h2>
-          </div>
-          <div className="mx-auto max-w-4xl">
-            <div className="space-y-0">
-              {[
-                { time: "Minute 1", icon: BookOpen, title: "Pick your first template", desc: "Choose from 9 dental-specific templates &mdash; sterilisation, OSHA exposure control, patient intake, and more. Or describe any procedure in plain language.", colour: "bg-indigo-100 text-indigo-600" },
-                { time: "Minute 2", icon: FileText, title: "Your SOP is generated", desc: "A structured, compliance-tagged procedure with regulatory cross-references, step-by-step instructions, and role assignments. Review and edit every word.", colour: "bg-violet-100 text-violet-600" },
-                { time: "Minute 3", icon: Users, title: "Assign it to your team", desc: "Select which roles need this procedure. Every staff member sees exactly which SOPs are theirs.", colour: "bg-emerald-100 text-emerald-600" },
-                { time: "Hour 1", icon: Eye, title: "Track who&rsquo;s read it", desc: "Your dashboard shows read status by name. You know who&rsquo;s compliant and who needs a nudge.", colour: "bg-amber-100 text-amber-600" },
-                { time: "Day 1", icon: Shield, title: "You&rsquo;re inspection-ready", desc: "Export audit-ready documentation with version history, acknowledgement logs, and compliance framework tags.", colour: "bg-emerald-100 text-emerald-700" },
-              ].map((step, i) => (
-                <div key={step.time} className="flex gap-5">
-                  <div className="flex flex-col items-center">
-                    <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${step.colour}`}>
-                      <step.icon className="h-6 w-6" />
-                    </div>
-                    {i < 4 && <div className="w-0.5 flex-1 bg-slate-200 my-1" />}
-                  </div>
-                  <div className="pb-8">
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">{step.time}</p>
-                    <h3 className="mt-1 text-lg font-bold text-slate-900">{step.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  2d · TRUST & LEGITIMACY                                     */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="border-y border-slate-200 bg-white py-16">
-        <div className={C}>
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald-600">Built on real standards</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              Not Generic AI. Dental Compliance Standards.
-            </h2>
-            <p className="mt-3 text-slate-500">
-              Every template and generated procedure is structured around the regulatory frameworks dental inspectors actually reference.
-            </p>
-          </div>
-          <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { framework: "OSHA", ref: "29 CFR 1910.1030", desc: "Bloodborne pathogens, hazard communication, exposure control" },
-              { framework: "HIPAA", ref: "45 CFR Parts 160 & 164", desc: "Patient privacy, security procedures, breach protocols" },
-              { framework: "CDC", ref: "MMWR 52(RR-17)", desc: "Infection control guidelines for dental settings" },
-              { framework: "State Board", ref: "Dental Practice Act", desc: "Scope of practice, supervision, record-keeping" },
-            ].map((f) => (
-              <div key={f.framework} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <div className="flex items-center gap-2 mb-2">
-                  <Shield className="h-5 w-5 text-emerald-600" />
-                  <span className="text-lg font-bold text-slate-900">{f.framework}</span>
-                </div>
-                <p className="text-xs font-mono text-slate-400 mb-2">{f.ref}</p>
-                <p className="text-sm text-slate-600">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mx-auto mt-8 max-w-3xl rounded-xl bg-amber-50 border border-amber-200 p-5">
-            <p className="text-sm text-amber-800">
-              <span className="font-bold">Important:</span> DentiSOP structures your SOPs around these frameworks. We always recommend your compliance officer reviews generated procedures before implementation. DentiSOP is not a substitute for professional regulatory advice.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  3 · PROBLEMS (icon + stat cards)                           */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-20">
-        <div className={C}>
-          <div className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-red-600">The reality</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              This Is Happening Right Now
-            </h2>
-          </div>
-          <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { icon: UserX, title: "Best DA quits", stat: "$23,650\u2013$94,600", sub: "replacement cost", colour: "text-red-600" },
-              { icon: AlertTriangle, title: "No consistency", stat: "3 different", sub: "answers per procedure", colour: "text-red-600" },
-              { icon: ShieldAlert, title: "OSHA exposure", stat: "$165,514", sub: "max wilful fine", colour: "text-red-600" },
-              { icon: Clock, title: "Slow onboarding", stat: "3 weeks", sub: "before new hires are useful", colour: "text-amber-600" },
-              { icon: Flame, title: "Constant interruptions", stat: "5+", sub: "repeated questions per day", colour: "text-amber-600" },
-              { icon: CircleAlert, title: "Zero documentation", stat: "0", sub: "written procedures on file", colour: "text-red-600" },
-            ].map((p) => (
-              <Card key={p.title} className="border-red-100 bg-gradient-to-b from-red-50/60 to-white text-center transition-all hover:shadow-lg hover:border-red-200">
-                <CardContent className="pt-6 pb-5">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-red-100 mb-3">
-                    <p.icon className="h-6 w-6 text-red-500" />
-                  </div>
-                  <h3 className="font-bold text-slate-900">{p.title}</h3>
-                  <p className={`text-3xl font-black mt-2 ${p.colour}`}>{p.stat}</p>
-                  <p className="text-xs text-slate-500 mt-1">{p.sub}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  3b · HUMAN MOMENT                                          */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="border-y border-slate-200 bg-white py-14">
-        <div className={`${C} mx-auto max-w-3xl text-center`}>
-          <div className="flex justify-center gap-1 mb-5">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="relative flex h-10 w-10 items-center justify-center rounded-full bg-amber-50 border border-amber-200">
-                <MessageCircle className="h-4 w-4 text-amber-500" />
-              </div>
-            ))}
-            <div className="flex h-10 items-center justify-center rounded-full bg-red-100 border border-red-200 px-3">
-              <span className="text-sm font-bold text-red-600">+10 today</span>
-            </div>
-          </div>
-          <p className="text-2xl font-bold text-slate-900 sm:text-3xl">
-            The same questions. Every. Single. Day.
-          </p>
-          <p className="mt-4 font-semibold text-red-600">
-            That&rsquo;s not a staffing problem. That&rsquo;s a systems problem.
-          </p>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  3c · SCENARIO TIMELINE                                      */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-slate-950 py-16">
-        <div className={C}>
-          <p className="mb-10 text-center text-sm font-bold uppercase tracking-widest text-red-400">One week without documented procedures</p>
-          <div className="mx-auto max-w-4xl">
-            {/* Desktop timeline */}
-            <div className="hidden sm:flex items-start justify-between relative">
-              {/* Connector line */}
-              <div className="absolute top-6 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-amber-500 via-red-500 to-red-600" />
-              {[
-                { day: "Mon", icon: UserPlus, label: "No onboarding\nchecklist", colour: "bg-amber-500" },
-                { day: "Tue", icon: HelpCircle, label: "3 different\nanswers", colour: "bg-amber-600" },
-                { day: "Wed", icon: AlertTriangle, label: "Step skipped.\nNo one noticed", colour: "bg-red-500" },
-                { day: "Thu", icon: Clock, label: "Patient\ncomplaints", colour: "bg-red-600" },
-                { day: "Fri", icon: ShieldAlert, label: "Inspector\narrives", colour: "bg-red-700" },
-              ].map((d) => (
-                <div key={d.day} className="relative flex flex-col items-center text-center w-1/5">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-full ${d.colour} shadow-lg z-10`}>
-                    <d.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <p className="mt-3 text-sm font-bold text-white">{d.day}</p>
-                  <p className="mt-1 text-xs text-slate-400 whitespace-pre-line">{d.label}</p>
-                </div>
-              ))}
-            </div>
-            {/* Mobile stacked */}
-            <div className="sm:hidden space-y-3">
-              {[
-                { day: "Mon", icon: UserPlus, label: "No onboarding checklist", colour: "bg-amber-500" },
-                { day: "Tue", icon: HelpCircle, label: "3 different answers", colour: "bg-amber-600" },
-                { day: "Wed", icon: AlertTriangle, label: "Step skipped. No one noticed", colour: "bg-red-500" },
-                { day: "Thu", icon: Clock, label: "Patient complaints", colour: "bg-red-600" },
-                { day: "Fri", icon: ShieldAlert, label: "Inspector arrives", colour: "bg-red-700" },
-              ].map((d) => (
-                <div key={d.day} className="flex items-center gap-4">
-                  <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${d.colour}`}>
-                    <d.icon className="h-4 w-4 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-white">{d.day}</p>
-                    <p className="text-xs text-slate-400">{d.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="mt-10 text-center text-lg font-bold text-red-400">This is Tuesday at most dental practices.</p>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  4 · PRACTICE DOCUMENTATION SCORE                           */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-slate-50 py-20">
-        <div className={C}>
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-12 text-center">
-              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Close the gaps</p>
-              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                DentiSOP Closes Every Gap in Your Practice
-              </h2>
-              <p className="mt-3 text-slate-500">Here&rsquo;s what a typical practice looks like before DentiSOP &mdash; and how quickly the system fills the gaps.</p>
-            </div>
-
-            <Card className="border-0 shadow-2xl ring-1 ring-slate-200">
-              <CardHeader className="border-b bg-gradient-to-r from-slate-50 to-red-50/30">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-900">Practice Documentation Assessment</h3>
-                    <p className="text-sm text-red-500 font-medium">High-risk &middot; Not inspection-ready</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-5xl font-black text-red-600">{pct}%</p>
-                    <Badge variant="destructive" className="mt-1 text-xs">AT RISK</Badge>
-                  </div>
-                </div>
-                <div className="mt-5 h-4 overflow-hidden rounded-full bg-slate-200">
-                  <div className="h-full rounded-full bg-gradient-to-r from-red-500 to-red-400" style={{ width: `${pct}%` }} />
-                </div>
-              </CardHeader>
-              <CardContent className="pb-6 pt-5">
-                <div className="grid gap-1.5 sm:grid-cols-2">
-                  {SCORE_ITEMS.map((item) => {
-                    const t = tag(item.status);
-                    return (
-                      <div key={item.name} className="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-slate-50">
-                        <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${dot(item.status)}`} />
-                        <span className="flex-1 text-sm text-slate-700">{item.name}</span>
-                        <span className={`text-xs font-semibold ${t.c}`}>{t.t}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="mt-6 border-t pt-5 text-center">
-                  <p className="text-lg font-bold text-red-700">{missing} of {SCORE_ITEMS.length} procedures undocumented</p>
-                  <Button size="lg" className="mt-4" asChild>
-                    <Link href="/signup">Close the Gap <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  5 · THE SOLUTION (icon cards)                               */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-20">
-        <div className={C}>
-          <div className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">The system</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              Make Sure Your Team Actually Follows the Process
-            </h2>
-          </div>
-          <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { icon: ClipboardCheck, t: "Assign by Role", d: "Every staff member knows exactly which procedures are theirs." },
-              { icon: Eye, t: "Track Reads", d: "See who's read what — and who hasn't." },
-              { icon: AlertTriangle, t: "Flag Non-Compliance", d: "Dashboard shows who's behind, by name." },
-              { icon: Shield, t: "Enforce Standards", d: "OSHA, HIPAA, CDC — mapped and monitored." },
-            ].map((item) => (
-              <Card key={item.t} className="border-slate-100 text-center transition-all hover:border-primary/30 hover:shadow-lg group">
-                <CardContent className="pt-8 pb-6">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 group-hover:bg-primary/15 transition-colors">
-                    <item.icon className="h-7 w-7 text-primary" />
-                  </div>
-                  <h3 className="mt-4 font-bold text-slate-900">{item.t}</h3>
-                  <p className="mt-2 text-sm text-slate-500">{item.d}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  6 · BEFORE / AFTER                                         */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-slate-50 py-20">
-        <div className={C}>
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Transformation</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">From Chaos to Control</h2>
-          </div>
-          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
-            <Card className="border-red-200 bg-red-50/60">
-              <CardHeader className="pb-3">
-                <h3 className="flex items-center gap-2 text-lg font-bold text-red-800"><X className="h-5 w-5" /> Before</h3>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {BEFORE.map((b) => (
-                    <li key={b} className="flex items-center gap-2.5 text-sm text-red-700"><X className="h-4 w-4 shrink-0 opacity-60" />{b}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="border-emerald-200 bg-emerald-50/60">
-              <CardHeader className="pb-3">
-                <h3 className="flex items-center gap-2 text-lg font-bold text-emerald-800"><CheckCircle className="h-5 w-5" /> After</h3>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {AFTER.map((a) => (
-                    <li key={a} className="flex items-center gap-2.5 text-sm text-emerald-700"><Check className="h-4 w-4 shrink-0" />{a}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  6b · SYSTEM STATEMENT                                       */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="border-y border-indigo-100 bg-gradient-to-r from-indigo-50 via-white to-indigo-50 py-14">
-        <div className={`${C} mx-auto max-w-3xl text-center`}>
-          <p className="text-2xl font-bold leading-snug text-slate-900 sm:text-3xl">
-            If your team doesn&rsquo;t follow the process,{" "}
-            <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">the process doesn&rsquo;t exist.</span>
-          </p>
-          <p className="mt-4 text-lg text-slate-600">
-            DentiSOP makes sure they follow it.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            {[
-              { icon: Users, label: "Assigned to staff" },
-              { icon: Eye, label: "Tracked for reads" },
-              { icon: RefreshCw, label: "Updated in real time" },
-              { icon: Shield, label: "Audit-ready always" },
-            ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2 rounded-full bg-white border border-indigo-200 px-5 py-2.5 shadow-sm">
-                <item.icon className="h-4 w-4 text-indigo-600" />
-                <span className="text-sm font-medium text-slate-700">{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  6c · DAILY USAGE                                            */}
-      {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-20">
-        <div className={C}>
-          <div className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-indigo-600">Execution layer</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Your Team Uses It Every Day. Not Once.</h2>
-          </div>
-          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
-            {[
-              {
-                icon: UserPlus,
-                title: "New hire joins",
-                desc: "Assign role-specific procedures. Track acknowledgements.",
-                tag: "Onboarding",
-                colour: "bg-violet-50 text-violet-600",
-                iconBg: "bg-violet-100",
-              },
-              {
-                icon: BarChart3,
-                title: "Weekly check",
-                desc: "See who read what. Spot gaps instantly.",
-                tag: "Monitoring",
-                colour: "bg-indigo-50 text-indigo-600",
-                iconBg: "bg-indigo-100",
-              },
-              {
-                icon: RefreshCw,
-                title: "Process changes",
-                desc: "Update once. Everyone gets the current version.",
-                tag: "Updates",
-                colour: "bg-emerald-50 text-emerald-600",
-                iconBg: "bg-emerald-100",
-              },
-            ].map((item) => (
-              <Card key={item.title} className="border-slate-100 text-center transition-all hover:shadow-lg hover:border-indigo-200 group">
-                <CardContent className="pt-8 pb-6">
-                  <Badge className={`${item.colour} hover:${item.colour} mb-4`}>{item.tag}</Badge>
-                  <div className={`mx-auto flex h-14 w-14 items-center justify-center rounded-2xl ${item.iconBg} mb-4 group-hover:scale-110 transition-transform`}>
-                    <item.icon className="h-7 w-7 text-slate-700" />
-                  </div>
-                  <h3 className="font-bold text-slate-900 text-lg">{item.title}</h3>
-                  <p className="mt-2 text-sm text-slate-500">{item.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* system preview moved to section 2b */}
-
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/*  7 · GOOGLE DOCS / BINDER COMPARISON                        */}
+      {/*  7 · COMPARISON (Binders / Docs / AI vs DentiSOP)            */}
       {/* ════════════════════════════════════════════════════════════ */}
       <section className="bg-white py-20">
         <div className={C}>
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-amber-600">Upgrade</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Binders &amp; Google Docs vs. DentiSOP</h2>
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-amber-600">Comparison</p>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Binders and Docs Are Not a System</h2>
           </div>
-          <div className="mx-auto max-w-3xl space-y-3">
-            {[
-              { old: "Last updated 2019", now: "Always current, version-tracked" },
-              { old: "14 scattered Google Docs", now: "One searchable procedure library" },
-              { old: "Procedures from memory", now: "Step-by-step with roles assigned" },
-              { old: "No proof anyone read it", now: "Digital acknowledgement tracking" },
-              { old: "Binder + good luck for new hires", now: "Role-based assignments from day one" },
-              { old: "Manual compliance tracking", now: "Automated review reminders" },
-            ].map((r, i) => (
-              <div key={i} className="grid overflow-hidden rounded-xl border shadow-sm md:grid-cols-2">
-                <div className="flex items-center gap-3 border-r border-red-100 bg-red-50 p-4">
-                  <X className="h-5 w-5 shrink-0 text-red-400" />
-                  <p className="text-sm font-medium text-red-800">{r.old}</p>
-                </div>
-                <div className="flex items-center gap-3 bg-emerald-50 p-4">
-                  <Check className="h-5 w-5 shrink-0 text-emerald-500" />
-                  <p className="text-sm font-medium text-emerald-800">{r.now}</p>
-                </div>
-              </div>
-            ))}
+          <div className="mx-auto max-w-4xl overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 pr-4 text-left font-semibold text-slate-500 w-1/4">Capability</th>
+                  <th className="py-3 px-4 text-center font-semibold text-slate-500 w-1/4">Binder / Google Docs</th>
+                  <th className="py-3 px-4 text-center font-semibold text-slate-500 w-1/4">Generic AI Chat</th>
+                  <th className="py-3 px-4 text-center font-semibold text-primary w-1/4">DentiSOP</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {[
+                  { cap: "Dental-specific templates", binder: false, ai: false, ds: true },
+                  { cap: "Regulatory framework tagging", binder: false, ai: false, ds: true },
+                  { cap: "Role-based assignment", binder: false, ai: false, ds: true },
+                  { cap: "Read acknowledgment tracking", binder: false, ai: false, ds: true },
+                  { cap: "Version history", binder: false, ai: false, ds: true },
+                  { cap: "Review reminders", binder: false, ai: false, ds: true },
+                  { cap: "Exportable audit records", binder: false, ai: false, ds: true },
+                  { cap: "Structured, editable output", binder: false, ai: "partial", ds: true },
+                ].map((r) => (
+                  <tr key={r.cap} className="hover:bg-slate-50/60">
+                    <td className="py-3 pr-4 font-medium text-slate-700">{r.cap}</td>
+                    <td className="py-3 px-4 text-center">{r.binder ? <Check className="mx-auto h-4 w-4 text-emerald-500" /> : <X className="mx-auto h-4 w-4 text-slate-300" />}</td>
+                    <td className="py-3 px-4 text-center">{r.ai === true ? <Check className="mx-auto h-4 w-4 text-emerald-500" /> : r.ai === "partial" ? <span className="text-xs text-amber-500 font-medium">Partial</span> : <X className="mx-auto h-4 w-4 text-slate-300" />}</td>
+                    <td className="py-3 px-4 text-center">{r.ds ? <Check className="mx-auto h-4 w-4 text-emerald-500" /> : <X className="mx-auto h-4 w-4 text-slate-300" />}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════════ */}
-      {/*  8 · HOW IT WORKS                                            */}
+      {/*  8 · SOCIAL PROOF / TESTIMONIAL PLACEHOLDER                  */}
       {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-slate-50 py-20">
-        <div className={C}>
-          <div className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">How it works</p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Document. Assign. Enforce.</h2>
-          </div>
-          <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-3">
-            {[
-              { n: "01", icon: BookOpen, t: "Document", d: "Pick a template. Your procedure is structured in seconds." },
-              { n: "02", icon: Users, t: "Assign", d: "Assign to the right roles. Everyone knows what's theirs." },
-              { n: "03", icon: Eye, t: "Enforce", d: "Track reads. Flag non-compliance. Run your clinic to standard." },
-            ].map((s) => (
-              <div key={s.n} className="text-center group">
-                <div className="relative mx-auto flex h-18 w-18 items-center justify-center rounded-2xl bg-primary/10 group-hover:bg-primary/15 transition-colors" style={{ height: "4.5rem", width: "4.5rem" }}>
-                  <s.icon className="h-8 w-8 text-primary" />
-                  <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-black text-white">{s.n}</span>
-                </div>
-                <h3 className="mt-5 text-lg font-bold text-slate-900">{s.t}</h3>
-                <p className="mt-2 text-sm text-slate-500">{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* TODO: Replace with real testimonials and case studies once available.
+          Suggested format: 2-3 quote cards from office managers / practice owners.
+          Include: name, role, practice size, specific outcome (e.g., "Cut onboarding from 3 weeks to 3 days").
+          Do NOT use fake quotes or invented names. */}
 
       {/* ════════════════════════════════════════════════════════════ */}
       {/*  9 · PRICING                                                 */}
       {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-20">
+      <section className="bg-slate-50 py-20 border-y border-slate-200">
         <div className={C}>
-          <div className="mx-auto mb-4 max-w-2xl text-center">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
             <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">Pricing</p>
             <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              One Mistake Costs More Than a Year
+              Start With Your First Procedures
             </h2>
-          </div>
-
-          {/* Cost comparison icons */}
-          <div className="mx-auto mb-12 max-w-2xl">
-            <div className="grid grid-cols-3 gap-3">
-              <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-center">
-                <ShieldAlert className="mx-auto h-8 w-8 text-red-500 mb-2" />
-                <p className="text-2xl font-black text-red-700">$16,550</p>
-                <p className="text-xs text-red-500 mt-1">OSHA fine</p>
-              </div>
-              <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-center">
-                <UserX className="mx-auto h-8 w-8 text-red-500 mb-2" />
-                <p className="text-2xl font-black text-red-700">$23,650+</p>
-                <p className="text-xs text-red-500 mt-1">DA replacement</p>
-              </div>
-              <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-center">
-                <Shield className="mx-auto h-8 w-8 text-emerald-500 mb-2" />
-                <p className="text-2xl font-black text-emerald-700">&pound;59/mo</p>
-                <p className="text-xs text-emerald-500 mt-1">DentiSOP</p>
-              </div>
-            </div>
+            <p className="mt-3 text-slate-500">No implementation project. No onboarding calls. Pick a plan and document your first procedure in minutes.</p>
           </div>
 
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
             {PLANS.map((p) => (
               <Card key={p.name} className={p.pop ? "relative scale-[1.02] border-primary shadow-xl ring-2 ring-primary/20" : "border-slate-200"}>
-                {p.pop && <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 shadow-sm">Best Value</Badge>}
+                {p.pop && <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 shadow-sm">Most Popular</Badge>}
                 <CardHeader>
                   <h3 className="text-lg font-bold text-slate-900">{p.name}</h3>
                   <p className="text-sm text-slate-500">{p.desc}</p>
@@ -968,7 +585,7 @@ export default function LandingPage() {
                     {p.period && <span className="font-medium text-slate-500">{p.period}</span>}
                   </div>
                   {"annual" in p && p.annual && (
-                    <p className="mt-1 text-sm font-semibold text-emerald-600">{p.annual}/mo billed annually &mdash; save 25%</p>
+                    <p className="mt-1 text-sm font-semibold text-emerald-600">{p.annual}/mo billed annually &mdash; save ~20%</p>
                   )}
                 </CardHeader>
                 <CardContent>
@@ -996,7 +613,7 @@ export default function LandingPage() {
       {/* ════════════════════════════════════════════════════════════ */}
       {/*  10 · FAQ                                                    */}
       {/* ════════════════════════════════════════════════════════════ */}
-      <section className="bg-slate-50 py-20">
+      <section className="bg-white py-20">
         <div className={C}>
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-slate-900">Common Questions</h2>
@@ -1022,25 +639,22 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.12),transparent)]" />
         <div className={`${C} relative`}>
           <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-6 text-sm font-bold uppercase tracking-widest text-red-400">Stop hoping</p>
             <h2 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-              Hope Is Not a System. Control Is.
+              Stop Relying on Memory.{" "}
+              <span className="text-slate-400">Run Your Practice to One Standard.</span>
             </h2>
             <p className="mt-5 text-lg text-slate-400">
-              Right now, you&rsquo;re hoping your team follows the process. Hoping someone remembers the steps. Hoping the inspector doesn&rsquo;t show up.
+              Find the gaps. Document the procedures. Assign them to your team. Prove they were followed.
             </p>
-            <p className="mt-3 font-medium text-white">
-              Replace hope with a system that enforces it.
-            </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
               <Button size="lg" asChild className="h-14 px-10 text-base shadow-lg shadow-primary/25">
                 <Link href="/signup">
-                  Take Control Now
+                  Run My Gap Check
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
+              <a href="#sample-sop" className="text-sm font-semibold text-slate-400 hover:text-white transition-colors underline underline-offset-4 decoration-slate-600 hover:decoration-white">View Sample SOP</a>
             </div>
-            {/* Trust pills */}
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {[
                 { icon: Shield, label: "30-day guarantee" },
