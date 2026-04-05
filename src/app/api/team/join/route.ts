@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createServiceClient } from "@/lib/supabase/service";
 
 // GET /api/team/join?token=xxx — get invite info (public, no auth needed)
 export async function GET(request: Request) {
@@ -7,7 +8,8 @@ export async function GET(request: Request) {
   const token = searchParams.get("token");
   if (!token) return NextResponse.json({ error: "Missing token" }, { status: 400 });
 
-  const supabase = await createClient();
+  // Use service client to bypass RLS — this is a public invite lookup
+  const supabase = createServiceClient();
 
   const { data, error } = await supabase
     .from("team_members")
@@ -43,8 +45,10 @@ export async function POST(request: Request) {
   const { token } = await request.json();
   if (!token) return NextResponse.json({ error: "Missing token" }, { status: 400 });
 
-  // Find the invite
-  const { data: member, error: findError } = await supabase
+  // Use service client to bypass RLS for the lookup and update
+  const service = createServiceClient();
+
+  const { data: member, error: findError } = await service
     .from("team_members")
     .select("id, email, joined_at")
     .eq("invite_token", token)
@@ -58,8 +62,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Already joined" }, { status: 400 });
   }
 
-  // Link the auth user to the team member
-  const { error: updateError } = await supabase
+  const { error: updateError } = await service
     .from("team_members")
     .update({
       user_id: user.id,

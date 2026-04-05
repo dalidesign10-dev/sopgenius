@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createServiceClient } from "@/lib/supabase/service";
 
 // GET /api/team/reads?sopId=xxx — get reads for a SOP (admin) or for current member (portal)
 export async function GET(request: Request) {
@@ -11,9 +12,8 @@ export async function GET(request: Request) {
   const sopId = searchParams.get("sopId");
   const memberId = searchParams.get("memberId");
 
-  let query = supabase
-    .from("sop_reads")
-    .select("*");
+  const service = createServiceClient();
+  let query = service.from("sop_reads").select("*");
 
   if (sopId) query = query.eq("sop_id", sopId);
   if (memberId) query = query.eq("team_member_id", memberId);
@@ -30,9 +30,10 @@ export async function POST(request: Request) {
   if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { sopId } = await request.json();
+  const service = createServiceClient();
 
   // Find the team member record for this auth user
-  const { data: teamMember } = await supabase
+  const { data: teamMember } = await service
     .from("team_members")
     .select("id")
     .eq("user_id", user.id)
@@ -43,7 +44,7 @@ export async function POST(request: Request) {
   }
 
   // Verify assignment exists
-  const { data: assignment } = await supabase
+  const { data: assignment } = await service
     .from("team_assignments")
     .select("id")
     .eq("team_member_id", teamMember.id)
@@ -54,7 +55,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "This procedure is not assigned to you" }, { status: 403 });
   }
 
-  const { data, error } = await supabase
+  const { data, error } = await service
     .from("sop_reads")
     .insert({
       team_member_id: teamMember.id,

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createServiceClient } from "@/lib/supabase/service";
 
 // DELETE /api/team/[id] — remove a team member
 export async function DELETE(
@@ -11,7 +12,8 @@ export async function DELETE(
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const { error } = await supabase
+  const service = createServiceClient();
+  const { error } = await service
     .from("team_members")
     .delete()
     .eq("id", id)

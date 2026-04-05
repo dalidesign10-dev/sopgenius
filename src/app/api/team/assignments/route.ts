@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createServiceClient } from "@/lib/supabase/service";
 
 // GET /api/team/assignments?sopId=xxx — get assignments for a SOP
 export async function GET(request: Request) {
@@ -11,18 +12,13 @@ export async function GET(request: Request) {
   const sopId = searchParams.get("sopId");
   const memberId = searchParams.get("memberId");
 
-  let query = supabase
+  const service = createServiceClient();
+  let query = service
     .from("team_assignments")
     .select("*, team_members!inner(*)");
 
-  if (sopId) {
-    query = query.eq("sop_id", sopId);
-  }
-  if (memberId) {
-    query = query.eq("team_member_id", memberId);
-  }
-
-  // Filter to only this clinic's members
+  if (sopId) query = query.eq("sop_id", sopId);
+  if (memberId) query = query.eq("team_member_id", memberId);
   query = query.eq("team_members.clinic_id", user.id);
 
   const { data, error } = await query;
@@ -37,8 +33,9 @@ export async function POST(request: Request) {
   if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { sopId, memberId } = await request.json();
+  const service = createServiceClient();
 
-  const { data, error } = await supabase
+  const { data, error } = await service
     .from("team_assignments")
     .insert({
       team_member_id: memberId,
@@ -64,9 +61,9 @@ export async function DELETE(request: Request) {
   if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { sopId, memberId } = await request.json();
+  const service = createServiceClient();
 
-  // Verify this member belongs to the current clinic
-  const { data: member } = await supabase
+  const { data: member } = await service
     .from("team_members")
     .select("id")
     .eq("id", memberId)
@@ -75,14 +72,13 @@ export async function DELETE(request: Request) {
 
   if (!member) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  // Delete assignment and associated read
-  await supabase
+  await service
     .from("sop_reads")
     .delete()
     .eq("team_member_id", memberId)
     .eq("sop_id", sopId);
 
-  const { error } = await supabase
+  const { error } = await service
     .from("team_assignments")
     .delete()
     .eq("team_member_id", memberId)
